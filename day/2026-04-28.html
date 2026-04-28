@@ -33,6 +33,23 @@
   .section-eyebrow{font-size:12px;font-weight:600;color:var(--accent);
                    letter-spacing:0.05em;text-transform:uppercase;margin-bottom:8px}
   .stories{list-style:none;padding:0;margin:0;counter-reset:story}
+  .category-nav{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 32px;
+                padding-bottom:16px;border-bottom:1px solid var(--border)}
+  .category-nav a{display:inline-flex;align-items:center;gap:6px;
+                  padding:6px 12px;border:1px solid var(--border);border-radius:999px;
+                  text-decoration:none;color:var(--text-2);font-size:13px;font-weight:500;
+                  transition:border-color 0.15s,color 0.15s,background 0.15s}
+  .category-nav a:hover{border-color:var(--accent);color:var(--accent);
+                        background:rgba(37,99,235,0.04)}
+  .category-nav .cat-count{font-size:11px;font-weight:600;
+                           background:var(--bg-subtle);color:var(--muted);
+                           padding:1px 6px;border-radius:999px;
+                           font-variant-numeric:tabular-nums}
+  .category-section{margin:48px 0 0;scroll-margin-top:24px}
+  .category-section:first-of-type{margin-top:24px}
+  .category-heading{font-size:20px;font-weight:700;letter-spacing:-0.02em;
+                    margin:0 0 8px;padding-bottom:8px;
+                    border-bottom:1px solid var(--border)}
   .story{counter-increment:story;padding:28px 0;border-bottom:1px solid var(--border);
          position:relative;padding-left:44px}
   .story:last-child{border-bottom:0}
@@ -114,30 +131,71 @@
   <div class="section-eyebrow">April 28, 2026</div>
   <h1>AI News of the Day</h1>
 </header>
-<ol class="stories"><li class="story">
-  <h3 class="story-headline"><a href="story/2026-04-28-openai-models-now-available-on-aws-expanding-enterprise-clou-0ff444.html">OpenAI models now available on AWS, expanding enterprise cloud options</a></h3>
-  <p class="story-summary">OpenAI&#39;s GPT models, Codex, and Managed Agents are now accessible on Amazon Web Services, allowing enterprises to build and deploy AI solutions within their AWS environments.</p>
-  <div class="story-meta"><span>OpenAI</span><span class="dot">·</span><a href="https://openai.com/index/openai-on-aws" target="_blank" rel="noopener noreferrer">openai.com ↗</a></div>
+<nav class="category-nav"><a href="#cat-models">Models &amp; Research <span class="cat-count">3</span></a><a href="#cat-industry">Industry &amp; Business <span class="cat-count">3</span></a><a href="#cat-tools">Tools &amp; Code <span class="cat-count">3</span></a><a href="#cat-policy">Policy &amp; Safety <span class="cat-count">3</span></a></nav>
+<section class="category-section" id="cat-models">
+  <h2 class="category-heading">Models &amp; Research</h2>
+  <ol class="stories"><li class="story">
+  <h3 class="story-headline"><a href="story/2026-04-28-nvidia-introduces-nemotron-3-nano-omni-for-long-context-mult-39c0a1.html">NVIDIA Introduces Nemotron 3 Nano Omni for Long-Context Multimodal AI Agents</a></h3>
+  <p class="story-summary">NVIDIA has released Nemotron 3 Nano Omni, a new multimodal intelligence model designed for long-context processing of documents, audio, and video for AI agents.</p>
+  <div class="story-meta"><span>Hugging Face</span><span class="dot">·</span><a href="https://huggingface.co/blog/nvidia/nemotron-3-nano-omni-multimodal-intelligence" target="_blank" rel="noopener noreferrer">huggingface.co ↗</a></div>
 </li><li class="story">
-  <h3 class="story-headline"><a href="story/2026-04-28-musk-vs-altman-trial-begins-potentially-reshaping-openais-fu-41c83e.html">Musk vs. Altman trial begins, potentially reshaping OpenAI&#39;s future</a></h3>
-  <p class="story-summary">A high-stakes trial has commenced between Elon Musk and OpenAI CEO Sam Altman, centering on Musk&#39;s lawsuit alleging OpenAI abandoned its original mission for profit.</p>
-  <div class="story-meta"><span>The Verge AI</span><span class="dot">·</span><a href="https://www.theverge.com/tech/917225/sam-altman-elon-musk-openai-lawsuit" target="_blank" rel="noopener noreferrer">theverge.com ↗</a></div>
+  <h3 class="story-headline"><a href="story/2026-04-28-openmoss-releases-moss-audio-an-open-source-foundation-model-427daf.html">OpenMOSS Releases MOSS-Audio, an Open-Source Foundation Model for Unified Audio Reasoning</a></h3>
+  <p class="story-summary">OpenMOSS has launched MOSS-Audio, an open-source foundation model that unifies speech, environmental sound, music, and temporal reasoning into a single architecture, outperforming larger models on general audio benchmarks.</p>
+  <div class="story-meta"><span>Marktechpost</span><span class="dot">·</span><a href="https://www.marktechpost.com/2026/04/27/openmoss-releases-moss-audio-an-open-source-foundation-model-for-speech-sound-music-and-time-aware-audio-reasoning/" target="_blank" rel="noopener noreferrer">marktechpost.com ↗</a></div>
 </li><li class="story">
-  <h3 class="story-headline"><a href="story/2026-04-28-github-to-charge-copilot-users-based-on-actual-ai-inference--32002d.html">GitHub to charge Copilot users based on actual AI inference usage</a></h3>
-  <p class="story-summary">GitHub is shifting its Copilot pricing model to reflect actual AI usage rather than a flat subscription, citing escalating inference costs.</p>
-  <div class="story-meta"><span>Ars Technica AI</span><span class="dot">·</span><a href="https://arstechnica.com/ai/2026/04/github-will-start-charging-copilot-users-based-on-their-actual-ai-usage/" target="_blank" rel="noopener noreferrer">arstechnica.com ↗</a></div>
+  <h3 class="story-headline"><a href="story/2026-04-28-researchers-introduce-talkie-1930-a-13b-llm-trained-exclusiv-a79eeb.html">Researchers Introduce Talkie-1930, a 13B LLM Trained Exclusively on Pre-1931 English Text</a></h3>
+  <p class="story-summary">Nick Levine, David Duvenaud, and Alec Radford have released Talkie-1930, a 13B language model trained solely on English texts from before 1931, designed to explore historical reasoning and generalization.</p>
+  <div class="story-meta"><span>Simon Willison</span><span class="dot">·</span><a href="https://simonwillison.net/2026/Apr/28/talkie/#atom-everything" target="_blank" rel="noopener noreferrer">simonwillison.net ↗</a></div>
+</li></ol>
+</section><section class="category-section" id="cat-industry">
+  <h2 class="category-heading">Industry &amp; Business</h2>
+  <ol class="stories"><li class="story">
+  <h3 class="story-headline"><a href="story/2026-04-28-openai-and-microsoft-amend-partnership-granting-openai-cloud-414538.html">OpenAI and Microsoft Amend Partnership, Granting OpenAI Cloud Provider Flexibility</a></h3>
+  <p class="story-summary">OpenAI and Microsoft announced an amended agreement that simplifies their partnership, removes exclusivity clauses, and allows OpenAI to offer its models on other cloud providers like AWS.</p>
+  <div class="story-meta"><span>OpenAI</span><span class="dot">·</span><a href="https://openai.com/index/next-phase-of-microsoft-partnership" target="_blank" rel="noopener noreferrer">openai.com ↗</a></div>
 </li><li class="story">
-  <h3 class="story-headline"><a href="story/2026-04-28-anthropics-claude-gains-direct-integrations-with-photoshop-b-b42e8c.html">Anthropic&#39;s Claude gains direct integrations with Photoshop, Blender, Ableton</a></h3>
-  <p class="story-summary">Anthropic has released connectors enabling Claude to integrate directly with popular creative software like Adobe Creative Cloud, Blender, and Ableton.</p>
+  <h3 class="story-headline"><a href="story/2026-04-28-deepmind-co-founder-david-silver-raises-11-billion-for-new-a-330777.html">DeepMind Co-Founder David Silver Raises $1.1 Billion for New AI Lab Ineffable Intelligence</a></h3>
+  <p class="story-summary">Ineffable Intelligence, a new British AI lab founded by former DeepMind researcher David Silver, has secured $1.1 billion in funding to develop AI that learns without human data.</p>
+  <div class="story-meta"><span>TechCrunch AI</span><span class="dot">·</span><a href="https://techcrunch.com/2026/04/27/deepminds-david-silver-just-raised-1-1b-to-build-an-ai-that-learns-without-human-data/" target="_blank" rel="noopener noreferrer">techcrunch.com ↗</a></div>
+</li><li class="story">
+  <h3 class="story-headline"><a href="story/2026-04-28-openai-misses-q1-revenue-targets-amidst-growing-competition--984197.html">OpenAI Misses Q1 Revenue Targets Amidst Growing Competition from Anthropic and Google</a></h3>
+  <p class="story-summary">OpenAI reportedly fell short of its internal revenue goals for the first quarter of 2026, facing increasing competitive pressure from rivals like Anthropic and Google.</p>
+  <div class="story-meta"><span>The Decoder</span><span class="dot">·</span><a href="https://the-decoder.com/openai-misses-revenue-targets-as-anthropic-and-google-close-in/" target="_blank" rel="noopener noreferrer">the-decoder.com ↗</a></div>
+</li></ol>
+</section><section class="category-section" id="cat-tools">
+  <h2 class="category-heading">Tools &amp; Code</h2>
+  <ol class="stories"><li class="story">
+  <h3 class="story-headline"><a href="story/2026-04-28-mistral-ai-launches-workflows-for-enterprise-ai-orchestratio-ce5492.html">Mistral AI Launches Workflows for Enterprise AI Orchestration</a></h3>
+  <p class="story-summary">Mistral AI has introduced Workflows, an orchestration layer designed to help companies integrate and manage AI-powered processes into production-ready systems.</p>
+  <div class="story-meta"><span>The Decoder</span><span class="dot">·</span><a href="https://the-decoder.com/mistral-ai-takes-on-enterprise-ai-orchestration-with-workflows/" target="_blank" rel="noopener noreferrer">the-decoder.com ↗</a></div>
+</li><li class="story">
+  <h3 class="story-headline"><a href="story/2026-04-28-anthropics-claude-now-integrates-directly-with-creative-soft-b42e8c.html">Anthropic&#39;s Claude Now Integrates Directly with Creative Software like Photoshop and Blender</a></h3>
+  <p class="story-summary">Anthropic has released new connectors for Claude, allowing the AI chatbot to directly interface with popular creative applications such as Adobe Creative Cloud, Blender, and Ableton.</p>
   <div class="story-meta"><span>The Verge AI</span><span class="dot">·</span><a href="https://www.theverge.com/ai-artificial-intelligence/919648/anthropic-claude-creative-connectors-adobe-blender" target="_blank" rel="noopener noreferrer">theverge.com ↗</a></div>
 </li><li class="story">
-  <h3 class="story-headline"><a href="story/2026-04-28-deepmind-founder-raises-11b-for-ai-that-learns-without-human-330777.html">DeepMind founder raises $1.1B for AI that learns without human data</a></h3>
-  <p class="story-summary">Ineffable Intelligence, founded by DeepMind&#39;s David Silver, has secured $1.1 billion to develop AI models that learn autonomously without relying on human-provided data.</p>
-  <div class="story-meta"><span>TechCrunch AI</span><span class="dot">·</span><a href="https://techcrunch.com/2026/04/27/deepminds-david-silver-just-raised-1-1b-to-build-an-ai-that-learns-without-human-data/" target="_blank" rel="noopener noreferrer">techcrunch.com ↗</a></div>
-</li></ol></main>
+  <h3 class="story-headline"><a href="story/2026-04-28-github-copilot-to-switch-to-usage-based-token-billing-for-ai-32002d.html">GitHub Copilot to Switch to Usage-Based Token Billing for AI Assistance</a></h3>
+  <p class="story-summary">GitHub announced that Copilot will transition to a token-based billing model, charging users based on their actual AI usage rather than premium request counts, citing escalating inference costs.</p>
+  <div class="story-meta"><span>Ars Technica AI</span><span class="dot">·</span><a href="https://arstechnica.com/ai/2026/04/github-will-start-charging-copilot-users-based-on-their-actual-ai-usage/" target="_blank" rel="noopener noreferrer">arstechnica.com ↗</a></div>
+</li></ol>
+</section><section class="category-section" id="cat-policy">
+  <h2 class="category-heading">Policy &amp; Safety</h2>
+  <ol class="stories"><li class="story">
+  <h3 class="story-headline"><a href="story/2026-04-28-elon-musk-and-sam-altman-face-off-in-trial-over-openais-foun-4950d3.html">Elon Musk and Sam Altman Face Off in Trial Over OpenAI&#39;s Founding Mission</a></h3>
+  <p class="story-summary">Elon Musk and Sam Altman are in court for a high-stakes trial that could redefine OpenAI&#39;s future, with Musk accusing the company of abandoning its original non-profit mission.</p>
+  <div class="story-meta"><span>Ars Technica AI</span><span class="dot">·</span><a href="https://arstechnica.com/tech-policy/2026/04/musk-and-altman-face-off-in-trial-that-will-determine-openais-future/" target="_blank" rel="noopener noreferrer">arstechnica.com ↗</a></div>
+</li><li class="story">
+  <h3 class="story-headline"><a href="story/2026-04-28-china-blocks-metas-acquisition-of-manus-amid-deepening-us-ch-a65173.html">China Blocks Meta&#39;s Acquisition of Manus Amid Deepening US-China AI Rivalry</a></h3>
+  <p class="story-summary">China has reportedly blocked Meta&#39;s acquisition of Manus after a months-long probe, highlighting how geopolitical tensions are increasingly impacting technology mergers and acquisitions in the AI sector.</p>
+  <div class="story-meta"><span>Ars Technica AI</span><span class="dot">·</span><a href="https://arstechnica.com/ai/2026/04/china-kills-metas-acquisition-of-manus-as-us-china-ai-rivalry-deepens/" target="_blank" rel="noopener noreferrer">arstechnica.com ↗</a></div>
+</li><li class="story">
+  <h3 class="story-headline"><a href="story/2026-04-28-google-signs-classified-ai-deal-with-pentagon-despite-employ-c5c3f7.html">Google Signs Classified AI Deal with Pentagon Despite Employee Protests</a></h3>
+  <p class="story-summary">Google has reportedly signed a classified agreement allowing the U.S. Department of Defense to use its AI models for &#39;any lawful government purpose,&#39; despite an open letter of protest from over 600 employees.</p>
+  <div class="story-meta"><span>The Decoder</span><span class="dot">·</span><a href="https://the-decoder.com/google-signs-ai-deal-with-the-pentagon-ignoring-protest-from-over-600-employees/" target="_blank" rel="noopener noreferrer">the-decoder.com ↗</a></div>
+</li></ol>
+</section></main>
 <footer>
   
-  <div>Updated <time datetime="2026-04-28T18:02:31Z">2026-04-28T18:02:31Z</time></div>
+  <div>Updated <time datetime="2026-04-28T18:11:13Z">2026-04-28T18:11:13Z</time></div>
 </footer>
 </body>
 </html>
