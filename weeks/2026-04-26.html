@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Week of April 26, 2026 · Arunkumar&#39;s AI Reading List</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #ffffff;
+    --bg-subtle: #fafafa;
+    --border: #e5e7eb;
+    --text: #0a0a0a;
+    --text-2: #3f3f46;
+    --muted: #71717a;
+    --muted-2: #a1a1aa;
+    --accent: #2563eb;
+    --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: var(--font);
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  .topbar {
+    border-bottom: 1px solid var(--border);
+    padding: 14px 24px;
+  }
+  .topbar-inner {
+    max-width: 720px; margin: 0 auto;
+    display: flex; align-items: center; justify-content: space-between;
+    font-size: 13px;
+  }
+  .topbar a { color: var(--text-2); text-decoration: none; }
+  .topbar a:hover { color: var(--accent); }
+  .logo {
+    display: flex; align-items: center; gap: 10px;
+    font-weight: 600; color: var(--text);
+  }
+  .logo-mark {
+    width: 22px; height: 22px; border-radius: 6px;
+    background: var(--text); color: var(--bg);
+    display: grid; place-items: center;
+    font-weight: 700; font-size: 12px;
+  }
+  main { max-width: 720px; margin: 0 auto; padding: 56px 24px 96px; }
+  .page-header { margin-bottom: 48px; }
+  .page-header h1 {
+    font-size: 32px; font-weight: 700; letter-spacing: -0.025em;
+    margin: 8px 0;
+  }
+  .page-header p {
+    color: var(--text-2); font-size: 16px; margin: 0;
+  }
+  .section-eyebrow {
+    font-size: 12px; font-weight: 600;
+    color: var(--accent); letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .stories {
+    list-style: none; padding: 0; margin: 0;
+    counter-reset: story;
+  }
+  .story {
+    counter-increment: story;
+    padding: 28px 0;
+    border-bottom: 1px solid var(--border);
+    position: relative;
+    padding-left: 44px;
+  }
+  .story:last-child { border-bottom: 0; }
+  .story::before {
+    content: counter(story);
+    position: absolute; left: 0; top: 30px;
+    font-size: 13px; font-weight: 600; color: var(--muted-2);
+    width: 24px; height: 24px;
+    border: 1px solid var(--border); border-radius: 50%;
+    display: grid; place-items: center;
+    font-variant-numeric: tabular-nums;
+  }
+  .story-headline {
+    font-size: 19px; font-weight: 600; line-height: 1.35;
+    letter-spacing: -0.015em; margin: 0 0 8px;
+  }
+  .story-headline a {
+    color: var(--text); text-decoration: none;
+    transition: color 0.15s;
+  }
+  .story-headline a:hover { color: var(--accent); }
+  .story-summary {
+    margin: 0 0 10px;
+    color: var(--text-2);
+    font-size: 15px;
+  }
+  .story-meta {
+    display: flex; gap: 8px;
+    font-size: 13px; color: var(--muted);
+  }
+  .story-meta .dot { color: var(--muted-2); }
+  .archive-section { margin-top: 64px; padding-top: 32px; border-top: 1px solid var(--border); }
+  .archive-section h2 {
+    font-size: 14px; font-weight: 600;
+    text-transform: uppercase; letter-spacing: 0.05em;
+    color: var(--muted); margin: 0 0 12px;
+  }
+  .archive-list { list-style: none; padding: 0; margin: 0; }
+  .archive-list li { padding: 6px 0; }
+  .archive-list a {
+    color: var(--text-2); text-decoration: none;
+    font-size: 14px;
+  }
+  .archive-list a:hover { color: var(--accent); text-decoration: underline; }
+  .empty { color: var(--muted); font-style: italic; }
+  footer {
+    max-width: 720px; margin: 0 auto;
+    padding: 32px 24px;
+    border-top: 1px solid var(--border);
+    font-size: 12px; color: var(--muted);
+    display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px;
+  }
+</style>
+</head>
+<body>
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="logo">
+      <span class="logo-mark">A</span>
+      <span>AI Reading List</span>
+    </div>
+    <div><a href="../index.html">← Back to current week</a></div>
+  </div>
+</div>
+<main>
+<header class="page-header">
+  <div class="section-eyebrow">Archive · Week of April 26, 2026</div>
+  <h1>Arunkumar&#39;s AI Reading List</h1>
+</header>
+<ol class="stories"><li class="story">
+  <h3 class="story-headline">
+    <a href="https://tldr.tech/ai/126078" target="_blank" rel="noopener noreferrer">OpenAI Misses Revenue and User Targets Amidst IPO Sprint</a>
+  </h3>
+  <p class="story-summary">OpenAI is reportedly facing internal concerns over missed revenue and user growth targets, prompting leadership to focus on cost control and business discipline as it prepares for a potential IPO.</p>
+  <div class="story-meta">
+    <span>TLDR AI</span>
+    <span class="dot">·</span>
+    <span>tldr.tech</span>
+  </div>
+</li><li class="story">
+  <h3 class="story-headline">
+    <a href="https://genai.works/2026/04/27/google-just-let-claude-and-gpt-run-inside-workspace/" target="_blank" rel="noopener noreferrer">Google Workspace Integrates Gemini Agents for Enterprise-Wide AI Operations</a>
+  </h3>
+  <p class="story-summary">Google has launched Workspace Intelligence, integrating Gemini agents across Workspace apps to create a unified knowledge graph and agent platform for enterprise use.</p>
+  <div class="story-meta">
+    <span>Generative AI</span>
+    <span class="dot">·</span>
+    <span>genai.works</span>
+  </div>
+</li><li class="story">
+  <h3 class="story-headline">
+    <a href="https://tldr.tech/design/126081" target="_blank" rel="noopener noreferrer">OpenAI&#39;s Images 2.0 Model Demonstrates Advanced Reasoning and Web Search Capabilities</a>
+  </h3>
+  <p class="story-summary">OpenAI&#39;s new Images 2.0 model integrates reasoning, web searching, and planning before image generation, achieving high accuracy and topping image generation leaderboards.</p>
+  <div class="story-meta">
+    <span>TLDR Design</span>
+    <span class="dot">·</span>
+    <span>tldr.tech</span>
+  </div>
+</li><li class="story">
+  <h3 class="story-headline">
+    <a href="https://tldr.tech/ai/126079" target="_blank" rel="noopener noreferrer">SpaceX Eyes Cursor Acquisition for $60 Billion in Strategic AI Coding Play</a>
+  </h3>
+  <p class="story-summary">SpaceX is partnering with AI coding startup Cursor, with terms allowing for a potential $60 billion acquisition, aiming to bolster its AI development capabilities.</p>
+  <div class="story-meta">
+    <span>TLDR AI</span>
+    <span class="dot">·</span>
+    <span>tldr.tech</span>
+  </div>
+</li><li class="story">
+  <h3 class="story-headline">
+    <a href="https://tldr.tech/ai/126082" target="_blank" rel="noopener noreferrer">DeepSeek Unveils V4 AI Models Claiming Top Performance in Coding and Reasoning Benchmarks</a>
+  </h3>
+  <p class="story-summary">DeepSeek has released its V4 Flash and V4 Pro AI models, asserting top-tier performance in coding benchmarks and significant advancements in reasoning and agentic tasks.</p>
+  <div class="story-meta">
+    <span>TLDR</span>
+    <span class="dot">·</span>
+    <span>tldr.tech</span>
+  </div>
+</li></ol>
+</main>
+<footer>
+  <div>Auto-curated weekly &middot; Sources: dan@tldrnewsletter.com &middot; newsletter@genai.works</div>
+  <div>Updated <time datetime="2026-04-28T17:04:52Z">2026-04-28T17:04:52Z</time></div>
+</footer>
+</body>
+</html>
