@@ -3,16 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>April 28, 2026 · Arunkumar&#39;s AI Reading List</title>
+<title>April 28, 2026 · AI News of the Day</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root {
     --bg:#fff;--bg-subtle:#fafafa;--border:#e5e7eb;
     --text:#0a0a0a;--text-2:#3f3f46;--muted:#71717a;--muted-2:#a1a1aa;
     --accent:#2563eb;
     --font:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+    --mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
   }
   *{box-sizing:border-box}
   body{margin:0;font-family:var(--font);background:var(--bg);color:var(--text);
@@ -50,16 +51,39 @@
   .story-meta .dot{color:var(--muted-2)}
   .story-detail h1{font-size:32px;font-weight:700;letter-spacing:-0.025em;
                    line-height:1.2;margin:8px 0 24px}
-  .story-summary-large{font-size:18px;color:var(--text-2);line-height:1.6;
-                       margin:0 0 32px}
+  .story-summary-large{font-size:18px;color:var(--text-2);line-height:1.6;margin:0 0 32px}
   .why-section{background:var(--bg-subtle);border:1px solid var(--border);
                border-radius:8px;padding:20px 24px;margin:32px 0}
-  .why-section h2{font-size:13px;font-weight:600;text-transform:uppercase;
+  .why-section h2,.why-section h3{font-size:13px;font-weight:600;text-transform:uppercase;
                   letter-spacing:0.05em;color:var(--accent);margin:0 0 8px}
   .why-section p{margin:0;color:var(--text);font-size:15px}
+  .example-section{margin:24px 0;padding:16px 20px;border-left:3px solid var(--border);background:var(--bg-subtle)}
+  .example-section h3{font-size:12px;font-weight:600;text-transform:uppercase;
+                      letter-spacing:0.05em;color:var(--muted);margin:0 0 6px}
+  .example-section p{margin:0;color:var(--text-2);font-size:14px;font-style:italic}
   .read-original{margin-top:32px;padding-top:24px;border-top:1px solid var(--border)}
   .read-original a{color:var(--accent);text-decoration:none;font-weight:500}
   .read-original a:hover{text-decoration:underline}
+
+  /* Prompt-specific styles */
+  .prompt-title{font-size:24px;font-weight:700;letter-spacing:-0.02em;margin:8px 0 4px;line-height:1.3}
+  .prompt-subtitle{color:var(--text-2);font-size:15px;margin:0 0 24px}
+  .prompt-block{border:1px solid var(--border);border-radius:8px;overflow:hidden;
+                background:var(--bg-subtle);margin:24px 0}
+  .prompt-block-header{display:flex;align-items:center;justify-content:space-between;
+                       padding:10px 16px;background:#fff;border-bottom:1px solid var(--border)}
+  .prompt-label{font-size:11px;font-weight:600;text-transform:uppercase;
+                letter-spacing:0.08em;color:var(--muted)}
+  .copy-btn{background:var(--text);color:var(--bg);border:none;border-radius:6px;
+            padding:6px 14px;font:500 12px var(--font);cursor:pointer;
+            transition:background 0.15s,transform 0.05s}
+  .copy-btn:hover{background:#000}
+  .copy-btn:active{transform:scale(0.97)}
+  .copy-btn.copied{background:#059669}
+  .prompt-text{margin:0;padding:20px;font-family:var(--mono);font-size:13.5px;
+               line-height:1.65;color:var(--text);white-space:pre-wrap;word-wrap:break-word;
+               background:transparent}
+
   .archive-section{margin-top:64px;padding-top:32px;border-top:1px solid var(--border)}
   .archive-section h2{font-size:14px;font-weight:600;text-transform:uppercase;
                       letter-spacing:0.05em;color:var(--muted);margin:0 0 12px}
@@ -72,6 +96,7 @@
   footer{max-width:720px;margin:0 auto;padding:32px 24px;
          border-top:1px solid var(--border);font-size:12px;color:var(--muted);
          display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+  footer time{font-variant-numeric:tabular-nums}
 </style>
 </head>
 <body>
@@ -79,7 +104,7 @@
   <div class="topbar-inner">
     <div class="logo">
       <span class="logo-mark">A</span>
-      <span>AI Reading List</span>
+      <span>AI News of the Day</span>
     </div>
     <div><a href="../index.html">← Back to today</a></div>
   </div>
@@ -87,53 +112,32 @@
 <main>
 <header class="page-header">
   <div class="section-eyebrow">April 28, 2026</div>
-  <h1>Arunkumar&#39;s AI Reading List</h1>
+  <h1>AI News of the Day</h1>
 </header>
 <ol class="stories"><li class="story">
-  <h3 class="story-headline"><a href="story/2026-04-28-openai-and-microsoft-amend-partnership-ending-agi-clause-and-820389.html">OpenAI and Microsoft Amend Partnership, Ending AGI Clause and Enabling AWS Deals</a></h3>
-  <p class="story-summary">OpenAI and Microsoft have renegotiated their partnership agreement, removing the AGI clause that previously dictated control and allowing OpenAI to pursue deals with other cloud providers like Amazon Web Services.</p>
-  <div class="story-meta">
-    <span>TechCrunch AI</span>
-    <span class="dot">·</span>
-    <a href="https://techcrunch.com/2026/04/27/openai-ends-microsoft-legal-peril-over-its-50b-amazon-deal/" target="_blank" rel="noopener noreferrer">techcrunch.com ↗</a>
-  </div>
+  <h3 class="story-headline"><a href="story/2026-04-28-openai-models-now-available-on-aws-expanding-enterprise-clou-0ff444.html">OpenAI models now available on AWS, expanding enterprise cloud options</a></h3>
+  <p class="story-summary">OpenAI&#39;s GPT models, Codex, and Managed Agents are now accessible on Amazon Web Services, allowing enterprises to build and deploy AI solutions within their AWS environments.</p>
+  <div class="story-meta"><span>OpenAI</span><span class="dot">·</span><a href="https://openai.com/index/openai-on-aws" target="_blank" rel="noopener noreferrer">openai.com ↗</a></div>
 </li><li class="story">
-  <h3 class="story-headline"><a href="story/2026-04-28-elon-musk-and-sam-altman-begin-high-stakes-trial-over-openai-654be3.html">Elon Musk and Sam Altman Begin High-Stakes Trial Over OpenAI&#39;s Founding Mission</a></h3>
-  <p class="story-summary">Elon Musk and Sam Altman are in court for a trial that will examine OpenAI&#39;s founding mission as a non-profit for humanity versus its current for-profit structure.</p>
-  <div class="story-meta">
-    <span>MIT Tech Review</span>
-    <span class="dot">·</span>
-    <a href="https://www.technologyreview.com/2026/04/27/1136466/elon-musk-and-sam-altman-are-going-to-court-over-openais-future/" target="_blank" rel="noopener noreferrer">technologyreview.com ↗</a>
-  </div>
+  <h3 class="story-headline"><a href="story/2026-04-28-musk-vs-altman-trial-begins-potentially-reshaping-openais-fu-41c83e.html">Musk vs. Altman trial begins, potentially reshaping OpenAI&#39;s future</a></h3>
+  <p class="story-summary">A high-stakes trial has commenced between Elon Musk and OpenAI CEO Sam Altman, centering on Musk&#39;s lawsuit alleging OpenAI abandoned its original mission for profit.</p>
+  <div class="story-meta"><span>The Verge AI</span><span class="dot">·</span><a href="https://www.theverge.com/tech/917225/sam-altman-elon-musk-openai-lawsuit" target="_blank" rel="noopener noreferrer">theverge.com ↗</a></div>
 </li><li class="story">
-  <h3 class="story-headline"><a href="story/2026-04-28-eu-demands-google-open-android-to-competing-ai-assistants-ci-5f7015.html">EU Demands Google Open Android to Competing AI Assistants, Citing Antitrust Concerns</a></h3>
-  <p class="story-summary">The European Union is pressuring Google to allow third-party AI assistants to operate on Android devices, challenging Google&#39;s preferential treatment of its own Gemini AI.</p>
-  <div class="story-meta">
-    <span>Ars Technica AI</span>
-    <span class="dot">·</span>
-    <a href="https://arstechnica.com/ai/2026/04/europe-could-force-google-to-open-android-to-other-ai-assistants/" target="_blank" rel="noopener noreferrer">arstechnica.com ↗</a>
-  </div>
+  <h3 class="story-headline"><a href="story/2026-04-28-github-to-charge-copilot-users-based-on-actual-ai-inference--32002d.html">GitHub to charge Copilot users based on actual AI inference usage</a></h3>
+  <p class="story-summary">GitHub is shifting its Copilot pricing model to reflect actual AI usage rather than a flat subscription, citing escalating inference costs.</p>
+  <div class="story-meta"><span>Ars Technica AI</span><span class="dot">·</span><a href="https://arstechnica.com/ai/2026/04/github-will-start-charging-copilot-users-based-on-their-actual-ai-usage/" target="_blank" rel="noopener noreferrer">arstechnica.com ↗</a></div>
 </li><li class="story">
-  <h3 class="story-headline"><a href="story/2026-04-28-nvidia-introduces-nemotron-3-nano-omni-a-long-context-multim-39c0a1.html">NVIDIA Introduces Nemotron 3 Nano Omni, a Long-Context Multimodal Model for AI Agents</a></h3>
-  <p class="story-summary">NVIDIA has launched Nemotron 3 Nano Omni, a new multimodal AI model designed for agents that can process long-context documents, audio, and video inputs.</p>
-  <div class="story-meta">
-    <span>Hugging Face</span>
-    <span class="dot">·</span>
-    <a href="https://huggingface.co/blog/nvidia/nemotron-3-nano-omni-multimodal-intelligence" target="_blank" rel="noopener noreferrer">huggingface.co ↗</a>
-  </div>
+  <h3 class="story-headline"><a href="story/2026-04-28-anthropics-claude-gains-direct-integrations-with-photoshop-b-b42e8c.html">Anthropic&#39;s Claude gains direct integrations with Photoshop, Blender, Ableton</a></h3>
+  <p class="story-summary">Anthropic has released connectors enabling Claude to integrate directly with popular creative software like Adobe Creative Cloud, Blender, and Ableton.</p>
+  <div class="story-meta"><span>The Verge AI</span><span class="dot">·</span><a href="https://www.theverge.com/ai-artificial-intelligence/919648/anthropic-claude-creative-connectors-adobe-blender" target="_blank" rel="noopener noreferrer">theverge.com ↗</a></div>
 </li><li class="story">
-  <h3 class="story-headline"><a href="story/2026-04-28-darpa-aixcc-reveals-ai-systems-can-find-software-vulnerabili-5716a0.html">DARPA AIxCC Reveals AI Systems Can Find Software Vulnerabilities at Scale</a></h3>
-  <p class="story-summary">The DARPA Artificial Intelligence Cyber Challenge (AIxCC) demonstrated that AI bug-finding systems can effectively scan millions of lines of code to identify artificial flaws.</p>
-  <div class="story-meta">
-    <span>The Verge AI</span>
-    <span class="dot">·</span>
-    <a href="https://www.theverge.com/ai-artificial-intelligence/915660/mythos-script-kiddies-hackers-attack-cybersecurity-ai" target="_blank" rel="noopener noreferrer">theverge.com ↗</a>
-  </div>
-</li></ol>
-</main>
+  <h3 class="story-headline"><a href="story/2026-04-28-deepmind-founder-raises-11b-for-ai-that-learns-without-human-330777.html">DeepMind founder raises $1.1B for AI that learns without human data</a></h3>
+  <p class="story-summary">Ineffable Intelligence, founded by DeepMind&#39;s David Silver, has secured $1.1 billion to develop AI models that learn autonomously without relying on human-provided data.</p>
+  <div class="story-meta"><span>TechCrunch AI</span><span class="dot">·</span><a href="https://techcrunch.com/2026/04/27/deepminds-david-silver-just-raised-1-1b-to-build-an-ai-that-learns-without-human-data/" target="_blank" rel="noopener noreferrer">techcrunch.com ↗</a></div>
+</li></ol></main>
 <footer>
-  <div>Auto-curated daily &middot; Sourced from 14+ publications and Hacker News</div>
-  <div>Updated <time datetime="2026-04-28T17:37:08Z">2026-04-28T17:37:08Z</time></div>
+  
+  <div>Updated <time datetime="2026-04-28T18:02:31Z">2026-04-28T18:02:31Z</time></div>
 </footer>
 </body>
 </html>
