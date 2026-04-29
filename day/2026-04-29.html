@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>April 29, 2026 · AI News of the Day</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:#fff;--bg-subtle:#fafafa;--border:#e5e7eb;
+    --text:#0a0a0a;--text-2:#3f3f46;--muted:#71717a;--muted-2:#a1a1aa;
+    --accent:#2563eb;
+    --font:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+    --mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:var(--font);background:var(--bg);color:var(--text);
+       line-height:1.6;-webkit-font-smoothing:antialiased}
+  .topbar{border-bottom:1px solid var(--border);padding:14px 24px}
+  .topbar-inner{max-width:720px;margin:0 auto;display:flex;
+                align-items:center;justify-content:space-between;font-size:13px}
+  .topbar a{color:var(--text-2);text-decoration:none}
+  .topbar a:hover{color:var(--accent)}
+  .logo{display:flex;align-items:center;gap:10px;font-weight:600;color:var(--text)}
+  .logo-mark{width:22px;height:22px;border-radius:6px;background:var(--text);
+             color:var(--bg);display:grid;place-items:center;font-weight:700;font-size:12px}
+  main{max-width:720px;margin:0 auto;padding:56px 24px 96px}
+  .page-header{margin-bottom:48px}
+  .page-header h1{font-size:32px;font-weight:700;letter-spacing:-0.025em;margin:8px 0}
+  .page-header p{color:var(--text-2);font-size:16px;margin:0}
+  .section-eyebrow{font-size:12px;font-weight:600;color:var(--accent);
+                   letter-spacing:0.05em;text-transform:uppercase;margin-bottom:8px}
+  .stories{list-style:none;padding:0;margin:0;counter-reset:story}
+  .category-nav{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 32px;
+                padding-bottom:16px;border-bottom:1px solid var(--border)}
+  .category-nav a{display:inline-flex;align-items:center;gap:6px;
+                  padding:6px 12px;border:1px solid var(--border);border-radius:999px;
+                  text-decoration:none;color:var(--text-2);font-size:13px;font-weight:500;
+                  transition:border-color 0.15s,color 0.15s,background 0.15s}
+  .category-nav a:hover{border-color:var(--accent);color:var(--accent);
+                        background:rgba(37,99,235,0.04)}
+  .category-nav .cat-count{font-size:11px;font-weight:600;
+                           background:var(--bg-subtle);color:var(--muted);
+                           padding:1px 6px;border-radius:999px;
+                           font-variant-numeric:tabular-nums}
+  .category-section{margin:48px 0 0;scroll-margin-top:24px}
+  .category-section:first-of-type{margin-top:24px}
+  .category-heading{font-size:20px;font-weight:700;letter-spacing:-0.02em;
+                    margin:0 0 8px;padding-bottom:8px;
+                    border-bottom:1px solid var(--border)}
+  .story{counter-increment:story;padding:28px 0;border-bottom:1px solid var(--border);
+         position:relative;padding-left:44px}
+  .story:last-child{border-bottom:0}
+  .story::before{content:counter(story);position:absolute;left:0;top:30px;
+                 font-size:13px;font-weight:600;color:var(--muted-2);
+                 width:24px;height:24px;border:1px solid var(--border);border-radius:50%;
+                 display:grid;place-items:center;font-variant-numeric:tabular-nums}
+  .story-headline{font-size:19px;font-weight:600;line-height:1.35;
+                  letter-spacing:-0.015em;margin:0 0 8px}
+  .story-headline a{color:var(--text);text-decoration:none;transition:color 0.15s}
+  .story-headline a:hover{color:var(--accent)}
+  .story-summary{margin:0 0 10px;color:var(--text-2);font-size:15px}
+  .story-meta{display:flex;gap:8px;font-size:13px;color:var(--muted)}
+  .story-meta a{color:var(--muted);text-decoration:none}
+  .story-meta a:hover{color:var(--accent)}
+  .story-meta .dot{color:var(--muted-2)}
+  .story-detail h1{font-size:32px;font-weight:700;letter-spacing:-0.025em;
+                   line-height:1.2;margin:8px 0 24px}
+  .story-summary-large{font-size:18px;color:var(--text-2);line-height:1.6;margin:0 0 32px}
+  .why-section{background:var(--bg-subtle);border:1px solid var(--border);
+               border-radius:8px;padding:20px 24px;margin:32px 0}
+  .why-section h2,.why-section h3{font-size:13px;font-weight:600;text-transform:uppercase;
+                  letter-spacing:0.05em;color:var(--accent);margin:0 0 8px}
+  .why-section p{margin:0;color:var(--text);font-size:15px}
+  .example-section{margin:24px 0;padding:16px 20px;border-left:3px solid var(--border);background:var(--bg-subtle)}
+  .example-section h3{font-size:12px;font-weight:600;text-transform:uppercase;
+                      letter-spacing:0.05em;color:var(--muted);margin:0 0 6px}
+  .example-section p{margin:0;color:var(--text-2);font-size:14px;font-style:italic}
+  .read-original{margin-top:32px;padding-top:24px;border-top:1px solid var(--border)}
+  .read-original a{color:var(--accent);text-decoration:none;font-weight:500}
+  .read-original a:hover{text-decoration:underline}
+
+  /* Prompt-specific styles */
+  .prompt-title{font-size:24px;font-weight:700;letter-spacing:-0.02em;margin:8px 0 4px;line-height:1.3}
+  .prompt-subtitle{color:var(--text-2);font-size:15px;margin:0 0 24px}
+  .prompt-block{border:1px solid var(--border);border-radius:8px;overflow:hidden;
+                background:var(--bg-subtle);margin:24px 0}
+  .prompt-block-header{display:flex;align-items:center;justify-content:space-between;
+                       padding:10px 16px;background:#fff;border-bottom:1px solid var(--border)}
+  .prompt-label{font-size:11px;font-weight:600;text-transform:uppercase;
+                letter-spacing:0.08em;color:var(--muted)}
+  .copy-btn{background:var(--text);color:var(--bg);border:none;border-radius:6px;
+            padding:6px 14px;font:500 12px var(--font);cursor:pointer;
+            transition:background 0.15s,transform 0.05s}
+  .copy-btn:hover{background:#000}
+  .copy-btn:active{transform:scale(0.97)}
+  .copy-btn.copied{background:#059669}
+  .prompt-text{margin:0;padding:20px;font-family:var(--mono);font-size:13.5px;
+               line-height:1.65;color:var(--text);white-space:pre-wrap;word-wrap:break-word;
+               background:transparent}
+
+  .archive-section{margin-top:64px;padding-top:32px;border-top:1px solid var(--border)}
+  .archive-section h2{font-size:14px;font-weight:600;text-transform:uppercase;
+                      letter-spacing:0.05em;color:var(--muted);margin:0 0 12px}
+  .archive-list{list-style:none;padding:0;margin:0;
+                display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:8px}
+  .archive-list li{padding:6px 0}
+  .archive-list a{color:var(--text-2);text-decoration:none;font-size:14px}
+  .archive-list a:hover{color:var(--accent);text-decoration:underline}
+  .empty{color:var(--muted);font-style:italic}
+  footer{max-width:720px;margin:0 auto;padding:32px 24px;
+         border-top:1px solid var(--border);font-size:12px;color:var(--muted);
+         display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+  footer time{font-variant-numeric:tabular-nums}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="logo">
+      <span class="logo-mark">A</span>
+      <span>AI News of the Day</span>
+    </div>
+    <div><a href="../index.html">← Back to today</a></div>
+  </div>
+</div>
+<main>
+<header class="page-header">
+  <div class="section-eyebrow">April 29, 2026</div>
+  <h1>AI News of the Day</h1>
+</header>
+<nav class="category-nav"><a href="#cat-models">Models &amp; Research <span class="cat-count">3</span></a><a href="#cat-industry">Industry &amp; Business <span class="cat-count">3</span></a><a href="#cat-tools">Tools &amp; Code <span class="cat-count">3</span></a><a href="#cat-policy">Policy &amp; Safety <span class="cat-count">3</span></a></nav>
+<section class="category-section" id="cat-models">
+  <h2 class="category-heading">Models &amp; Research</h2>
+  <ol class="stories"><li class="story">
+  <h3 class="story-headline"><a href="story/2026-04-29-deepseek-releases-v4-a-new-flagship-model-with-extended-cont-cf7c10.html">DeepSeek Releases V4, a New Flagship Model with Extended Context Capabilities</a></h3>
+  <p class="story-summary">Chinese AI firm DeepSeek has released a preview of its new flagship model, V4, which is noted for its ability to process significantly longer prompts.</p>
+  <div class="story-meta"><span>MIT Tech Review</span><span class="dot">·</span><a href="https://www.technologyreview.com/2026/04/27/1136438/the-download-deepseek-v4-ai-world-models/" target="_blank" rel="noopener noreferrer">technologyreview.com ↗</a></div>
+</li><li class="story">
+  <h3 class="story-headline"><a href="story/2026-04-29-meta-ai-introduces-sapiens2-a-high-resolution-human-centric--4908bc.html">Meta AI Introduces Sapiens2, a High-Resolution Human-Centric Vision Foundation Model</a></h3>
+  <p class="story-summary">Meta Reality Labs has released Sapiens2, a new foundation model family for human-centric vision that achieves state-of-the-art levels in pose estimation, segmentation, and 3D geometry from a single backbone.</p>
+  <div class="story-meta"><span>Marktechpost</span><span class="dot">·</span><a href="https://www.marktechpost.com/2026/04/27/meta-ai-releases-sapiens2-a-high-resolution-human-centric-vision-model-for-pose-segmentation-normals-pointmap-and-albedo/" target="_blank" rel="noopener noreferrer">marktechpost.com ↗</a></div>
+</li><li class="story">
+  <h3 class="story-headline"><a href="story/2026-04-29-karl-framework-mitigates-llm-hallucinations-with-knowledge-b-b4293c.html">KARL Framework Mitigates LLM Hallucinations with Knowledge-Boundary-Aware Reinforcement Learning</a></h3>
+  <p class="story-summary">Researchers propose KARL, a novel framework that uses knowledge-boundary-aware reinforcement learning to enable large language models to abstain appropriately from questions beyond their knowledge, thereby mitigating hallucinations.</p>
+  <div class="story-meta"><span>arXiv cs.LG</span><span class="dot">·</span><a href="https://arxiv.org/abs/2604.22779" target="_blank" rel="noopener noreferrer">arxiv.org ↗</a></div>
+</li></ol>
+</section><section class="category-section" id="cat-industry">
+  <h2 class="category-heading">Industry &amp; Business</h2>
+  <ol class="stories"><li class="story">
+  <h3 class="story-headline"><a href="story/2026-04-29-openai-ends-microsoft-exclusivity-secures-aws-deal-and-revis-820389.html">OpenAI Ends Microsoft Exclusivity, Secures AWS Deal and Revised Revenue Share</a></h3>
+  <p class="story-summary">OpenAI has secured concessions from Microsoft, ending its exclusive partnership and allowing it to offer products on AWS, while Microsoft receives a larger revenue share.</p>
+  <div class="story-meta"><span>TechCrunch AI</span><span class="dot">·</span><a href="https://techcrunch.com/2026/04/27/openai-ends-microsoft-legal-peril-over-its-50b-amazon-deal/" target="_blank" rel="noopener noreferrer">techcrunch.com ↗</a></div>
+</li><li class="story">
+  <h3 class="story-headline"><a href="story/2026-04-29-china-blocks-metas-2-billion-manus-acquisition-after-regulat-7dc5f7.html">China Blocks Meta&#39;s $2 Billion Manus Acquisition After Regulatory Probe</a></h3>
+  <p class="story-summary">China has ordered Meta to unwind its $2 billion acquisition of Manus, a move that could impact Meta&#39;s strategy for AI agents and global expansion.</p>
+  <div class="story-meta"><span>TechCrunch AI</span><span class="dot">·</span><a href="https://techcrunch.com/2026/04/27/china-vetoes-metas-2b-manus-deal-after-months-long-probe/" target="_blank" rel="noopener noreferrer">techcrunch.com ↗</a></div>
+</li><li class="story">
+  <h3 class="story-headline"><a href="story/2026-04-29-lightelligence-ipo-signals-market-bet-on-optical-interconnec-1520af.html">Lightelligence IPO Signals Market Bet on Optical Interconnects as Next AI Bottleneck</a></h3>
+  <p class="story-summary">Lightelligence, an optical interconnect company, saw its market capitalization briefly hit $10 billion on its debut, indicating investor belief that optical interconnects are crucial for future AI infrastructure.</p>
+  <div class="story-meta"><span>AI News</span><span class="dot">·</span><a href="https://www.artificialintelligence-news.com/news/lightelligence-ipo-optical-interconnect-ai-infrastructure/" target="_blank" rel="noopener noreferrer">artificialintelligence-news.com ↗</a></div>
+</li></ol>
+</section><section class="category-section" id="cat-tools">
+  <h2 class="category-heading">Tools &amp; Code</h2>
+  <ol class="stories"><li class="story">
+  <h3 class="story-headline"><a href="story/2026-04-29-openai-releases-symphony-an-open-source-orchestration-specif-f9ff22.html">OpenAI Releases Symphony, an Open-Source Orchestration Specification for AI Agents</a></h3>
+  <p class="story-summary">OpenAI has released Symphony, an open-source specification for Codex orchestration designed to turn issue trackers into always-on agent systems, aiming to boost engineering output.</p>
+  <div class="story-meta"><span>OpenAI</span><span class="dot">·</span><a href="https://openai.com/index/open-source-codex-orchestration-symphony" target="_blank" rel="noopener noreferrer">openai.com ↗</a></div>
+</li><li class="story">
+  <h3 class="story-headline"><a href="story/2026-04-29-github-copilot-to-switch-to-token-based-billing-model-in-jun-5a3b3d.html">GitHub Copilot to Switch to Token-Based Billing Model in June 2026</a></h3>
+  <p class="story-summary">Starting June 1, 2026, GitHub Copilot will transition from premium request counts to a token-based billing model, charging users based on actual usage.</p>
+  <div class="story-meta"><span>The Decoder</span><span class="dot">·</span><a href="https://the-decoder.com/github-copilot-switches-to-token-based-billing-in-june-2026/" target="_blank" rel="noopener noreferrer">the-decoder.com ↗</a></div>
+</li><li class="story">
+  <h3 class="story-headline"><a href="story/2026-04-29-pip-261-introduces-lockfiles-and-dependency-cooldowns-for-im-afbaac.html">Pip 26.1 Introduces Lockfiles and Dependency Cooldowns for Improved Python Package Management</a></h3>
+  <p class="story-summary">Python&#39;s default package installer, pip, has released version 26.1, which includes significant upgrades such as lockfiles and dependency cooldowns, enhancing dependency management.</p>
+  <div class="story-meta"><span>Simon Willison</span><span class="dot">·</span><a href="https://simonwillison.net/2026/Apr/28/pip-261/#atom-everything" target="_blank" rel="noopener noreferrer">simonwillison.net ↗</a></div>
+</li></ol>
+</section><section class="category-section" id="cat-policy">
+  <h2 class="category-heading">Policy &amp; Safety</h2>
+  <ol class="stories"><li class="story">
+  <h3 class="story-headline"><a href="story/2026-04-29-elon-musk-and-sam-altman-head-to-trial-over-openais-founding-654be3.html">Elon Musk and Sam Altman Head to Trial Over OpenAI&#39;s Founding Mission and Future</a></h3>
+  <p class="story-summary">Elon Musk and Sam Altman are in court for a high-stakes trial that could determine the future of OpenAI, focusing on its founding mission as a non-profit versus its current for-profit structure.</p>
+  <div class="story-meta"><span>MIT Tech Review</span><span class="dot">·</span><a href="https://www.technologyreview.com/2026/04/27/1136466/elon-musk-and-sam-altman-are-going-to-court-over-openais-future/" target="_blank" rel="noopener noreferrer">technologyreview.com ↗</a></div>
+</li><li class="story">
+  <h3 class="story-headline"><a href="story/2026-04-29-google-expands-pentagon-ai-access-following-anthropics-refus-16fd72.html">Google Expands Pentagon AI Access Following Anthropic&#39;s Refusal on Sensitive Use</a></h3>
+  <p class="story-summary">Google has reportedly signed a classified deal allowing the US Department of Defense to use its AI models for &#39;any lawful government purpose,&#39; contrasting with Anthropic&#39;s refusal for domestic surveillance or autonomous weapons.</p>
+  <div class="story-meta"><span>TechCrunch AI</span><span class="dot">·</span><a href="https://techcrunch.com/2026/04/28/google-expands-pentagons-access-to-its-ai-after-anthropics-refusal/" target="_blank" rel="noopener noreferrer">techcrunch.com ↗</a></div>
+</li><li class="story">
+  <h3 class="story-headline"><a href="story/2026-04-29-google-warns-of-malicious-web-pages-poisoning-enterprise-ai--dd14b6.html">Google Warns of Malicious Web Pages Poisoning Enterprise AI Agents via Indirect Prompt Injection</a></h3>
+  <p class="story-summary">Google researchers have warned that public web pages are actively hijacking enterprise AI agents through indirect prompt injections, embedding hidden instructions within standard HTML.</p>
+  <div class="story-meta"><span>AI News</span><span class="dot">·</span><a href="https://www.artificialintelligence-news.com/news/google-warns-malicious-web-pages-poisoning-ai-agents/" target="_blank" rel="noopener noreferrer">artificialintelligence-news.com ↗</a></div>
+</li></ol>
+</section></main>
+<footer>
+  
+  <div>Updated <time datetime="2026-04-29T02:05:07Z">2026-04-29T02:05:07Z</time></div>
+</footer>
+</body>
+</html>
