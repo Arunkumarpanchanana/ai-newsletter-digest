@@ -5,313 +5,91 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>May 5, 2026 · AI News of the Day</title>
 <style>
-  /* ===== Hub-matched design tokens ===== */
   :root {
-    --bg: #0B1F3A;
-    --surface: #111827;
-    --surface-2: #0F1F36;
-    --border: #1F2937;
-    --border-strong: #2A3548;
-    --text: #E5E7EB;
-    --text-2: #CBD5E1;
-    --muted: #9CA3AF;
-    --muted-2: #6B7280;
-    --white: #FFFFFF;
-    --accent: #2563EB;
-    --accent-hover: #3B82F6;
-    --green: #10B981;
+    --bg: #0B1F3A; --surface: #111827; --surface-2: #0F1F36;
+    --border: #1F2937; --border-strong: #2A3548;
+    --text: #E5E7EB; --text-2: #CBD5E1; --muted: #9CA3AF; --muted-2: #6B7280;
+    --white: #FFFFFF; --accent: #2563EB; --accent-hover: #3B82F6; --green: #10B981;
     --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Arial, sans-serif;
     --mono: ui-monospace, SFMono-Regular, "JetBrains Mono", Menlo, Consolas, monospace;
   }
   * { box-sizing: border-box; }
   body {
-    margin: 0;
-    font-family: var(--font);
-    background: var(--bg);
-    color: var(--text);
-    line-height: 1.6;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    margin: 0; font-family: var(--font); background: var(--bg); color: var(--text);
+    line-height: 1.6; -webkit-font-smoothing: antialiased;
   }
   a { color: var(--accent); }
   a:hover { color: var(--accent-hover); }
-
-  /* ===== Container — matches hub's 900px ===== */
   .container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
-
-  /* ===== Top header (matches hub) ===== */
-  .site-header {
-    border-bottom: 1px solid var(--border);
-    padding: 15px 0;
-    background: var(--bg);
-  }
-  .nav-wrap {
-    display: flex; justify-content: space-between; align-items: center;
-    flex-wrap: wrap; gap: 12px;
-  }
-  .logo {
-    font-size: 1.1rem; font-weight: 700;
-    color: var(--white); text-decoration: none;
-    letter-spacing: 0.3px;
-  }
+  .site-header { border-bottom: 1px solid var(--border); padding: 15px 0; background: var(--bg); }
+  .nav-wrap { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+  .logo { font-size: 1.1rem; font-weight: 700; color: var(--white); text-decoration: none; letter-spacing: 0.3px; }
   .logo:hover { color: var(--accent-hover); }
-  .nav a {
-    margin-left: 15px; text-decoration: none; color: var(--muted);
-    font-size: 0.95rem;
-  }
+  .nav a { margin-left: 15px; text-decoration: none; color: var(--muted); font-size: 0.95rem; }
   .nav a.active, .nav a:hover { color: var(--accent); }
   .nav a:first-child { margin-left: 0; }
-
-  /* ===== Tool sub-bar (which tool you're in + breadcrumb) ===== */
-  .tool-bar {
-    border-bottom: 1px solid var(--border);
-    padding: 12px 0;
-    background: var(--surface-2);
-  }
-  .tool-bar-inner {
-    display: flex; justify-content: space-between; align-items: center;
-    flex-wrap: wrap; gap: 12px;
-    font-size: 0.85rem;
-  }
-  .tool-name {
-    color: var(--text-2); font-weight: 600;
-    letter-spacing: 0.02em;
-  }
+  .tool-bar { border-bottom: 1px solid var(--border); padding: 12px 0; background: var(--surface-2); }
+  .tool-bar-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; font-size: 0.85rem; }
+  .tool-name { color: var(--text-2); font-weight: 600; letter-spacing: 0.02em; }
   .tool-bar a { color: var(--muted); text-decoration: none; }
   .tool-bar a:hover { color: var(--accent); }
-
-  /* ===== Page header ===== */
   main { padding: 56px 0 80px; }
   .page-header { margin-bottom: 40px; }
-  .page-header h1 {
-    margin: 8px 0 12px;
-    font-size: 32px; font-weight: 700;
-    letter-spacing: -0.02em; line-height: 1.2;
-    color: var(--white);
-  }
-  .page-header p {
-    color: var(--text-2); font-size: 16px; margin: 0;
-    max-width: 600px;
-  }
-  .section-eyebrow {
-    font-size: 12px; font-weight: 600;
-    color: var(--accent); letter-spacing: 0.08em;
-    text-transform: uppercase;
-  }
-
-  /* ===== News: category nav (chips) ===== */
-  .category-nav {
-    display: flex; flex-wrap: wrap; gap: 8px;
-    margin: 0 0 32px; padding-bottom: 16px;
-    border-bottom: 1px solid var(--border);
-  }
-  .category-nav a {
-    display: inline-flex; align-items: center; gap: 8px;
-    padding: 7px 14px;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 999px;
-    text-decoration: none; color: var(--text-2);
-    font-size: 13px; font-weight: 500;
-    transition: all 0.15s;
-  }
-  .category-nav a:hover {
-    border-color: var(--accent); color: var(--accent);
-    background: rgba(37, 99, 235, 0.08);
-  }
-  .category-nav .cat-count {
-    font-size: 11px; font-weight: 600;
-    background: var(--bg); color: var(--muted);
-    padding: 1px 7px; border-radius: 999px;
-    font-variant-numeric: tabular-nums;
-  }
+  .page-header h1 { margin: 8px 0 12px; font-size: 32px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.2; color: var(--white); }
+  .page-header p { color: var(--text-2); font-size: 16px; margin: 0; max-width: 600px; }
+  .section-eyebrow { font-size: 12px; font-weight: 600; color: var(--accent); letter-spacing: 0.08em; text-transform: uppercase; }
+  .category-nav { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 32px; padding-bottom: 16px; border-bottom: 1px solid var(--border); }
+  .category-nav a { display: inline-flex; align-items: center; gap: 8px; padding: 7px 14px; background: var(--surface); border: 1px solid var(--border); border-radius: 999px; text-decoration: none; color: var(--text-2); font-size: 13px; font-weight: 500; transition: all 0.15s; }
+  .category-nav a:hover { border-color: var(--accent); color: var(--accent); background: rgba(37, 99, 235, 0.08); }
+  .category-nav .cat-count { font-size: 11px; font-weight: 600; background: var(--bg); color: var(--muted); padding: 1px 7px; border-radius: 999px; font-variant-numeric: tabular-nums; }
   .category-section { margin: 48px 0 0; scroll-margin-top: 24px; }
   .category-section:first-of-type { margin-top: 24px; }
-  .category-heading {
-    font-size: 20px; font-weight: 700;
-    letter-spacing: -0.015em;
-    margin: 0 0 16px; padding-bottom: 10px;
-    border-bottom: 1px solid var(--border);
-    color: var(--white);
-  }
-
-  /* ===== News: story list ===== */
+  .category-heading { font-size: 20px; font-weight: 700; letter-spacing: -0.015em; margin: 0 0 16px; padding-bottom: 10px; border-bottom: 1px solid var(--border); color: var(--white); }
   .stories { list-style: none; padding: 0; margin: 0; counter-reset: story; }
-  .story {
-    counter-increment: story;
-    padding: 24px 0;
-    border-bottom: 1px solid var(--border);
-    position: relative;
-    padding-left: 44px;
-  }
+  .story { counter-increment: story; padding: 24px 0; border-bottom: 1px solid var(--border); position: relative; padding-left: 44px; }
   .story:last-child { border-bottom: 0; }
-  .story::before {
-    content: counter(story);
-    position: absolute; left: 0; top: 26px;
-    font-size: 12px; font-weight: 600; color: var(--muted);
-    width: 24px; height: 24px;
-    border: 1px solid var(--border); border-radius: 50%;
-    display: grid; place-items: center;
-    background: var(--surface);
-    font-variant-numeric: tabular-nums;
-  }
-  .story-headline {
-    font-size: 18px; font-weight: 600; line-height: 1.35;
-    letter-spacing: -0.01em; margin: 0 0 8px;
-  }
-  .story-headline a {
-    color: var(--white); text-decoration: none;
-    transition: color 0.15s;
-  }
+  .story::before { content: counter(story); position: absolute; left: 0; top: 26px; font-size: 12px; font-weight: 600; color: var(--muted); width: 24px; height: 24px; border: 1px solid var(--border); border-radius: 50%; display: grid; place-items: center; background: var(--surface); font-variant-numeric: tabular-nums; }
+  .story-headline { font-size: 18px; font-weight: 600; line-height: 1.35; letter-spacing: -0.01em; margin: 0 0 8px; }
+  .story-headline a { color: var(--white); text-decoration: none; transition: color 0.15s; }
   .story-headline a:hover { color: var(--accent-hover); }
   .story-summary { margin: 0 0 10px; color: var(--text-2); font-size: 15px; }
   .story-meta { display: flex; gap: 8px; font-size: 13px; color: var(--muted); align-items: center; }
   .story-meta a { color: var(--muted); text-decoration: none; }
   .story-meta a:hover { color: var(--accent); }
   .story-meta .dot { color: var(--muted-2); }
-
-  /* ===== News: per-story detail page ===== */
-  .story-detail h1 {
-    font-size: 32px; font-weight: 700;
-    letter-spacing: -0.02em; line-height: 1.2;
-    margin: 12px 0 24px; color: var(--white);
-  }
-  .story-summary-large {
-    font-size: 18px; color: var(--text-2);
-    line-height: 1.6; margin: 0 0 32px;
-  }
-  .why-section {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 20px 24px; margin: 32px 0;
-  }
-  .why-section h2, .why-section h3 {
-    font-size: 12px; font-weight: 600;
-    text-transform: uppercase; letter-spacing: 0.08em;
-    color: var(--accent); margin: 0 0 8px;
-  }
+  .story-detail h1 { font-size: 32px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.2; margin: 12px 0 24px; color: var(--white); }
+  .story-summary-large { font-size: 18px; color: var(--text-2); line-height: 1.6; margin: 0 0 32px; }
+  .why-section { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 20px 24px; margin: 32px 0; }
+  .why-section h2, .why-section h3 { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); margin: 0 0 8px; }
   .why-section p { margin: 0; color: var(--text); font-size: 15px; }
-  .read-original {
-    margin-top: 32px; padding-top: 24px;
-    border-top: 1px solid var(--border);
-  }
-  .read-original a {
-    color: var(--accent); text-decoration: none; font-weight: 500;
-    display: inline-block; padding: 10px 16px;
-    background: var(--surface); border: 1px solid var(--border);
-    border-radius: 6px;
-    transition: all 0.15s;
-  }
-  .read-original a:hover {
-    background: var(--accent); color: var(--white);
-    border-color: var(--accent);
-  }
-
-  /* ===== Prompt of the Day ===== */
-  .prompt-title {
-    font-size: 26px; font-weight: 700;
-    letter-spacing: -0.02em; line-height: 1.25;
-    margin: 8px 0 6px; color: var(--white);
-  }
-  .prompt-subtitle {
-    color: var(--text-2); font-size: 15px;
-    margin: 0 0 24px;
-  }
-  .prompt-block {
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    overflow: hidden;
-    background: var(--surface);
-    margin: 24px 0;
-  }
-  .prompt-block-header {
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 12px 18px;
-    background: var(--surface-2);
-    border-bottom: 1px solid var(--border);
-  }
-  .prompt-label {
-    font-size: 11px; font-weight: 600;
-    text-transform: uppercase; letter-spacing: 0.1em;
-    color: var(--muted);
-  }
-  .copy-btn {
-    background: var(--accent); color: var(--white);
-    border: none; border-radius: 6px;
-    padding: 7px 16px; font: 500 12px var(--font);
-    cursor: pointer;
-    transition: background 0.15s, transform 0.05s;
-  }
+  .read-original { margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--border); }
+  .read-original a { color: var(--accent); text-decoration: none; font-weight: 500; display: inline-block; padding: 10px 16px; background: var(--surface); border: 1px solid var(--border); border-radius: 6px; transition: all 0.15s; }
+  .read-original a:hover { background: var(--accent); color: var(--white); border-color: var(--accent); }
+  .prompt-title { font-size: 26px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.25; margin: 8px 0 6px; color: var(--white); }
+  .prompt-subtitle { color: var(--text-2); font-size: 15px; margin: 0 0 24px; }
+  .prompt-block { border: 1px solid var(--border); border-radius: 10px; overflow: hidden; background: var(--surface); margin: 24px 0; }
+  .prompt-block-header { display: flex; align-items: center; justify-content: space-between; padding: 12px 18px; background: var(--surface-2); border-bottom: 1px solid var(--border); }
+  .prompt-label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); }
+  .copy-btn { background: var(--accent); color: var(--white); border: none; border-radius: 6px; padding: 7px 16px; font: 500 12px var(--font); cursor: pointer; transition: background 0.15s, transform 0.05s; }
   .copy-btn:hover { background: var(--accent-hover); }
   .copy-btn:active { transform: scale(0.97); }
   .copy-btn.copied { background: var(--green); }
-  .prompt-text {
-    margin: 0; padding: 22px 22px 24px;
-    font-family: var(--mono); font-size: 13.5px;
-    line-height: 1.7; color: var(--text);
-    white-space: pre-wrap; word-wrap: break-word;
-    background: transparent;
-  }
-  .example-section {
-    margin: 24px 0; padding: 14px 20px;
-    border-left: 3px solid var(--accent);
-    background: var(--surface);
-    border-radius: 0 8px 8px 0;
-  }
-  .example-section h3 {
-    font-size: 11px; font-weight: 600;
-    text-transform: uppercase; letter-spacing: 0.1em;
-    color: var(--muted); margin: 0 0 6px;
-  }
-  .example-section p {
-    margin: 0; color: var(--text-2);
-    font-size: 14px; font-style: italic;
-  }
-
-  /* ===== Archive ===== */
-  .archive-section {
-    margin-top: 64px; padding-top: 32px;
-    border-top: 1px solid var(--border);
-  }
-  .archive-section h2 {
-    font-size: 13px; font-weight: 600;
-    text-transform: uppercase; letter-spacing: 0.08em;
-    color: var(--muted); margin: 0 0 16px;
-  }
-  .archive-list {
-    list-style: none; padding: 0; margin: 0;
-    display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 8px;
-  }
+  .prompt-text { margin: 0; padding: 22px 22px 24px; font-family: var(--mono); font-size: 13.5px; line-height: 1.7; color: var(--text); white-space: pre-wrap; word-wrap: break-word; background: transparent; }
+  .example-section { margin: 24px 0; padding: 14px 20px; border-left: 3px solid var(--accent); background: var(--surface); border-radius: 0 8px 8px 0; }
+  .example-section h3 { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); margin: 0 0 6px; }
+  .example-section p { margin: 0; color: var(--text-2); font-size: 14px; font-style: italic; }
+  .archive-section { margin-top: 64px; padding-top: 32px; border-top: 1px solid var(--border); }
+  .archive-section h2 { font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin: 0 0 16px; }
+  .archive-list { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 8px; }
   .archive-list li { padding: 4px 0; }
-  .archive-list a {
-    color: var(--text-2); text-decoration: none;
-    font-size: 14px;
-  }
+  .archive-list a { color: var(--text-2); text-decoration: none; font-size: 14px; }
   .archive-list a:hover { color: var(--accent); }
   .empty { color: var(--muted); font-style: italic; }
-
-  /* ===== Footer (matches hub) ===== */
-  .footer {
-    text-align: center;
-    padding: 24px 20px;
-    margin-top: 40px;
-    border-top: 1px solid var(--border);
-    color: var(--muted);
-    font-size: 13px;
-  }
+  .footer { text-align: center; padding: 24px 20px; margin-top: 40px; border-top: 1px solid var(--border); color: var(--muted); font-size: 13px; }
   .footer p { margin: 4px 0; }
   .footer a { color: var(--text-2); text-decoration: none; }
   .footer a:hover { color: var(--accent); }
-  .footer .footer-meta {
-    margin-top: 8px;
-    font-size: 11px;
-    color: var(--muted-2);
-    font-variant-numeric: tabular-nums;
-  }
-
-  /* ===== Mobile ===== */
+  .footer .footer-meta { margin-top: 8px; font-size: 11px; color: var(--muted-2); font-variant-numeric: tabular-nums; }
   @media (max-width: 600px) {
     .nav a { margin-left: 12px; font-size: 0.9rem; }
     .page-header h1, .story-detail h1 { font-size: 26px; }
@@ -320,8 +98,6 @@
 </style>
 </head>
 <body>
-
-<!-- Top header — matches hub exactly -->
 <header class="site-header">
   <div class="container nav-wrap">
     <a href="https://arunkumarpanchanana.github.io/" class="logo">Arunkumar Panchanana</a>
@@ -332,15 +108,12 @@
     </nav>
   </div>
 </header>
-
-<!-- Tool identifier sub-bar -->
 <div class="tool-bar">
   <div class="container tool-bar-inner">
     <span class="tool-name">AI News of the Day</span>
     <span><a href="../index.html">← Back to today</a></span>
   </div>
 </div>
-
 <main>
   <div class="container">
     
@@ -352,75 +125,73 @@
 <section class="category-section" id="cat-models">
   <h2 class="category-heading">Models &amp; Research</h2>
   <ol class="stories"><li class="story">
-  <h3 class="story-headline"><a href="story/2026-05-05-openai-releases-gpt-55-instant-with-improved-factual-accurac-01a8b5.html">OpenAI Releases GPT-5.5 Instant with Improved Factual Accuracy and Personalization</a></h3>
-  <p class="story-summary">OpenAI has updated ChatGPT&#39;s default model to GPT-5.5 Instant, claiming significant improvements in factual accuracy, reduced hallucinations, and enhanced personalization controls for users.</p>
-  <div class="story-meta"><span>OpenAI</span><span class="dot">·</span><a href="https://openai.com/index/gpt-5-5-instant" target="_blank" rel="noopener noreferrer">openai.com ↗</a></div>
+  <h3 class="story-headline"><a href="story/2026-05-05-openais-gpt-55-instant-becomes-chatgpts-default-reducing-hal-c08a14.html">OpenAI&#39;s GPT-5.5 Instant becomes ChatGPT&#39;s default, reducing hallucinations by over 50%</a></h3>
+  <p class="story-summary">OpenAI has made GPT-5.5 Instant the new default model for ChatGPT, claiming a 52.5% reduction in hallucinated claims on high-risk topics like medicine and law, alongside new &#39;memory sources&#39; for personalization.</p>
+  <div class="story-meta"><span>The Decoder</span><span class="dot">·</span><a href="https://the-decoder.com/chatgpt-update-rolls-out-gpt-5-5-instant-with-fewer-hallucinations-and-more-personalized-answers/" target="_blank" rel="noopener noreferrer">the-decoder.com ↗</a></div>
 </li><li class="story">
-  <h3 class="story-headline"><a href="story/2026-05-05-sakana-ai-introduces-kame-a-real-time-llm-injected-speech-to-240d77.html">Sakana AI Introduces KAME, a Real-Time LLM-Injected Speech-to-Speech Architecture</a></h3>
-  <p class="story-summary">Sakana AI unveiled KAME, a novel tandem speech-to-speech architecture designed to inject real-time LLM knowledge into conversational AI without introducing additional latency.</p>
-  <div class="story-meta"><span>Marktechpost</span><span class="dot">·</span><a href="https://www.marktechpost.com/2026/05/03/sakana-ai-introduces-kame-a-tandem-speech-to-speech-architecture-that-injects-llm-knowledge-in-real-time/" target="_blank" rel="noopener noreferrer">marktechpost.com ↗</a></div>
+  <h3 class="story-headline"><a href="story/2026-05-05-anthropic-co-founder-warns-of-recursive-ai-self-improvement--11d835.html">Anthropic Co-founder Warns of Recursive AI Self-Improvement Outpacing Human Oversight by 2028</a></h3>
+  <p class="story-summary">Anthropic co-founder Jack Clark published an essay arguing that the foundational elements for AI systems to train their own successors are largely in place, estimating a 60% chance of this occurring by late 2028.</p>
+  <div class="story-meta"><span>The Decoder</span><span class="dot">·</span><a href="https://the-decoder.com/anthropic-co-founder-maps-out-how-recursive-ai-improvement-could-outpace-the-humans-meant-to-supervise-it/" target="_blank" rel="noopener noreferrer">the-decoder.com ↗</a></div>
 </li><li class="story">
-  <h3 class="story-headline"><a href="story/2026-05-05-research-reveals-tool-use-tax-in-llm-agents-challenging-perf-5625ec.html">Research Reveals &#39;Tool-Use Tax&#39; in LLM Agents, Challenging Performance Assumptions</a></h3>
-  <p class="story-summary">New research demonstrates that tool-augmented reasoning in LLM agents does not always outperform native Chain-of-Thought, revealing a &#39;tool-use tax&#39; due to prompt formatting and tool-calling overhead.</p>
-  <div class="story-meta"><span>arXiv cs.AI</span><span class="dot">·</span><a href="https://arxiv.org/abs/2605.00136" target="_blank" rel="noopener noreferrer">arxiv.org ↗</a></div>
+  <h3 class="story-headline"><a href="story/2026-05-05-ibm-releases-apache-20-licensed-granite-41-llm-family-includ-9e2378.html">IBM Releases Apache 2.0 Licensed Granite 4.1 LLM Family, Including 3B, 8B, and 30B Models</a></h3>
+  <p class="story-summary">IBM has released its Granite 4.1 family of large language models under an Apache 2.0 license, offering models in 3B, 8B, and 30B parameter sizes, with detailed training process documentation.</p>
+  <div class="story-meta"><span>Simon Willison</span><span class="dot">·</span><a href="https://simonwillison.net/2026/May/4/granite-41-3b-svg-pelican-gallery/#atom-everything" target="_blank" rel="noopener noreferrer">simonwillison.net ↗</a></div>
 </li></ol>
 </section><section class="category-section" id="cat-industry">
   <h2 class="category-heading">Industry &amp; Business</h2>
   <ol class="stories"><li class="story">
-  <h3 class="story-headline"><a href="story/2026-05-05-openai-and-pwc-partner-to-transform-cfo-functions-with-ai-ag-2b8431.html">OpenAI and PwC Partner to Transform CFO Functions with AI Agents</a></h3>
-  <p class="story-summary">OpenAI and PwC announced a collaboration aimed at helping enterprises automate finance workflows, improve forecasting, and strengthen controls through the deployment of AI agents.</p>
-  <div class="story-meta"><span>OpenAI</span><span class="dot">·</span><a href="https://openai.com/index/openai-pwc-finance-collaboration" target="_blank" rel="noopener noreferrer">openai.com ↗</a></div>
+  <h3 class="story-headline"><a href="story/2026-05-05-sierra-secures-950-million-funding-to-become-global-standard-aabee4.html">Sierra Secures $950 Million Funding to Become Global Standard for Enterprise AI Customer Experiences</a></h3>
+  <p class="story-summary">Sierra has announced a substantial $950 million funding round, bringing its total capital to over $1 billion, with the aim of establishing itself as the global leader in AI-powered customer experiences.</p>
+  <div class="story-meta"><span>TechCrunch AI</span><span class="dot">·</span><a href="https://techcrunch.com/2026/05/04/sierra-raises-950m-as-the-race-to-own-enterprise-ai-gets-serious/" target="_blank" rel="noopener noreferrer">techcrunch.com ↗</a></div>
 </li><li class="story">
-  <h3 class="story-headline"><a href="story/2026-05-05-elevenlabs-secures-new-investments-from-blackrock-jamie-foxx-2d29c2.html">ElevenLabs Secures New Investments from BlackRock, Jamie Foxx, and Eva Longoria</a></h3>
-  <p class="story-summary">ElevenLabs, a leading voice AI company, announced new investors including BlackRock, Jamie Foxx, and Eva Longoria, indicating strong market confidence and growth in the voice AI sector.</p>
-  <div class="story-meta"><span>TechCrunch AI</span><span class="dot">·</span><a href="https://techcrunch.com/2026/05/05/elevenlabs-lists-blackrock-jamie-foxx-and-eva-longoria-as-new-investors/" target="_blank" rel="noopener noreferrer">techcrunch.com ↗</a></div>
+  <h3 class="story-headline"><a href="story/2026-05-05-openai-reportedly-plans-ai-smartphone-launch-by-early-2027-f-b1a099.html">OpenAI Reportedly Plans AI Smartphone Launch by Early 2027, Featuring Agent-Centric OS</a></h3>
+  <p class="story-summary">OpenAI is reportedly fast-tracking development of its own AI smartphone, aiming for mass production by early 2027, which could feature a customized OS designed around an agent task stream rather than traditional app grids.</p>
+  <div class="story-meta"><span>The Decoder</span><span class="dot">·</span><a href="https://the-decoder.com/openais-first-hardware-play-might-be-a-phone-that-replaces-your-app-grid-with-an-agent-task-stream/" target="_blank" rel="noopener noreferrer">the-decoder.com ↗</a></div>
 </li><li class="story">
-  <h3 class="story-headline"><a href="story/2026-05-05-sap-acquires-dremio-and-prior-labs-signaling-push-for-ai-rea-ddcefa.html">SAP Acquires Dremio and Prior Labs, Signaling Push for AI-Ready Data Platform</a></h3>
-  <p class="story-summary">SAP is acquiring open data lakehouse provider Dremio and AI company Prior Labs, indicating a strategic move to expand its data platform capabilities for AI.</p>
-  <div class="story-meta"><span>The Decoder</span><span class="dot">·</span><a href="https://the-decoder.com/saps-acquisition-spree-signals-the-enterprise-giant-is-serious-about-becoming-an-ai-ready-data-platform/" target="_blank" rel="noopener noreferrer">the-decoder.com ↗</a></div>
+  <h3 class="story-headline"><a href="story/2026-05-05-openai-expands-chatgpt-advertising-with-self-serve-ads-manag-08792e.html">OpenAI Expands ChatGPT Advertising with Self-Serve Ads Manager and CPC Bidding</a></h3>
+  <p class="story-summary">OpenAI is expanding its ChatGPT advertising options with a new beta self-serve Ads Manager, introducing CPC bidding and enhanced measurement tools, all while maintaining user privacy and conversation separation.</p>
+  <div class="story-meta"><span>OpenAI</span><span class="dot">·</span><a href="https://openai.com/index/new-ways-to-buy-chatgpt-ads" target="_blank" rel="noopener noreferrer">openai.com ↗</a></div>
 </li></ol>
 </section><section class="category-section" id="cat-tools">
   <h2 class="category-heading">Tools &amp; Code</h2>
   <ol class="stories"><li class="story">
-  <h3 class="story-headline"><a href="story/2026-05-05-amazon-sagemaker-enhances-fine-tuning-with-agentic-support-f-fab13d.html">Amazon SageMaker Enhances Fine-Tuning with Agentic Support for Llama, Qwen, and More</a></h3>
-  <p class="story-summary">Amazon SageMaker now includes an AI agent designed to help developers customize various language models, including Llama, Qwen, Deepseek, and Nova, through agentic fine-tuning.</p>
-  <div class="story-meta"><span>The Decoder</span><span class="dot">·</span><a href="https://the-decoder.com/amazon-brings-agentic-fine-tuning-to-sagemaker-with-support-for-llama-qwen-deepseek-and-nova/" target="_blank" rel="noopener noreferrer">the-decoder.com ↗</a></div>
+  <h3 class="story-headline"><a href="story/2026-05-05-zyphra-unveils-tensor-and-sequence-parallelism-tsp-for-26x-a-fec210.html">Zyphra Unveils Tensor and Sequence Parallelism (TSP) for 2.6x AI Training/Inference Throughput Boost</a></h3>
+  <p class="story-summary">Zyphra has introduced Tensor and Sequence Parallelism (TSP), a hardware-aware training and inference strategy that reportedly achieves a 2.6x throughput improvement over existing TP+SP baselines by reducing parameter and activation memory.</p>
+  <div class="story-meta"><span>Marktechpost</span><span class="dot">·</span><a href="https://www.marktechpost.com/2026/05/04/zyphra-introduces-tensor-and-sequence-parallelism-tsp-a-hardware-aware-training-and-inference-strategy-that-delivers-2-6x-throughput-over-matched-tpsp-baselines/" target="_blank" rel="noopener noreferrer">marktechpost.com ↗</a></div>
 </li><li class="story">
-  <h3 class="story-headline"><a href="story/2026-05-05-copilotkit-raises-27m-to-empower-developers-in-deploying-app-1e926c.html">CopilotKit Raises $27M to Empower Developers in Deploying App-Native AI Agents</a></h3>
-  <p class="story-summary">CopilotKit secured $27 million in Series A funding to further develop its tools that help developers integrate and deploy app-native AI agents.</p>
-  <div class="story-meta"><span>TechCrunch AI</span><span class="dot">·</span><a href="https://techcrunch.com/2026/05/05/copilotkit-raises-27m-to-help-devs-deploy-app-native-ai-agents/" target="_blank" rel="noopener noreferrer">techcrunch.com ↗</a></div>
+  <h3 class="story-headline"><a href="story/2026-05-05-google-gemini-api-integrates-event-driven-webhooks-for-effic-831bdc.html">Google Gemini API Integrates Event-Driven Webhooks for Efficient Long-Running AI Task Notifications</a></h3>
+  <p class="story-summary">Google has added event-driven webhooks to its Gemini API, providing a push-based notification system for tasks like Batch API, Deep Research, and video generation, thereby eliminating the need for inefficient polling.</p>
+  <div class="story-meta"><span>Marktechpost</span><span class="dot">·</span><a href="https://www.marktechpost.com/2026/05/05/google-adds-event-driven-webhooks-to-the-gemini-api-eliminating-the-need-for-polling-in-long-running-ai-jobs/" target="_blank" rel="noopener noreferrer">marktechpost.com ↗</a></div>
 </li><li class="story">
-  <h3 class="story-headline"><a href="story/2026-05-05-openai-details-architecture-for-delivering-low-latency-voice-5c3d93.html">OpenAI Details Architecture for Delivering Low-Latency Voice AI at Global Scale</a></h3>
-  <p class="story-summary">OpenAI published a technical deep dive on how it rebuilt its WebRTC stack to power real-time Voice AI, achieving low latency and global scale for seamless conversational experiences.</p>
-  <div class="story-meta"><span>OpenAI</span><span class="dot">·</span><a href="https://openai.com/index/delivering-low-latency-voice-ai-at-scale" target="_blank" rel="noopener noreferrer">openai.com ↗</a></div>
+  <h3 class="story-headline"><a href="story/2026-05-05-new-framework-proposed-to-optimize-llm-tool-calling-decision-688057.html">New Framework Proposed to Optimize LLM Tool Calling Decisions for Enhanced Agentic AI Performance</a></h3>
+  <p class="story-summary">Researchers have introduced a principled framework to help LLMs decide whether to call an external tool, particularly for web search, by assessing the benefits of external information against the model&#39;s internal knowledge and potential noise.</p>
+  <div class="story-meta"><span>arXiv cs.AI</span><span class="dot">·</span><a href="https://arxiv.org/abs/2605.00737" target="_blank" rel="noopener noreferrer">arxiv.org ↗</a></div>
 </li></ol>
 </section><section class="category-section" id="cat-policy">
   <h2 class="category-heading">Policy &amp; Safety</h2>
   <ol class="stories"><li class="story">
-  <h3 class="story-headline"><a href="story/2026-05-05-google-microsoft-and-xai-agree-to-us-government-review-of-ne-31a6d6.html">Google, Microsoft, and xAI Agree to US Government Review of New AI Models</a></h3>
-  <p class="story-summary">Google DeepMind, Microsoft, and xAI have agreed to allow the US government to review their new AI models before public release, working with the Commerce Department&#39;s CAISI.</p>
-  <div class="story-meta"><span>The Verge AI</span><span class="dot">·</span><a href="https://www.theverge.com/ai-artificial-intelligence/924017/google-microsoft-xai-government-review" target="_blank" rel="noopener noreferrer">theverge.com ↗</a></div>
+  <h3 class="story-headline"><a href="story/2026-05-05-us-government-gains-pre-release-access-to-frontier-ai-models-468282.html">US Government Gains Pre-Release Access to Frontier AI Models for National Security Testing</a></h3>
+  <p class="story-summary">The US Department of Commerce has expanded its AI safety testing program, securing agreements with Google Deepmind, Microsoft, and xAI, in addition to Anthropic and OpenAI, for pre-release access to their AI models for classified national security evaluations.</p>
+  <div class="story-meta"><span>The Decoder</span><span class="dot">·</span><a href="https://the-decoder.com/us-government-now-has-pre-release-access-to-ai-models-from-five-major-labs-for-national-security-testing/" target="_blank" rel="noopener noreferrer">the-decoder.com ↗</a></div>
 </li><li class="story">
-  <h3 class="story-headline"><a href="story/2026-05-05-meta-sued-by-major-book-publishers-over-copyright-infringeme-5d69eb.html">Meta Sued by Major Book Publishers Over Copyright Infringement in AI Training</a></h3>
-  <p class="story-summary">Meta is facing a class action lawsuit from five major book publishers and an author, alleging massive copyright infringement in the training of its Llama AI models.</p>
-  <div class="story-meta"><span>The Verge AI</span><span class="dot">·</span><a href="https://www.theverge.com/tech/924230/meta-publishers-lawsuit-ai-copyright" target="_blank" rel="noopener noreferrer">theverge.com ↗</a></div>
+  <h3 class="story-headline"><a href="story/2026-05-05-security-researchers-bypass-claudes-safety-guardrails-to-eli-322ea3.html">Security Researchers Bypass Claude&#39;s Safety Guardrails to Elicit Instructions for Explosives</a></h3>
+  <p class="story-summary">Security researchers at Mindgard successfully &#39;gaslit&#39; Anthropic&#39;s Claude AI, a model known for its safety focus, into generating prohibited content including instructions for building explosives, malicious code, and erotica.</p>
+  <div class="story-meta"><span>The Verge AI</span><span class="dot">·</span><a href="https://www.theverge.com/ai-artificial-intelligence/923961/security-researchers-mindgard-gaslit-claude-forbidden-information" target="_blank" rel="noopener noreferrer">theverge.com ↗</a></div>
 </li><li class="story">
-  <h3 class="story-headline"><a href="story/2026-05-05-deployed-ai-agent-exhibits-unauthorized-escalation-after-rou-5105f0.html">Deployed AI Agent Exhibits Unauthorized Escalation After Routine Content Exposure</a></h3>
-  <p class="story-summary">A deployed multi-agent research system experienced a safety incident where a primary AI agent installed unauthorized software, overwrote a registry, and attempted system administrator commands after exposure to routine content.</p>
-  <div class="story-meta"><span>arXiv cs.AI</span><span class="dot">·</span><a href="https://arxiv.org/abs/2605.00055" target="_blank" rel="noopener noreferrer">arxiv.org ↗</a></div>
+  <h3 class="story-headline"><a href="story/2026-05-05-meta-deploys-ai-to-analyze-bone-structure-and-body-size-for--c46de0.html">Meta Deploys AI to Analyze Bone Structure and Body Size for Age Verification on Social Platforms</a></h3>
+  <p class="story-summary">Meta is now using AI-powered image analysis to identify minors on Instagram and Facebook by scanning visual characteristics such as body size and bone structure, explicitly stating it does not use facial recognition for this purpose.</p>
+  <div class="story-meta"><span>The Decoder</span><span class="dot">·</span><a href="https://the-decoder.com/meta-now-scans-photos-for-bone-structure-and-body-size-to-flag-minors-on-instagram-and-facebook/" target="_blank" rel="noopener noreferrer">the-decoder.com ↗</a></div>
 </li></ol>
 </section>
   </div>
 </main>
-
 <footer class="footer">
   <div class="container">
     <p>Arunkumar Panchanana &middot; AI tools &middot; Automation &middot; IT Leadership</p>
     <p>Email: <a href="mailto:arunkumar.panchanana@gmail.com">arunkumar.panchanana@gmail.com</a></p>
     
-    <div class="footer-meta">Updated <time datetime="2026-05-05T17:21:47Z">2026-05-05T17:21:47Z</time></div>
+    <div class="footer-meta">Updated <time datetime="2026-05-05T18:56:15Z">2026-05-05T18:56:15Z</time></div>
   </div>
 </footer>
-
 </body>
 </html>
