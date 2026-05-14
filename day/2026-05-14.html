@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>May 14, 2026 · AI News of the Day</title>
+<style>
+  :root {
+    --bg: #0B1F3A; --surface: #111827; --surface-2: #0F1F36;
+    --border: #1F2937; --border-strong: #2A3548;
+    --text: #E5E7EB; --text-2: #CBD5E1; --muted: #9CA3AF; --muted-2: #6B7280;
+    --white: #FFFFFF; --accent: #2563EB; --accent-hover: #3B82F6; --green: #10B981;
+    --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Arial, sans-serif;
+    --mono: ui-monospace, SFMono-Regular, "JetBrains Mono", Menlo, Consolas, monospace;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; font-family: var(--font); background: var(--bg); color: var(--text);
+    line-height: 1.6; -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--accent); }
+  a:hover { color: var(--accent-hover); }
+  .container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
+  .site-header { border-bottom: 1px solid var(--border); padding: 15px 0; background: var(--bg); }
+  .nav-wrap { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+  .logo { font-size: 1.1rem; font-weight: 700; color: var(--white); text-decoration: none; letter-spacing: 0.3px; }
+  .logo:hover { color: var(--accent-hover); }
+  .nav a { margin-left: 15px; text-decoration: none; color: var(--muted); font-size: 0.95rem; }
+  .nav a.active, .nav a:hover { color: var(--accent); }
+  .nav a:first-child { margin-left: 0; }
+  .tool-bar { border-bottom: 1px solid var(--border); padding: 12px 0; background: var(--surface-2); }
+  .tool-bar-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; font-size: 0.85rem; }
+  .tool-name { color: var(--text-2); font-weight: 600; letter-spacing: 0.02em; }
+  .tool-bar a { color: var(--muted); text-decoration: none; }
+  .tool-bar a:hover { color: var(--accent); }
+  main { padding: 56px 0 80px; }
+  .page-header { margin-bottom: 40px; }
+  .page-header h1 { margin: 8px 0 12px; font-size: 32px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.2; color: var(--white); }
+  .page-header p { color: var(--text-2); font-size: 16px; margin: 0; max-width: 600px; }
+  .section-eyebrow { font-size: 12px; font-weight: 600; color: var(--accent); letter-spacing: 0.08em; text-transform: uppercase; }
+  .category-nav { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 32px; padding-bottom: 16px; border-bottom: 1px solid var(--border); }
+  .category-nav a { display: inline-flex; align-items: center; gap: 8px; padding: 7px 14px; background: var(--surface); border: 1px solid var(--border); border-radius: 999px; text-decoration: none; color: var(--text-2); font-size: 13px; font-weight: 500; transition: all 0.15s; }
+  .category-nav a:hover { border-color: var(--accent); color: var(--accent); background: rgba(37, 99, 235, 0.08); }
+  .category-nav .cat-count { font-size: 11px; font-weight: 600; background: var(--bg); color: var(--muted); padding: 1px 7px; border-radius: 999px; font-variant-numeric: tabular-nums; }
+  .category-section { margin: 48px 0 0; scroll-margin-top: 24px; }
+  .category-section:first-of-type { margin-top: 24px; }
+  .category-heading { font-size: 20px; font-weight: 700; letter-spacing: -0.015em; margin: 0 0 16px; padding-bottom: 10px; border-bottom: 1px solid var(--border); color: var(--white); }
+  .stories { list-style: none; padding: 0; margin: 0; counter-reset: story; }
+  .story { counter-increment: story; padding: 24px 0; border-bottom: 1px solid var(--border); position: relative; padding-left: 44px; }
+  .story:last-child { border-bottom: 0; }
+  .story::before { content: counter(story); position: absolute; left: 0; top: 26px; font-size: 12px; font-weight: 600; color: var(--muted); width: 24px; height: 24px; border: 1px solid var(--border); border-radius: 50%; display: grid; place-items: center; background: var(--surface); font-variant-numeric: tabular-nums; }
+  .story-headline { font-size: 18px; font-weight: 600; line-height: 1.35; letter-spacing: -0.01em; margin: 0 0 8px; }
+  .story-headline a { color: var(--white); text-decoration: none; transition: color 0.15s; }
+  .story-headline a:hover { color: var(--accent-hover); }
+  .story-summary { margin: 0 0 10px; color: var(--text-2); font-size: 15px; }
+  .story-meta { display: flex; gap: 8px; font-size: 13px; color: var(--muted); align-items: center; }
+  .story-meta a { color: var(--muted); text-decoration: none; }
+  .story-meta a:hover { color: var(--accent); }
+  .story-meta .dot { color: var(--muted-2); }
+  .story-detail h1 { font-size: 32px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.2; margin: 12px 0 24px; color: var(--white); }
+  .story-summary-large { font-size: 18px; color: var(--text-2); line-height: 1.6; margin: 0 0 32px; }
+  .why-section { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 20px 24px; margin: 32px 0; }
+  .why-section h2, .why-section h3 { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); margin: 0 0 8px; }
+  .why-section p { margin: 0; color: var(--text); font-size: 15px; }
+  .read-original { margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--border); }
+  .read-original a { color: var(--accent); text-decoration: none; font-weight: 500; display: inline-block; padding: 10px 16px; background: var(--surface); border: 1px solid var(--border); border-radius: 6px; transition: all 0.15s; }
+  .read-original a:hover { background: var(--accent); color: var(--white); border-color: var(--accent); }
+  .prompt-title { font-size: 26px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.25; margin: 8px 0 6px; color: var(--white); }
+  .prompt-subtitle { color: var(--text-2); font-size: 15px; margin: 0 0 24px; }
+  .prompt-block { border: 1px solid var(--border); border-radius: 10px; overflow: hidden; background: var(--surface); margin: 24px 0; }
+  .prompt-block-header { display: flex; align-items: center; justify-content: space-between; padding: 12px 18px; background: var(--surface-2); border-bottom: 1px solid var(--border); }
+  .prompt-label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); }
+  .copy-btn { background: var(--accent); color: var(--white); border: none; border-radius: 6px; padding: 7px 16px; font: 500 12px var(--font); cursor: pointer; transition: background 0.15s, transform 0.05s; }
+  .copy-btn:hover { background: var(--accent-hover); }
+  .copy-btn:active { transform: scale(0.97); }
+  .copy-btn.copied { background: var(--green); }
+  .prompt-text { margin: 0; padding: 22px 22px 24px; font-family: var(--mono); font-size: 13.5px; line-height: 1.7; color: var(--text); white-space: pre-wrap; word-wrap: break-word; background: transparent; }
+  .example-section { margin: 24px 0; padding: 14px 20px; border-left: 3px solid var(--accent); background: var(--surface); border-radius: 0 8px 8px 0; }
+  .example-section h3 { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); margin: 0 0 6px; }
+  .example-section p { margin: 0; color: var(--text-2); font-size: 14px; font-style: italic; }
+  .archive-section { margin-top: 64px; padding-top: 32px; border-top: 1px solid var(--border); }
+  .archive-section h2 { font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin: 0 0 16px; }
+  .archive-list { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 8px; }
+  .archive-list li { padding: 4px 0; }
+  .archive-list a { color: var(--text-2); text-decoration: none; font-size: 14px; }
+  .archive-list a:hover { color: var(--accent); }
+  .empty { color: var(--muted); font-style: italic; }
+  .footer { text-align: center; padding: 24px 20px; margin-top: 40px; border-top: 1px solid var(--border); color: var(--muted); font-size: 13px; }
+  .footer p { margin: 4px 0; }
+  .footer a { color: var(--text-2); text-decoration: none; }
+  .footer a:hover { color: var(--accent); }
+  .footer .footer-meta { margin-top: 8px; font-size: 11px; color: var(--muted-2); font-variant-numeric: tabular-nums; }
+  @media (max-width: 600px) {
+    .nav a { margin-left: 12px; font-size: 0.9rem; }
+    .page-header h1, .story-detail h1 { font-size: 26px; }
+    main { padding: 36px 0 60px; }
+  }
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="container nav-wrap">
+    <a href="https://arunkumarpanchanana.github.io/" class="logo">Arunkumar Panchanana</a>
+    <nav class="nav">
+      <a href="https://arunkumarpanchanana.github.io/">Home</a>
+      <a href="https://arunkumarpanchanana.github.io/about.html">About</a>
+      <a href="https://arunkumarpanchanana.github.io/tools.html" class="active">Tools</a>
+    </nav>
+  </div>
+</header>
+<div class="tool-bar">
+  <div class="container tool-bar-inner">
+    <span class="tool-name">AI News of the Day</span>
+    <span><a href="../index.html">← Back to today</a></span>
+  </div>
+</div>
+<main>
+  <div class="container">
+    
+<header class="page-header">
+  <div class="section-eyebrow">May 14, 2026</div>
+  <h1>AI News of the Day</h1>
+</header>
+<nav class="category-nav"><a href="#cat-models">Models &amp; Research <span class="cat-count">3</span></a><a href="#cat-industry">Industry &amp; Business <span class="cat-count">3</span></a><a href="#cat-tools">Tools &amp; Code <span class="cat-count">3</span></a><a href="#cat-policy">Policy &amp; Safety <span class="cat-count">3</span></a></nav>
+<section class="category-section" id="cat-models">
+  <h2 class="category-heading">Models &amp; Research</h2>
+  <ol class="stories"><li class="story">
+  <h3 class="story-headline"><a href="story/2026-05-14-mira-muratis-lab-unveils-multimodal-ai-for-real-time-human-a-6c2eb2.html">Mira Murati&#39;s Lab Unveils Multimodal AI for Real-Time Human-AI Collaboration</a></h3>
+  <p class="story-summary">Thinking Machines Lab introduced TML-Interaction-Small, a 276B parameter Mixture-of-Experts model designed for real-time human-AI collaboration through a native multimodal architecture that processes audio, video, and text simultaneously.</p>
+  <div class="story-meta"><span>Marktechpost</span><span class="dot">·</span><a href="https://www.marktechpost.com/2026/05/13/mira-muratis-thinking-machines-lab-introduces-interaction-models-a-native-multimodal-architecture-for-real-time-human-ai-collaboration/" target="_blank" rel="noopener noreferrer">marktechpost.com ↗</a></div>
+</li><li class="story">
+  <h3 class="story-headline"><a href="story/2026-05-14-fastino-labs-open-sources-gliguard-an-efficient-ai-safety-mo-3555a4.html">Fastino Labs Open-Sources GLiGuard, an Efficient AI Safety Moderation Model</a></h3>
+  <p class="story-summary">Fastino Labs released GLiGuard, a 300M parameter open-source safety moderation model that achieves accuracy comparable to models 23-90 times larger while offering significantly higher throughput and lower latency.</p>
+  <div class="story-meta"><span>Marktechpost</span><span class="dot">·</span><a href="https://www.marktechpost.com/2026/05/13/fastino-labs-open-sources-gliguard-a-300m-parameter-safety-moderation-model-that-matches-or-exceeds-accuracy-of-models-23-90x-its-size/" target="_blank" rel="noopener noreferrer">marktechpost.com ↗</a></div>
+</li><li class="story">
+  <h3 class="story-headline"><a href="story/2026-05-14-human-llm-dialogue-enhances-diagnostic-accuracy-in-emergency-b06a96.html">Human-LLM Dialogue Enhances Diagnostic Accuracy in Emergency Medicine</a></h3>
+  <p class="story-summary">A study using MedSyn found that iterative human-LLM dialogue significantly improved diagnostic accuracy for physicians, especially residents on difficult cases, in emergency medicine settings.</p>
+  <div class="story-meta"><span>arXiv cs.AI</span><span class="dot">·</span><a href="https://arxiv.org/abs/2605.08533" target="_blank" rel="noopener noreferrer">arxiv.org ↗</a></div>
+</li></ol>
+</section><section class="category-section" id="cat-industry">
+  <h2 class="category-heading">Industry &amp; Business</h2>
+  <ol class="stories"><li class="story">
+  <h3 class="story-headline"><a href="story/2026-05-14-anthropic-surpasses-openai-in-b2b-adoption-according-to-ramp-b23723.html">Anthropic Surpasses OpenAI in B2B Adoption, According to Ramp Spending Data</a></h3>
+  <p class="story-summary">Fintech firm Ramp&#39;s data indicates that Anthropic has surpassed OpenAI in B2B adoption, with 34.4% of participating businesses using Anthropic services compared to OpenAI&#39;s 32.3%.</p>
+  <div class="story-meta"><span>The Decoder</span><span class="dot">·</span><a href="https://the-decoder.com/anthropic-overtakes-openai-in-b2b-adoption-for-the-first-time-according-to-ramp-spending-data/" target="_blank" rel="noopener noreferrer">the-decoder.com ↗</a></div>
+</li><li class="story">
+  <h3 class="story-headline"><a href="story/2026-05-14-google-and-spacex-reportedly-discuss-orbital-data-centers-fo-c0a9f8.html">Google and SpaceX Reportedly Discuss Orbital Data Centers for AI Compute</a></h3>
+  <p class="story-summary">Google and SpaceX are reportedly in discussions to establish data centers in orbit, exploring space as a future frontier for AI compute infrastructure despite current high costs.</p>
+  <div class="story-meta"><span>TechCrunch AI</span><span class="dot">·</span><a href="https://techcrunch.com/2026/05/12/report-google-and-spacex-in-talks-to-put-data-centers-into-orbit/" target="_blank" rel="noopener noreferrer">techcrunch.com ↗</a></div>
+</li><li class="story">
+  <h3 class="story-headline"><a href="story/2026-05-14-tencent-boosts-ai-spending-amid-improved-chinese-chip-supply-47b69d.html">Tencent Boosts AI Spending Amid Improved Chinese Chip Supply</a></h3>
+  <p class="story-summary">Tencent plans a significant increase in AI infrastructure spending in the latter half of 2026, driven by an alleged improvement in domestic AI chip production in China.</p>
+  <div class="story-meta"><span>The Decoder</span><span class="dot">·</span><a href="https://the-decoder.com/tencent-plans-to-ramp-up-ai-spending-as-chinas-chip-supply-allegedly-improves/" target="_blank" rel="noopener noreferrer">the-decoder.com ↗</a></div>
+</li></ol>
+</section><section class="category-section" id="cat-tools">
+  <h2 class="category-heading">Tools &amp; Code</h2>
+  <ol class="stories"><li class="story">
+  <h3 class="story-headline"><a href="story/2026-05-14-notion-transforms-workspace-into-hub-for-ai-agents-with-new--c76472.html">Notion Transforms Workspace into Hub for AI Agents with New Developer Platform</a></h3>
+  <p class="story-summary">Notion has launched a new developer platform enabling teams to integrate AI agents, external data sources, and custom code directly into their workspaces, pushing deeper into agentic productivity software.</p>
+  <div class="story-meta"><span>TechCrunch AI</span><span class="dot">·</span><a href="https://techcrunch.com/2026/05/13/notion-just-turned-its-workspace-into-a-hub-for-ai-agents/" target="_blank" rel="noopener noreferrer">techcrunch.com ↗</a></div>
+</li><li class="story">
+  <h3 class="story-headline"><a href="story/2026-05-14-google-deepmind-unveils-ai-enabled-mouse-pointer-powered-by--27d4f0.html">Google DeepMind Unveils AI-Enabled Mouse Pointer Powered by Gemini</a></h3>
+  <p class="story-summary">Google DeepMind researchers have introduced an experimental AI-enabled mouse pointer, powered by Gemini, which captures visual and semantic context around the cursor to allow natural shorthand commands without switching windows.</p>
+  <div class="story-meta"><span>Marktechpost</span><span class="dot">·</span><a href="https://www.marktechpost.com/2026/05/13/google-deepmind-introduces-an-ai-enabled-mouse-pointer-powered-by-gemini-that-captures-visual-and-semantic-context-around-the-cursor/" target="_blank" rel="noopener noreferrer">marktechpost.com ↗</a></div>
+</li><li class="story">
+  <h3 class="story-headline"><a href="story/2026-05-14-openai-launches-daybreak-cybersecurity-initiative-with-codex-f8315d.html">OpenAI Launches Daybreak Cybersecurity Initiative with Codex Security</a></h3>
+  <p class="story-summary">OpenAI has launched Daybreak, a cybersecurity initiative combining frontier AI models with its coding-focused agentic system, Codex Security, to detect, validate, and patch software vulnerabilities earlier in development.</p>
+  <div class="story-meta"><span>Marktechpost</span><span class="dot">·</span><a href="https://www.marktechpost.com/2026/05/11/openai-introduces-daybreak-a-cybersecurity-initiative-that-puts-codex-security-at-the-center-of-vulnerability-detection-and-patch-validation/" target="_blank" rel="noopener noreferrer">marktechpost.com ↗</a></div>
+</li></ol>
+</section><section class="category-section" id="cat-policy">
+  <h2 class="category-heading">Policy &amp; Safety</h2>
+  <ol class="stories"><li class="story">
+  <h3 class="story-headline"><a href="story/2026-05-14-lawsuit-alleges-teen-died-after-chatgpt-recommended-deadly-d-cfdd33.html">Lawsuit Alleges Teen Died After ChatGPT Recommended Deadly Drug Mix</a></h3>
+  <p class="story-summary">A lawsuit claims a teen died after ChatGPT provided advice on safely experimenting with a deadly mix of drugs, highlighting severe safety failures and the potential for AI misuse.</p>
+  <div class="story-meta"><span>Ars Technica AI</span><span class="dot">·</span><a href="https://arstechnica.com/tech-policy/2026/05/12/will-i-be-ok-teen-died-after-chatgpt-pushed-deadly-mix-of-drugs-lawsuit-says/" target="_blank" rel="noopener noreferrer">arstechnica.com ↗</a></div>
+</li><li class="story">
+  <h3 class="story-headline"><a href="story/2026-05-14-ai-chatbots-exposing-users-real-phone-numbers-raising-privac-106181.html">AI Chatbots Exposing Users&#39; Real Phone Numbers, Raising Privacy Concerns</a></h3>
+  <p class="story-summary">Users are reporting that AI chatbots, including Google AI, are surfacing personal contact information like phone numbers, with no clear mechanism to prevent it.</p>
+  <div class="story-meta"><span>MIT Tech Review</span><span class="dot">·</span><a href="https://www.technologyreview.com/2026/05/13/1137203/ai-chatbots-are-giving-out-peoples-real-phone-numbers/" target="_blank" rel="noopener noreferrer">technologyreview.com ↗</a></div>
+</li><li class="story">
+  <h3 class="story-headline"><a href="story/2026-05-14-meta-ai-introduces-incognito-chat-with-no-stored-conversatio-d32042.html">Meta AI Introduces &#39;Incognito Chat&#39; with No Stored Conversation Data</a></h3>
+  <p class="story-summary">Meta is rolling out &#39;Incognito Chat&#39; for Meta AI on WhatsApp and its dedicated app, ensuring conversations are processed in a protected server environment with no stored chat history.</p>
+  <div class="story-meta"><span>The Decoder</span><span class="dot">·</span><a href="https://the-decoder.com/meta-ai-gets-a-private-mode-where-no-conversation-data-is-stored-on-servers/" target="_blank" rel="noopener noreferrer">the-decoder.com ↗</a></div>
+</li></ol>
+</section>
+  </div>
+</main>
+<footer class="footer">
+  <div class="container">
+    <p>Arunkumar Panchanana &middot; AI tools &middot; Automation &middot; IT Leadership</p>
+    <p>Email: <a href="mailto:arunkumar.panchanana@gmail.com">arunkumar.panchanana@gmail.com</a></p>
+    
+    <div class="footer-meta">Updated <time datetime="2026-05-14T02:05:22Z">2026-05-14T02:05:22Z</time></div>
+  </div>
+</footer>
+</body>
+</html>
