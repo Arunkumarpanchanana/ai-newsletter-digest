@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>June 5, 2026 · AI News of the Day</title>
+<style>
+  :root {
+    --bg: #0B1F3A; --surface: #111827; --surface-2: #0F1F36;
+    --border: #1F2937; --border-strong: #2A3548;
+    --text: #E5E7EB; --text-2: #CBD5E1; --muted: #9CA3AF; --muted-2: #6B7280;
+    --white: #FFFFFF; --accent: #2563EB; --accent-hover: #3B82F6; --green: #10B981;
+    --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Arial, sans-serif;
+    --mono: ui-monospace, SFMono-Regular, "JetBrains Mono", Menlo, Consolas, monospace;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; font-family: var(--font); background: var(--bg); color: var(--text);
+    line-height: 1.6; -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--accent); }
+  a:hover { color: var(--accent-hover); }
+  .container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
+  .site-header { border-bottom: 1px solid var(--border); padding: 15px 0; background: var(--bg); }
+  .nav-wrap { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+  .logo { font-size: 1.1rem; font-weight: 700; color: var(--white); text-decoration: none; letter-spacing: 0.3px; }
+  .logo:hover { color: var(--accent-hover); }
+  .nav a { margin-left: 15px; text-decoration: none; color: var(--muted); font-size: 0.95rem; }
+  .nav a.active, .nav a:hover { color: var(--accent); }
+  .nav a:first-child { margin-left: 0; }
+  .tool-bar { border-bottom: 1px solid var(--border); padding: 12px 0; background: var(--surface-2); }
+  .tool-bar-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; font-size: 0.85rem; }
+  .tool-name { color: var(--text-2); font-weight: 600; letter-spacing: 0.02em; }
+  .tool-bar a { color: var(--muted); text-decoration: none; }
+  .tool-bar a:hover { color: var(--accent); }
+  main { padding: 56px 0 80px; }
+  .page-header { margin-bottom: 40px; }
+  .page-header h1 { margin: 8px 0 12px; font-size: 32px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.2; color: var(--white); }
+  .page-header p { color: var(--text-2); font-size: 16px; margin: 0; max-width: 600px; }
+  .section-eyebrow { font-size: 12px; font-weight: 600; color: var(--accent); letter-spacing: 0.08em; text-transform: uppercase; }
+  .category-nav { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 32px; padding-bottom: 16px; border-bottom: 1px solid var(--border); }
+  .category-nav a { display: inline-flex; align-items: center; gap: 8px; padding: 7px 14px; background: var(--surface); border: 1px solid var(--border); border-radius: 999px; text-decoration: none; color: var(--text-2); font-size: 13px; font-weight: 500; transition: all 0.15s; }
+  .category-nav a:hover { border-color: var(--accent); color: var(--accent); background: rgba(37, 99, 235, 0.08); }
+  .category-nav .cat-count { font-size: 11px; font-weight: 600; background: var(--bg); color: var(--muted); padding: 1px 7px; border-radius: 999px; font-variant-numeric: tabular-nums; }
+  .category-section { margin: 48px 0 0; scroll-margin-top: 24px; }
+  .category-section:first-of-type { margin-top: 24px; }
+  .category-heading { font-size: 20px; font-weight: 700; letter-spacing: -0.015em; margin: 0 0 16px; padding-bottom: 10px; border-bottom: 1px solid var(--border); color: var(--white); }
+  .stories { list-style: none; padding: 0; margin: 0; counter-reset: story; }
+  .story { counter-increment: story; padding: 24px 0; border-bottom: 1px solid var(--border); position: relative; padding-left: 44px; }
+  .story:last-child { border-bottom: 0; }
+  .story::before { content: counter(story); position: absolute; left: 0; top: 26px; font-size: 12px; font-weight: 600; color: var(--muted); width: 24px; height: 24px; border: 1px solid var(--border); border-radius: 50%; display: grid; place-items: center; background: var(--surface); font-variant-numeric: tabular-nums; }
+  .story-headline { font-size: 18px; font-weight: 600; line-height: 1.35; letter-spacing: -0.01em; margin: 0 0 8px; }
+  .story-headline a { color: var(--white); text-decoration: none; transition: color 0.15s; }
+  .story-headline a:hover { color: var(--accent-hover); }
+  .story-summary { margin: 0 0 10px; color: var(--text-2); font-size: 15px; }
+  .story-meta { display: flex; gap: 8px; font-size: 13px; color: var(--muted); align-items: center; }
+  .story-meta a { color: var(--muted); text-decoration: none; }
+  .story-meta a:hover { color: var(--accent); }
+  .story-meta .dot { color: var(--muted-2); }
+  .story-detail h1 { font-size: 32px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.2; margin: 12px 0 24px; color: var(--white); }
+  .story-summary-large { font-size: 18px; color: var(--text-2); line-height: 1.6; margin: 0 0 32px; }
+  .why-section { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 20px 24px; margin: 32px 0; }
+  .why-section h2, .why-section h3 { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); margin: 0 0 8px; }
+  .why-section p { margin: 0; color: var(--text); font-size: 15px; }
+  .read-original { margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--border); }
+  .read-original a { color: var(--accent); text-decoration: none; font-weight: 500; display: inline-block; padding: 10px 16px; background: var(--surface); border: 1px solid var(--border); border-radius: 6px; transition: all 0.15s; }
+  .read-original a:hover { background: var(--accent); color: var(--white); border-color: var(--accent); }
+  .prompt-title { font-size: 26px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.25; margin: 8px 0 6px; color: var(--white); }
+  .prompt-subtitle { color: var(--text-2); font-size: 15px; margin: 0 0 24px; }
+  .prompt-block { border: 1px solid var(--border); border-radius: 10px; overflow: hidden; background: var(--surface); margin: 24px 0; }
+  .prompt-block-header { display: flex; align-items: center; justify-content: space-between; padding: 12px 18px; background: var(--surface-2); border-bottom: 1px solid var(--border); }
+  .prompt-label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); }
+  .copy-btn { background: var(--accent); color: var(--white); border: none; border-radius: 6px; padding: 7px 16px; font: 500 12px var(--font); cursor: pointer; transition: background 0.15s, transform 0.05s; }
+  .copy-btn:hover { background: var(--accent-hover); }
+  .copy-btn:active { transform: scale(0.97); }
+  .copy-btn.copied { background: var(--green); }
+  .prompt-text { margin: 0; padding: 22px 22px 24px; font-family: var(--mono); font-size: 13.5px; line-height: 1.7; color: var(--text); white-space: pre-wrap; word-wrap: break-word; background: transparent; }
+  .example-section { margin: 24px 0; padding: 14px 20px; border-left: 3px solid var(--accent); background: var(--surface); border-radius: 0 8px 8px 0; }
+  .example-section h3 { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); margin: 0 0 6px; }
+  .example-section p { margin: 0; color: var(--text-2); font-size: 14px; font-style: italic; }
+  .archive-section { margin-top: 64px; padding-top: 32px; border-top: 1px solid var(--border); }
+  .archive-section h2 { font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin: 0 0 16px; }
+  .archive-list { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 8px; }
+  .archive-list li { padding: 4px 0; }
+  .archive-list a { color: var(--text-2); text-decoration: none; font-size: 14px; }
+  .archive-list a:hover { color: var(--accent); }
+  .empty { color: var(--muted); font-style: italic; }
+  .footer { text-align: center; padding: 24px 20px; margin-top: 40px; border-top: 1px solid var(--border); color: var(--muted); font-size: 13px; }
+  .footer p { margin: 4px 0; }
+  .footer a { color: var(--text-2); text-decoration: none; }
+  .footer a:hover { color: var(--accent); }
+  .footer .footer-meta { margin-top: 8px; font-size: 11px; color: var(--muted-2); font-variant-numeric: tabular-nums; }
+  @media (max-width: 600px) {
+    .nav a { margin-left: 12px; font-size: 0.9rem; }
+    .page-header h1, .story-detail h1 { font-size: 26px; }
+    main { padding: 36px 0 60px; }
+  }
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="container nav-wrap">
+    <a href="https://arunkumarpanchanana.github.io/" class="logo">Arunkumar Panchanana</a>
+    <nav class="nav">
+      <a href="https://arunkumarpanchanana.github.io/">Home</a>
+      <a href="https://arunkumarpanchanana.github.io/about.html">About</a>
+      <a href="https://arunkumarpanchanana.github.io/tools.html" class="active">Tools</a>
+    </nav>
+  </div>
+</header>
+<div class="tool-bar">
+  <div class="container tool-bar-inner">
+    <span class="tool-name">AI News of the Day</span>
+    <span><a href="../index.html">← Back to today</a></span>
+  </div>
+</div>
+<main>
+  <div class="container">
+    
+<header class="page-header">
+  <div class="section-eyebrow">June 5, 2026</div>
+  <h1>AI News of the Day</h1>
+</header>
+<nav class="category-nav"><a href="#cat-models">Models &amp; Research <span class="cat-count">3</span></a><a href="#cat-industry">Industry &amp; Business <span class="cat-count">3</span></a><a href="#cat-tools">Tools &amp; Code <span class="cat-count">3</span></a><a href="#cat-policy">Policy &amp; Safety <span class="cat-count">3</span></a></nav>
+<section class="category-section" id="cat-models">
+  <h2 class="category-heading">Models &amp; Research</h2>
+  <ol class="stories"><li class="story">
+  <h3 class="story-headline"><a href="story/2026-06-05-nvidia-releases-nemotron-3-ultra-an-open-550b-moe-model-for--b79a51.html">NVIDIA Releases Nemotron 3 Ultra, an Open 550B MoE Model for Long-Running AI Agents</a></h3>
+  <p class="story-summary">NVIDIA has released Nemotron 3 Ultra, a 550B Mixture-of-Experts hybrid Mamba-Transformer model designed for long-running AI agents, featuring a 1M-token context and higher inference throughput.</p>
+  <div class="story-meta"><span>Marktechpost</span><span class="dot">·</span><a href="https://www.marktechpost.com/2026/06/04/nvidia-ai-releases-nemotron-3-ultra-an-open-550b-mixture-of-experts-hybrid-mamba-transformer-for-long-running-agents/" target="_blank" rel="noopener noreferrer">marktechpost.com ↗</a></div>
+</li><li class="story">
+  <h3 class="story-headline"><a href="story/2026-06-05-google-deepmind-launches-gemma-4-12b-a-multimodal-model-for--1c9475.html">Google DeepMind Launches Gemma 4 12B, a Multimodal Model for Local Laptop Deployment</a></h3>
+  <p class="story-summary">Google DeepMind has released Gemma 4 12B, an encoder-free multimodal model with native audio capabilities, specifically designed to run locally on laptops with 16GB of RAM under an Apache 2.0 license.</p>
+  <div class="story-meta"><span>Marktechpost</span><span class="dot">·</span><a href="https://www.marktechpost.com/2026/06/03/google-deepmind-releases-gemma-4-12b-an-encoder-free-multimodal-model-with-native-audio-that-runs-on-a-16-gb-laptop/" target="_blank" rel="noopener noreferrer">marktechpost.com ↗</a></div>
+</li><li class="story">
+  <h3 class="story-headline"><a href="story/2026-06-05-chatgpt-introduces-enhanced-memory-system-for-more-personali-c3ab33.html">ChatGPT Introduces Enhanced Memory System for More Personalized and Context-Aware Conversations</a></h3>
+  <p class="story-summary">ChatGPT has rolled out a new memory system, internally called &#39;Dreaming,&#39; designed to better remember user preferences and maintain context across multiple conversations, improving the relevance of interactions.</p>
+  <div class="story-meta"><span>OpenAI</span><span class="dot">·</span><a href="https://openai.com/index/chatgpt-memory-dreaming" target="_blank" rel="noopener noreferrer">openai.com ↗</a></div>
+</li></ol>
+</section><section class="category-section" id="cat-industry">
+  <h2 class="category-heading">Industry &amp; Business</h2>
+  <ol class="stories"><li class="story">
+  <h3 class="story-headline"><a href="story/2026-06-05-tsmc-struggles-to-meet-soaring-ai-chip-demand-citing-product-9d6cf6.html">TSMC Struggles to Meet Soaring AI Chip Demand, Citing Production Constraints</a></h3>
+  <p class="story-summary">Taiwan Semiconductor Manufacturing Co. (TSMC), the world&#39;s largest chipmaker, is reportedly struggling to meet the high demand for AI chips from its American customers, despite expanding its manufacturing capacity.</p>
+  <div class="story-meta"><span>The Verge AI</span><span class="dot">·</span><a href="https://www.theverge.com/tech/943066/tsmc-ai-demand-struggles" target="_blank" rel="noopener noreferrer">theverge.com ↗</a></div>
+</li><li class="story">
+  <h3 class="story-headline"><a href="story/2026-06-05-anthropic-reports-47-billion-annualized-revenue-ahead-of-ipo-69e393.html">Anthropic Reports $47 Billion Annualized Revenue Ahead of IPO, Dismissing Profitability Concerns</a></h3>
+  <p class="story-summary">Anthropic, a leading AI company, announced its annualized revenue crossed $47 billion in May, a significant increase from the previous year, as it prepares for an initial public offering amidst questions about AI&#39;s long-term returns.</p>
+  <div class="story-meta"><span>TechCrunch AI</span><span class="dot">·</span><a href="https://techcrunch.com/2026/06/04/ahead-of-its-ipo-anthropics-daniela-amodei-shrugs-off-doubts-about-ais-returns/" target="_blank" rel="noopener noreferrer">techcrunch.com ↗</a></div>
+</li><li class="story">
+  <h3 class="story-headline"><a href="story/2026-06-05-cloudflare-ceo-predicts-pay-to-crawl-web-as-ai-bots-surpass--de606a.html">Cloudflare CEO Predicts &#39;Pay to Crawl&#39; Web as AI Bots Surpass Human Internet Traffic</a></h3>
+  <p class="story-summary">Cloudflare CEO Matthew Prince stated that bot traffic now exceeds human traffic on the internet, attributing the surge to AI agents and forecasting a future where websites will charge for AI to crawl their content.</p>
+  <div class="story-meta"><span>The Decoder</span><span class="dot">·</span><a href="https://the-decoder.com/cloudflare-ceo-says-the-webs-future-is-pay-to-crawl-as-bots-overtake-human-traffic/" target="_blank" rel="noopener noreferrer">the-decoder.com ↗</a></div>
+</li></ol>
+</section><section class="category-section" id="cat-tools">
+  <h2 class="category-heading">Tools &amp; Code</h2>
+  <ol class="stories"><li class="story">
+  <h3 class="story-headline"><a href="story/2026-06-05-microsoft-unveils-scout-an-agentic-autopilot-for-microsoft-3-1f5c41.html">Microsoft Unveils Scout, an Agentic Autopilot for Microsoft 365 Workflows</a></h3>
+  <p class="story-summary">Microsoft announced wider testing for &#39;Scout,&#39; a new agentic Autopilot feature designed to work autonomously across Microsoft 365 applications, with each agent having its own identity.</p>
+  <div class="story-meta"><span>AI News</span><span class="dot">·</span><a href="https://www.artificialintelligence-news.com/news/microsofts-autopilot-scout-is-the-agentic-autopilot-that-works-across-m365/" target="_blank" rel="noopener noreferrer">artificialintelligence-news.com ↗</a></div>
+</li><li class="story">
+  <h3 class="story-headline"><a href="story/2026-06-05-stanford-researchers-release-openjarvis-a-local-first-framew-4490f6.html">Stanford Researchers Release OpenJarvis, a Local-First Framework for On-Device AI Agents</a></h3>
+  <p class="story-summary">Stanford researchers have introduced OpenJarvis, an open-source framework that enables personal AI agents with inference, memory, and learning to run entirely on-device, offering significant cost savings compared to cloud models.</p>
+  <div class="story-meta"><span>Marktechpost</span><span class="dot">·</span><a href="https://www.marktechpost.com/2026/06/03/meet-openjarvis-a-local-first-framework-for-on-device-personal-ai-agents-with-tools-memory-and-learning/" target="_blank" rel="noopener noreferrer">marktechpost.com ↗</a></div>
+</li><li class="story">
+  <h3 class="story-headline"><a href="story/2026-06-05-github-outlines-strategic-vision-for-ai-agents-and-their-imp-f0e213.html">GitHub Outlines Strategic Vision for AI Agents and Their Impact on Developer Workflows</a></h3>
+  <p class="story-summary">GitHub, a pioneer in AI coding with Copilot, has detailed its strategic plans for integrating AI agents into its platform to address the growing demands and evolving nature of agentic coding.</p>
+  <div class="story-meta"><span>Latent Space</span><span class="dot">·</span><a href="https://www.latent.space/p/github" target="_blank" rel="noopener noreferrer">latent.space ↗</a></div>
+</li></ol>
+</section><section class="category-section" id="cat-policy">
+  <h2 class="category-heading">Policy &amp; Safety</h2>
+  <ol class="stories"><li class="story">
+  <h3 class="story-headline"><a href="story/2026-06-05-ai-leaders-urge-congress-for-dna-security-laws-amidst-biowea-25a305.html">AI Leaders Urge Congress for DNA Security Laws Amidst Bioweapon Concerns</a></h3>
+  <p class="story-summary">Prominent AI leaders, including Sam Altman and Demis Hassabis, are calling on the US government to mandate screening of synthetic DNA orders, warning that AI could enable amateur virologists to create biological weapons.</p>
+  <div class="story-meta"><span>The Decoder</span><span class="dot">·</span><a href="https://the-decoder.com/ai-can-now-coach-amateur-virologists-and-top-tech-leaders-want-congress-to-act-on-dna-security/" target="_blank" rel="noopener noreferrer">the-decoder.com ↗</a></div>
+</li><li class="story">
+  <h3 class="story-headline"><a href="story/2026-06-05-google-allows-publishers-to-opt-out-of-ai-search-results-fol-c5fdd2.html">Google Allows Publishers to Opt Out of AI Search Results Following UK Regulatory Pressure</a></h3>
+  <p class="story-summary">Google is introducing an opt-out feature in Search Console for AI search features like AI Overviews, prompted by the UK&#39;s Competition and Markets Authority (CMA) to address concerns from website operators.</p>
+  <div class="story-meta"><span>The Decoder</span><span class="dot">·</span><a href="https://the-decoder.com/google-lets-sites-opt-out-of-ai-search-results-knowing-most-have-nowhere-else-to-go/" target="_blank" rel="noopener noreferrer">the-decoder.com ↗</a></div>
+</li><li class="story">
+  <h3 class="story-headline"><a href="story/2026-06-05-trumps-executive-order-calls-for-voluntary-ai-model-safety-r-172322.html">Trump&#39;s Executive Order Calls for Voluntary AI Model Safety Reviews by Government</a></h3>
+  <p class="story-summary">President Trump has issued an executive order encouraging AI developers to voluntarily submit their models for security testing by government agencies like the Pentagon and CISA, while explicitly ruling out mandatory approval.</p>
+  <div class="story-meta"><span>The Decoder</span><span class="dot">·</span><a href="https://the-decoder.com/trumps-new-executive-order-wants-ai-companies-to-voluntarily-submit-models-for-government-safety-reviews/" target="_blank" rel="noopener noreferrer">the-decoder.com ↗</a></div>
+</li></ol>
+</section>
+  </div>
+</main>
+<footer class="footer">
+  <div class="container">
+    <p>Arunkumar Panchanana &middot; AI tools &middot; Automation &middot; IT Leadership</p>
+    <p>Email: <a href="mailto:arunkumar.panchanana@gmail.com">arunkumar.panchanana@gmail.com</a></p>
+    
+    <div class="footer-meta">Updated <time datetime="2026-06-05T02:05:19Z">2026-06-05T02:05:19Z</time></div>
+  </div>
+</footer>
+</body>
+</html>
