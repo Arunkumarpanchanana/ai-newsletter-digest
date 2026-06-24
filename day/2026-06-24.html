@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>June 24, 2026 · AI News of the Day</title>
+<style>
+  :root {
+    --bg: #0B1F3A; --surface: #111827; --surface-2: #0F1F36;
+    --border: #1F2937; --border-strong: #2A3548;
+    --text: #E5E7EB; --text-2: #CBD5E1; --muted: #9CA3AF; --muted-2: #6B7280;
+    --white: #FFFFFF; --accent: #2563EB; --accent-hover: #3B82F6; --green: #10B981;
+    --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Arial, sans-serif;
+    --mono: ui-monospace, SFMono-Regular, "JetBrains Mono", Menlo, Consolas, monospace;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; font-family: var(--font); background: var(--bg); color: var(--text);
+    line-height: 1.6; -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--accent); }
+  a:hover { color: var(--accent-hover); }
+  .container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
+  .site-header { border-bottom: 1px solid var(--border); padding: 15px 0; background: var(--bg); }
+  .nav-wrap { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+  .logo { font-size: 1.1rem; font-weight: 700; color: var(--white); text-decoration: none; letter-spacing: 0.3px; }
+  .logo:hover { color: var(--accent-hover); }
+  .nav a { margin-left: 15px; text-decoration: none; color: var(--muted); font-size: 0.95rem; }
+  .nav a.active, .nav a:hover { color: var(--accent); }
+  .nav a:first-child { margin-left: 0; }
+  .tool-bar { border-bottom: 1px solid var(--border); padding: 12px 0; background: var(--surface-2); }
+  .tool-bar-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; font-size: 0.85rem; }
+  .tool-name { color: var(--text-2); font-weight: 600; letter-spacing: 0.02em; }
+  .tool-bar a { color: var(--muted); text-decoration: none; }
+  .tool-bar a:hover { color: var(--accent); }
+  main { padding: 56px 0 80px; }
+  .page-header { margin-bottom: 40px; }
+  .page-header h1 { margin: 8px 0 12px; font-size: 32px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.2; color: var(--white); }
+  .page-header p { color: var(--text-2); font-size: 16px; margin: 0; max-width: 600px; }
+  .section-eyebrow { font-size: 12px; font-weight: 600; color: var(--accent); letter-spacing: 0.08em; text-transform: uppercase; }
+  .category-nav { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 32px; padding-bottom: 16px; border-bottom: 1px solid var(--border); }
+  .category-nav a { display: inline-flex; align-items: center; gap: 8px; padding: 7px 14px; background: var(--surface); border: 1px solid var(--border); border-radius: 999px; text-decoration: none; color: var(--text-2); font-size: 13px; font-weight: 500; transition: all 0.15s; }
+  .category-nav a:hover { border-color: var(--accent); color: var(--accent); background: rgba(37, 99, 235, 0.08); }
+  .category-nav .cat-count { font-size: 11px; font-weight: 600; background: var(--bg); color: var(--muted); padding: 1px 7px; border-radius: 999px; font-variant-numeric: tabular-nums; }
+  .category-section { margin: 48px 0 0; scroll-margin-top: 24px; }
+  .category-section:first-of-type { margin-top: 24px; }
+  .category-heading { font-size: 20px; font-weight: 700; letter-spacing: -0.015em; margin: 0 0 16px; padding-bottom: 10px; border-bottom: 1px solid var(--border); color: var(--white); }
+  .stories { list-style: none; padding: 0; margin: 0; counter-reset: story; }
+  .story { counter-increment: story; padding: 24px 0; border-bottom: 1px solid var(--border); position: relative; padding-left: 44px; }
+  .story:last-child { border-bottom: 0; }
+  .story::before { content: counter(story); position: absolute; left: 0; top: 26px; font-size: 12px; font-weight: 600; color: var(--muted); width: 24px; height: 24px; border: 1px solid var(--border); border-radius: 50%; display: grid; place-items: center; background: var(--surface); font-variant-numeric: tabular-nums; }
+  .story-headline { font-size: 18px; font-weight: 600; line-height: 1.35; letter-spacing: -0.01em; margin: 0 0 8px; }
+  .story-headline a { color: var(--white); text-decoration: none; transition: color 0.15s; }
+  .story-headline a:hover { color: var(--accent-hover); }
+  .story-summary { margin: 0 0 10px; color: var(--text-2); font-size: 15px; }
+  .story-meta { display: flex; gap: 8px; font-size: 13px; color: var(--muted); align-items: center; }
+  .story-meta a { color: var(--muted); text-decoration: none; }
+  .story-meta a:hover { color: var(--accent); }
+  .story-meta .dot { color: var(--muted-2); }
+  .story-detail h1 { font-size: 32px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.2; margin: 12px 0 24px; color: var(--white); }
+  .story-summary-large { font-size: 18px; color: var(--text-2); line-height: 1.6; margin: 0 0 32px; }
+  .why-section { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 20px 24px; margin: 32px 0; }
+  .why-section h2, .why-section h3 { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); margin: 0 0 8px; }
+  .why-section p { margin: 0; color: var(--text); font-size: 15px; }
+  .read-original { margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--border); }
+  .read-original a { color: var(--accent); text-decoration: none; font-weight: 500; display: inline-block; padding: 10px 16px; background: var(--surface); border: 1px solid var(--border); border-radius: 6px; transition: all 0.15s; }
+  .read-original a:hover { background: var(--accent); color: var(--white); border-color: var(--accent); }
+  .prompt-title { font-size: 26px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.25; margin: 8px 0 6px; color: var(--white); }
+  .prompt-subtitle { color: var(--text-2); font-size: 15px; margin: 0 0 24px; }
+  .prompt-block { border: 1px solid var(--border); border-radius: 10px; overflow: hidden; background: var(--surface); margin: 24px 0; }
+  .prompt-block-header { display: flex; align-items: center; justify-content: space-between; padding: 12px 18px; background: var(--surface-2); border-bottom: 1px solid var(--border); }
+  .prompt-label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); }
+  .copy-btn { background: var(--accent); color: var(--white); border: none; border-radius: 6px; padding: 7px 16px; font: 500 12px var(--font); cursor: pointer; transition: background 0.15s, transform 0.05s; }
+  .copy-btn:hover { background: var(--accent-hover); }
+  .copy-btn:active { transform: scale(0.97); }
+  .copy-btn.copied { background: var(--green); }
+  .prompt-text { margin: 0; padding: 22px 22px 24px; font-family: var(--mono); font-size: 13.5px; line-height: 1.7; color: var(--text); white-space: pre-wrap; word-wrap: break-word; background: transparent; }
+  .example-section { margin: 24px 0; padding: 14px 20px; border-left: 3px solid var(--accent); background: var(--surface); border-radius: 0 8px 8px 0; }
+  .example-section h3 { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); margin: 0 0 6px; }
+  .example-section p { margin: 0; color: var(--text-2); font-size: 14px; font-style: italic; }
+  .archive-section { margin-top: 64px; padding-top: 32px; border-top: 1px solid var(--border); }
+  .archive-section h2 { font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin: 0 0 16px; }
+  .archive-list { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 8px; }
+  .archive-list li { padding: 4px 0; }
+  .archive-list a { color: var(--text-2); text-decoration: none; font-size: 14px; }
+  .archive-list a:hover { color: var(--accent); }
+  .empty { color: var(--muted); font-style: italic; }
+  .footer { text-align: center; padding: 24px 20px; margin-top: 40px; border-top: 1px solid var(--border); color: var(--muted); font-size: 13px; }
+  .footer p { margin: 4px 0; }
+  .footer a { color: var(--text-2); text-decoration: none; }
+  .footer a:hover { color: var(--accent); }
+  .footer .footer-meta { margin-top: 8px; font-size: 11px; color: var(--muted-2); font-variant-numeric: tabular-nums; }
+  @media (max-width: 600px) {
+    .nav a { margin-left: 12px; font-size: 0.9rem; }
+    .page-header h1, .story-detail h1 { font-size: 26px; }
+    main { padding: 36px 0 60px; }
+  }
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="container nav-wrap">
+    <a href="https://arunkumarpanchanana.github.io/" class="logo">Arunkumar Panchanana</a>
+    <nav class="nav">
+      <a href="https://arunkumarpanchanana.github.io/">Home</a>
+      <a href="https://arunkumarpanchanana.github.io/about.html">About</a>
+      <a href="https://arunkumarpanchanana.github.io/tools.html" class="active">Tools</a>
+    </nav>
+  </div>
+</header>
+<div class="tool-bar">
+  <div class="container tool-bar-inner">
+    <span class="tool-name">AI News of the Day</span>
+    <span><a href="../index.html">← Back to today</a></span>
+  </div>
+</div>
+<main>
+  <div class="container">
+    
+<header class="page-header">
+  <div class="section-eyebrow">June 24, 2026</div>
+  <h1>AI News of the Day</h1>
+</header>
+<nav class="category-nav"><a href="#cat-models">Models &amp; Research <span class="cat-count">3</span></a><a href="#cat-industry">Industry &amp; Business <span class="cat-count">3</span></a><a href="#cat-tools">Tools &amp; Code <span class="cat-count">3</span></a><a href="#cat-policy">Policy &amp; Safety <span class="cat-count">3</span></a></nav>
+<section class="category-section" id="cat-models">
+  <h2 class="category-heading">Models &amp; Research</h2>
+  <ol class="stories"><li class="story">
+  <h3 class="story-headline"><a href="story/2026-06-24-openais-gpt-55-cyber-surpasses-anthropics-mythos-in-cybersec-da339c.html">OpenAI&#39;s GPT-5.5-Cyber surpasses Anthropic&#39;s Mythos in cybersecurity benchmarks</a></h3>
+  <p class="story-summary">OpenAI&#39;s new GPT-5.5-Cyber model, part of its Daybreak initiative, has reportedly outperformed Anthropic&#39;s Mythos on key cybersecurity benchmarks.</p>
+  <div class="story-meta"><span>The Decoder</span><span class="dot">·</span><a href="https://the-decoder.com/openai-says-new-gpt-5-5-cyber-outperforms-anthropics-mythos-on-cybersecurity-benchmark/" target="_blank" rel="noopener noreferrer">the-decoder.com ↗</a></div>
+</li><li class="story">
+  <h3 class="story-headline"><a href="story/2026-06-24-bytedances-seedance-25-ai-model-generates-videos-longer-than-bdaeb0.html">ByteDance&#39;s Seedance 2.5 AI model generates videos longer than 30 seconds</a></h3>
+  <p class="story-summary">ByteDance has introduced Seedance 2.5, a new AI video generation model capable of creating videos exceeding 30 seconds in length, set to launch in early July.</p>
+  <div class="story-meta"><span>The Decoder</span><span class="dot">·</span><a href="https://the-decoder.com/bytedances-seedance-2-5-breaks-the-30-second-barrier-for-ai-video-generation/" target="_blank" rel="noopener noreferrer">the-decoder.com ↗</a></div>
+</li><li class="story">
+  <h3 class="story-headline"><a href="story/2026-06-24-sakana-ais-fugu-orchestrates-multiple-llms-to-rival-top-mode-ffd922.html">Sakana AI&#39;s Fugu orchestrates multiple LLMs to rival top models like Anthropic&#39;s Fable</a></h3>
+  <p class="story-summary">Japanese startup Sakana AI has launched Fugu, a system that dynamically coordinates multiple AI models to achieve performance comparable to leading frontier LLMs like Anthropic&#39;s Fable 5.</p>
+  <div class="story-meta"><span>The Decoder</span><span class="dot">·</span><a href="https://the-decoder.com/sakana-ais-fugu-orchestrates-multiple-llms-to-match-anthropics-fable-and-mythos-benchmarks/" target="_blank" rel="noopener noreferrer">the-decoder.com ↗</a></div>
+</li></ol>
+</section><section class="category-section" id="cat-industry">
+  <h2 class="category-heading">Industry &amp; Business</h2>
+  <ol class="stories"><li class="story">
+  <h3 class="story-headline"><a href="story/2026-06-24-spacex-secures-150mmonth-compute-deal-with-reflection-ai-for-624c08.html">SpaceX secures $150M/month compute deal with Reflection AI for Nvidia GB300 chips</a></h3>
+  <p class="story-summary">SpaceX has signed a compute deal worth $150 million per month with open-source AI lab Reflection AI, providing immediate access to Nvidia&#39;s latest GB300 AI chips.</p>
+  <div class="story-meta"><span>TechCrunch AI</span><span class="dot">·</span><a href="https://techcrunch.com/2026/06/22/spacex-inks-compute-deal-with-reflection-ai-an-open-source-ai-lab/" target="_blank" rel="noopener noreferrer">techcrunch.com ↗</a></div>
+</li><li class="story">
+  <h3 class="story-headline"><a href="story/2026-06-24-microsoft-building-2-gigawatt-data-center-in-texas-with-dedi-eeffd1.html">Microsoft building 2-gigawatt data center in Texas with dedicated gas plant</a></h3>
+  <p class="story-summary">Microsoft is constructing a massive 2-gigawatt data center campus in Pecos, Texas, which will include its own gas power plant to ensure stable energy supply and address local grid concerns.</p>
+  <div class="story-meta"><span>The Decoder</span><span class="dot">·</span><a href="https://the-decoder.com/microsoft-is-building-a-2-gigawatt-data-center-in-texas-with-its-own-gas-plant-to-dodge-the-grid/" target="_blank" rel="noopener noreferrer">the-decoder.com ↗</a></div>
+</li><li class="story">
+  <h3 class="story-headline"><a href="story/2026-06-24-google-deepmind-invests-75m-in-a24-for-ai-filmmaking-tools-p-17cf73.html">Google DeepMind invests $75M in A24 for AI filmmaking tools partnership</a></h3>
+  <p class="story-summary">Google DeepMind and film studio A24 are partnering in a long-term research collaboration, with Google investing approximately $75 million into A24 to develop AI filmmaking tools.</p>
+  <div class="story-meta"><span>TechCrunch AI</span><span class="dot">·</span><a href="https://techcrunch.com/2026/06/22/google-deepmind-bets-75m-on-ais-future-in-hollywood-with-a24-deal/" target="_blank" rel="noopener noreferrer">techcrunch.com ↗</a></div>
+</li></ol>
+</section><section class="category-section" id="cat-tools">
+  <h2 class="category-heading">Tools &amp; Code</h2>
+  <ol class="stories"><li class="story">
+  <h3 class="story-headline"><a href="story/2026-06-24-openai-introduces-daybreak-initiative-with-new-ai-tools-for--b63e5c.html">OpenAI introduces Daybreak initiative with new AI tools for cybersecurity</a></h3>
+  <p class="story-summary">OpenAI has launched Daybreak, an initiative featuring new tools like Codex Security and GPT-5.5-Cyber, designed to help organizations find, validate, and patch software vulnerabilities at scale.</p>
+  <div class="story-meta"><span>OpenAI</span><span class="dot">·</span><a href="https://openai.com/index/daybreak-securing-the-world" target="_blank" rel="noopener noreferrer">openai.com ↗</a></div>
+</li><li class="story">
+  <h3 class="story-headline"><a href="story/2026-06-24-anthropics-claude-tag-integrates-as-an-always-on-ai-teammate-c4b83b.html">Anthropic&#39;s Claude Tag integrates as an always-on AI teammate in Slack</a></h3>
+  <p class="story-summary">Anthropic&#39;s new Claude Tag feature brings an always-on AI teammate directly into Slack, designed to learn and leverage a company&#39;s organizational context and institutional knowledge.</p>
+  <div class="story-meta"><span>TechCrunch AI</span><span class="dot">·</span><a href="https://techcrunch.com/2026/06/23/anthropics-claude-tag-is-learning-your-company-one-slack-message-at-a-time/" target="_blank" rel="noopener noreferrer">techcrunch.com ↗</a></div>
+</li><li class="story">
+  <h3 class="story-headline"><a href="story/2026-06-24-xai-launches-goal-in-grok-build-for-autonomous-verified-mult-a69f3a.html">xAI launches &#39;/goal&#39; in Grok Build for autonomous, verified multi-step coding</a></h3>
+  <p class="story-summary">xAI has introduced &#39;/goal&#39; in Grok Build, enabling long-running, autonomous execution of multi-step coding tasks with built-in verification, where the agent plans, executes, and verifies results.</p>
+  <div class="story-meta"><span>Marktechpost</span><span class="dot">·</span><a href="https://www.marktechpost.com/2026/06/22/xai-launches-goal-in-grok-build-adding-long-running-autonomous-execution-with-built-in-verification-for-multi-step-coding-tasks/" target="_blank" rel="noopener noreferrer">marktechpost.com ↗</a></div>
+</li></ol>
+</section><section class="category-section" id="cat-policy">
+  <h2 class="category-heading">Policy &amp; Safety</h2>
+  <ol class="stories"><li class="story">
+  <h3 class="story-headline"><a href="story/2026-06-24-five-eyes-alliance-warns-frontier-ai-could-reshape-offensive-bb2b77.html">Five Eyes alliance warns frontier AI could reshape offensive cyber operations in months</a></h3>
+  <p class="story-summary">The Five Eyes intelligence alliance has issued a warning that advanced frontier AI models could fundamentally alter offensive cyber operations within a matter of months.</p>
+  <div class="story-meta"><span>The Decoder</span><span class="dot">·</span><a href="https://the-decoder.com/five-eyes-intelligence-alliance-says-frontier-ai-models-could-reshape-offensive-cyber-ops-in-months/" target="_blank" rel="noopener noreferrer">the-decoder.com ↗</a></div>
+</li><li class="story">
+  <h3 class="story-headline"><a href="story/2026-06-24-anthropics-warnings-about-advanced-ai-may-lead-to-export-res-b58a8a.html">Anthropic&#39;s warnings about advanced AI may lead to export restrictions</a></h3>
+  <p class="story-summary">Anthropic&#39;s public warnings about the dangers of advanced AI are reportedly being considered as a factor that could lead to the company facing an AI export ban.</p>
+  <div class="story-meta"><span>Ars Technica AI</span><span class="dot">·</span><a href="https://arstechnica.com/ai/2026/06/how-anthropic-may-have-talked-itself-into-an-ai-export-ban/" target="_blank" rel="noopener noreferrer">arstechnica.com ↗</a></div>
+</li><li class="story">
+  <h3 class="story-headline"><a href="story/2026-06-24-openai-helps-establish-shared-standards-for-advanced-ai-thro-aec47b.html">OpenAI helps establish shared standards for advanced AI through Appia Foundation</a></h3>
+  <p class="story-summary">OpenAI is actively contributing to the development of shared standards for advanced AI, supporting evaluation frameworks, safety practices, and global cooperation via the Appia Foundation.</p>
+  <div class="story-meta"><span>OpenAI</span><span class="dot">·</span><a href="https://openai.com/index/helping-build-shared-standards-for-advanced-ai" target="_blank" rel="noopener noreferrer">openai.com ↗</a></div>
+</li></ol>
+</section>
+  </div>
+</main>
+<footer class="footer">
+  <div class="container">
+    <p>Arunkumar Panchanana &middot; AI tools &middot; Automation &middot; IT Leadership</p>
+    <p>Email: <a href="mailto:arunkumar.panchanana@gmail.com">arunkumar.panchanana@gmail.com</a></p>
+    
+    <div class="footer-meta">Updated <time datetime="2026-06-24T02:05:00Z">2026-06-24T02:05:00Z</time></div>
+  </div>
+</footer>
+</body>
+</html>
