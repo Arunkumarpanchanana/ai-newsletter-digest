@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>July 13, 2026 · AI News of the Day</title>
+<style>
+  :root {
+    --bg: #0B1F3A; --surface: #111827; --surface-2: #0F1F36;
+    --border: #1F2937; --border-strong: #2A3548;
+    --text: #E5E7EB; --text-2: #CBD5E1; --muted: #9CA3AF; --muted-2: #6B7280;
+    --white: #FFFFFF; --accent: #2563EB; --accent-hover: #3B82F6; --green: #10B981;
+    --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Arial, sans-serif;
+    --mono: ui-monospace, SFMono-Regular, "JetBrains Mono", Menlo, Consolas, monospace;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; font-family: var(--font); background: var(--bg); color: var(--text);
+    line-height: 1.6; -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--accent); }
+  a:hover { color: var(--accent-hover); }
+  .container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
+  .site-header { border-bottom: 1px solid var(--border); padding: 15px 0; background: var(--bg); }
+  .nav-wrap { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+  .logo { font-size: 1.1rem; font-weight: 700; color: var(--white); text-decoration: none; letter-spacing: 0.3px; }
+  .logo:hover { color: var(--accent-hover); }
+  .nav a { margin-left: 15px; text-decoration: none; color: var(--muted); font-size: 0.95rem; }
+  .nav a.active, .nav a:hover { color: var(--accent); }
+  .nav a:first-child { margin-left: 0; }
+  .tool-bar { border-bottom: 1px solid var(--border); padding: 12px 0; background: var(--surface-2); }
+  .tool-bar-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; font-size: 0.85rem; }
+  .tool-name { color: var(--text-2); font-weight: 600; letter-spacing: 0.02em; }
+  .tool-bar a { color: var(--muted); text-decoration: none; }
+  .tool-bar a:hover { color: var(--accent); }
+  main { padding: 56px 0 80px; }
+  .page-header { margin-bottom: 40px; }
+  .page-header h1 { margin: 8px 0 12px; font-size: 32px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.2; color: var(--white); }
+  .page-header p { color: var(--text-2); font-size: 16px; margin: 0; max-width: 600px; }
+  .section-eyebrow { font-size: 12px; font-weight: 600; color: var(--accent); letter-spacing: 0.08em; text-transform: uppercase; }
+  .category-nav { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 32px; padding-bottom: 16px; border-bottom: 1px solid var(--border); }
+  .category-nav a { display: inline-flex; align-items: center; gap: 8px; padding: 7px 14px; background: var(--surface); border: 1px solid var(--border); border-radius: 999px; text-decoration: none; color: var(--text-2); font-size: 13px; font-weight: 500; transition: all 0.15s; }
+  .category-nav a:hover { border-color: var(--accent); color: var(--accent); background: rgba(37, 99, 235, 0.08); }
+  .category-nav .cat-count { font-size: 11px; font-weight: 600; background: var(--bg); color: var(--muted); padding: 1px 7px; border-radius: 999px; font-variant-numeric: tabular-nums; }
+  .category-section { margin: 48px 0 0; scroll-margin-top: 24px; }
+  .category-section:first-of-type { margin-top: 24px; }
+  .category-heading { font-size: 20px; font-weight: 700; letter-spacing: -0.015em; margin: 0 0 16px; padding-bottom: 10px; border-bottom: 1px solid var(--border); color: var(--white); }
+  .stories { list-style: none; padding: 0; margin: 0; counter-reset: story; }
+  .story { counter-increment: story; padding: 24px 0; border-bottom: 1px solid var(--border); position: relative; padding-left: 44px; }
+  .story:last-child { border-bottom: 0; }
+  .story::before { content: counter(story); position: absolute; left: 0; top: 26px; font-size: 12px; font-weight: 600; color: var(--muted); width: 24px; height: 24px; border: 1px solid var(--border); border-radius: 50%; display: grid; place-items: center; background: var(--surface); font-variant-numeric: tabular-nums; }
+  .story-headline { font-size: 18px; font-weight: 600; line-height: 1.35; letter-spacing: -0.01em; margin: 0 0 8px; }
+  .story-headline a { color: var(--white); text-decoration: none; transition: color 0.15s; }
+  .story-headline a:hover { color: var(--accent-hover); }
+  .story-summary { margin: 0 0 10px; color: var(--text-2); font-size: 15px; }
+  .story-meta { display: flex; gap: 8px; font-size: 13px; color: var(--muted); align-items: center; }
+  .story-meta a { color: var(--muted); text-decoration: none; }
+  .story-meta a:hover { color: var(--accent); }
+  .story-meta .dot { color: var(--muted-2); }
+  .story-detail h1 { font-size: 32px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.2; margin: 12px 0 24px; color: var(--white); }
+  .story-summary-large { font-size: 18px; color: var(--text-2); line-height: 1.6; margin: 0 0 32px; }
+  .why-section { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 20px 24px; margin: 32px 0; }
+  .why-section h2, .why-section h3 { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); margin: 0 0 8px; }
+  .why-section p { margin: 0; color: var(--text); font-size: 15px; }
+  .read-original { margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--border); }
+  .read-original a { color: var(--accent); text-decoration: none; font-weight: 500; display: inline-block; padding: 10px 16px; background: var(--surface); border: 1px solid var(--border); border-radius: 6px; transition: all 0.15s; }
+  .read-original a:hover { background: var(--accent); color: var(--white); border-color: var(--accent); }
+  .prompt-title { font-size: 26px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.25; margin: 8px 0 6px; color: var(--white); }
+  .prompt-subtitle { color: var(--text-2); font-size: 15px; margin: 0 0 24px; }
+  .prompt-block { border: 1px solid var(--border); border-radius: 10px; overflow: hidden; background: var(--surface); margin: 24px 0; }
+  .prompt-block-header { display: flex; align-items: center; justify-content: space-between; padding: 12px 18px; background: var(--surface-2); border-bottom: 1px solid var(--border); }
+  .prompt-label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); }
+  .copy-btn { background: var(--accent); color: var(--white); border: none; border-radius: 6px; padding: 7px 16px; font: 500 12px var(--font); cursor: pointer; transition: background 0.15s, transform 0.05s; }
+  .copy-btn:hover { background: var(--accent-hover); }
+  .copy-btn:active { transform: scale(0.97); }
+  .copy-btn.copied { background: var(--green); }
+  .prompt-text { margin: 0; padding: 22px 22px 24px; font-family: var(--mono); font-size: 13.5px; line-height: 1.7; color: var(--text); white-space: pre-wrap; word-wrap: break-word; background: transparent; }
+  .example-section { margin: 24px 0; padding: 14px 20px; border-left: 3px solid var(--accent); background: var(--surface); border-radius: 0 8px 8px 0; }
+  .example-section h3 { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); margin: 0 0 6px; }
+  .example-section p { margin: 0; color: var(--text-2); font-size: 14px; font-style: italic; }
+  .prompt-list { list-style: none; padding: 0; margin: 0; }
+  .prompt-list li { padding: 0; border-bottom: 1px solid var(--border); }
+  .prompt-list li:last-child { border-bottom: 0; }
+  .prompt-list a { display: flex; align-items: center; gap: 16px; padding: 14px 16px; text-decoration: none; color: var(--text-2); transition: all 0.12s; border-radius: 6px; }
+  .prompt-list a:hover { background: rgba(37,99,235,0.06); color: var(--white); }
+  .prompt-date { font-size: 12px; color: var(--muted-2); white-space: nowrap; font-variant-numeric: tabular-nums; min-width: 85px; }
+  .prompt-title { font-size: 15px; font-weight: 500; }
+  .prompt-list a:hover .prompt-title { color: var(--accent-hover); }
+  @media (max-width: 600px) {
+    .prompt-list a { flex-direction: column; align-items: flex-start; gap: 4px; padding: 12px 8px; }
+  }
+  .archive-section { margin-top: 64px; padding-top: 32px; border-top: 1px solid var(--border); }
+  .archive-section h2 { font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin: 0 0 16px; }
+  .archive-list { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 8px; }
+  .archive-list li { padding: 4px 0; }
+  .archive-list a { color: var(--text-2); text-decoration: none; font-size: 14px; }
+  .archive-list a:hover { color: var(--accent); }
+  .empty { color: var(--muted); font-style: italic; }
+  .footer { text-align: center; padding: 24px 20px; margin-top: 40px; border-top: 1px solid var(--border); color: var(--muted); font-size: 13px; }
+  .footer p { margin: 4px 0; }
+  .footer a { color: var(--text-2); text-decoration: none; }
+  .footer a:hover { color: var(--accent); }
+  .footer .footer-meta { margin-top: 8px; font-size: 11px; color: var(--muted-2); font-variant-numeric: tabular-nums; }
+  @media (max-width: 600px) {
+    .nav a { margin-left: 12px; font-size: 0.9rem; }
+    .page-header h1, .story-detail h1 { font-size: 26px; }
+    main { padding: 36px 0 60px; }
+  }
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="container nav-wrap">
+    <a href="https://arunkumarpanchanana.github.io/" class="logo">Arunkumar Panchanana</a>
+    <nav class="nav">
+      <a href="https://arunkumarpanchanana.github.io/">Home</a>
+      <a href="https://arunkumarpanchanana.github.io/about.html">About</a>
+      <a href="https://arunkumarpanchanana.github.io/tools.html" class="active">Tools</a>
+    </nav>
+  </div>
+</header>
+<div class="tool-bar">
+  <div class="container tool-bar-inner">
+    <span class="tool-name">AI News of the Day</span>
+    <span><a href="../index.html">← Back to today</a></span>
+  </div>
+</div>
+<main>
+  <div class="container">
+    
+<header class="page-header">
+  <div class="section-eyebrow">July 13, 2026</div>
+  <h1>AI News of the Day</h1>
+</header>
+<nav class="category-nav"><a href="#cat-models">Models &amp; Research <span class="cat-count">2</span></a><a href="#cat-industry">Industry &amp; Business <span class="cat-count">3</span></a><a href="#cat-tools">Tools &amp; Code <span class="cat-count">3</span></a><a href="#cat-policy">Policy &amp; Safety <span class="cat-count">3</span></a></nav>
+<section class="category-section" id="cat-models">
+  <h2 class="category-heading">Models &amp; Research</h2>
+  <ol class="stories"><li class="story">
+  <h3 class="story-headline"><a href="story/2026-07-13-university-of-michigan-introduces-neurovfm-a-neuroimaging-fo-e4ff10.html">University of Michigan Introduces NeuroVFM, a Neuroimaging Foundation Model Trained on 5.24M Clinical Volumes</a></h3>
+  <p class="story-summary">Researchers from the University of Michigan have developed NeuroVFM, a generalist neuroimaging foundation model trained on 5.24 million uncurated clinical MRI and CT scans using a volumetric JEPA approach.</p>
+  <div class="story-meta"><span>Marktechpost</span><span class="dot">·</span><a href="https://www.marktechpost.com/2026/07/12/meet-neurovfm-a-new-neuroimaging-foundation-model-trained-with-vol-jepa-on-uncurated-clinical-mri-and-ct-volumes/" target="_blank" rel="noopener noreferrer">marktechpost.com ↗</a></div>
+</li><li class="story">
+  <h3 class="story-headline"><a href="story/2026-07-13-google-research-unveils-sensorfm-a-wearable-health-foundatio-79e4db.html">Google Research Unveils SensorFM, a Wearable Health Foundation Model Pretrained on Trillions of Minutes of Sensor Data</a></h3>
+  <p class="story-summary">Google Research, DeepMind, and university collaborators introduced SensorFM, a wearable health foundation model trained on over one trillion minutes of unlabeled sensor signals from five million participants.</p>
+  <div class="story-meta"><span>Marktechpost</span><span class="dot">·</span><a href="https://www.marktechpost.com/2026/07/10/google-research-introduces-sensorfm-a-wearable-health-foundation-model-pretrained-on-one-trillion-minutes-of-sensor-data/" target="_blank" rel="noopener noreferrer">marktechpost.com ↗</a></div>
+</li></ol>
+</section><section class="category-section" id="cat-industry">
+  <h2 class="category-heading">Industry &amp; Business</h2>
+  <ol class="stories"><li class="story">
+  <h3 class="story-headline"><a href="story/2026-07-13-apple-sues-openai-alleging-trade-secret-theft-directed-by-se-3daaf0.html">Apple Sues OpenAI Alleging Trade Secret Theft Directed by Senior Leadership</a></h3>
+  <p class="story-summary">Apple has filed a lawsuit against OpenAI, accusing the AI company of trade secret theft, with allegations pointing to misconduct directed by OpenAI&#39;s senior leadership, including a former Apple employee.</p>
+  <div class="story-meta"><span>TechCrunch AI</span><span class="dot">·</span><a href="https://techcrunch.com/2026/07/10/apple-sues-openai-over-alleged-trade-secret-theft/" target="_blank" rel="noopener noreferrer">techcrunch.com ↗</a></div>
+</li><li class="story">
+  <h3 class="story-headline"><a href="story/2026-07-13-sp-global-downgrades-oracles-credit-rating-citing-openai-as--2dab6e.html">S&amp;P Global Downgrades Oracle&#39;s Credit Rating, Citing OpenAI as a Key Credit Risk</a></h3>
+  <p class="story-summary">S&amp;P Global has lowered Oracle&#39;s credit rating to &quot;BBB-&quot;, one notch above junk status, due to OpenAI accounting for roughly half of Oracle&#39;s $638 billion in contractual obligations.</p>
+  <div class="story-meta"><span>The Decoder</span><span class="dot">·</span><a href="https://the-decoder.com/sp-global-sees-openai-as-a-key-credit-risk-for-oracle-and-cuts-its-credit-rating/" target="_blank" rel="noopener noreferrer">the-decoder.com ↗</a></div>
+</li><li class="story">
+  <h3 class="story-headline"><a href="story/2026-07-13-deutsche-telekom-adopts-openai-to-become-an-ai-native-telco--521cb8.html">Deutsche Telekom Adopts OpenAI to Become an AI-Native Telco, Transforming Operations and Customer Service</a></h3>
+  <p class="story-summary">Deutsche Telekom is integrating OpenAI&#39;s AI across its operations, aiming to become an &quot;AI-native telco&quot; by transforming customer service, employee workflows, and network operations.</p>
+  <div class="story-meta"><span>OpenAI</span><span class="dot">·</span><a href="https://openai.com/index/deutsche-telekom" target="_blank" rel="noopener noreferrer">openai.com ↗</a></div>
+</li></ol>
+</section><section class="category-section" id="cat-tools">
+  <h2 class="category-heading">Tools &amp; Code</h2>
+  <ol class="stories"><li class="story">
+  <h3 class="story-headline"><a href="story/2026-07-13-claude-code-integrates-built-in-browser-for-ai-to-read-click-57ce05.html">Claude Code Integrates Built-in Browser for AI to Read, Click, and Type on External Websites</a></h3>
+  <p class="story-summary">Claude Code now features a built-in browser, enabling the AI to directly interact with web pages by reading, clicking, and typing within its development environment, with user approval for sensitive actions.</p>
+  <div class="story-meta"><span>The Decoder</span><span class="dot">·</span><a href="https://the-decoder.com/claude-code-now-has-a-built-in-browser-that-lets-the-ai-read-click-and-type-on-external-websites/" target="_blank" rel="noopener noreferrer">the-decoder.com ↗</a></div>
+</li><li class="story">
+  <h3 class="story-headline"><a href="story/2026-07-13-nvidia-releases-coding-guide-for-tile-based-gpu-programming--f94530.html">NVIDIA Releases Coding Guide for Tile-Based GPU Programming, Covering cuTile, Triton, and Flash Attention</a></h3>
+  <p class="story-summary">NVIDIA has published a comprehensive coding guide exploring tile-based GPU programming, demonstrating techniques from cuTile and Triton kernels to implementing Flash Attention for optimized performance.</p>
+  <div class="story-meta"><span>Marktechpost</span><span class="dot">·</span><a href="https://www.marktechpost.com/2026/07/11/a-coding-guide-to-nvidias-tile-based-gpu-programming-from-cutile-and-triton-kernels-to-flash-attention/" target="_blank" rel="noopener noreferrer">marktechpost.com ↗</a></div>
+</li><li class="story">
+  <h3 class="story-headline"><a href="story/2026-07-13-guide-to-loop-engineering-details-how-to-build-autonomous-ai-1e24a6.html">Guide to Loop Engineering Details How to Build Autonomous AI Machine Learning Research Agents</a></h3>
+  <p class="story-summary">A new guide explains &quot;Loop Engineering,&quot; a methodology that transforms AI agents into autonomous machine learning research loops using concepts like autoresearch and bilevel autoresearch.</p>
+  <div class="story-meta"><span>Marktechpost</span><span class="dot">·</span><a href="https://www.marktechpost.com/2026/07/12/guide-to-loop-engineering/" target="_blank" rel="noopener noreferrer">marktechpost.com ↗</a></div>
+</li></ol>
+</section><section class="category-section" id="cat-policy">
+  <h2 class="category-heading">Policy &amp; Safety</h2>
+  <ol class="stories"><li class="story">
+  <h3 class="story-headline"><a href="story/2026-07-13-meta-removes-controversial-muse-image-feature-allowing-ai-ph-bc7c78.html">Meta Removes Controversial Muse Image Feature Allowing AI Photo Generation of Instagram Users Without Consent</a></h3>
+  <p class="story-summary">Meta has pulled its Muse Image feature after backlash, which previously allowed users to generate AI images of public Instagram accounts without explicit consent from the individuals depicted.</p>
+  <div class="story-meta"><span>The Decoder</span><span class="dot">·</span><a href="https://the-decoder.com/meta-kills-muse-image-feature-that-let-anyone-generate-ai-photos-of-instagram-users-without-consent/" target="_blank" rel="noopener noreferrer">the-decoder.com ↗</a></div>
+</li><li class="story">
+  <h3 class="story-headline"><a href="story/2026-07-13-brown-professor-reports-significant-grade-drop-in-exams-take-cd68a0.html">Brown Professor Reports Significant Grade Drop in Exams Taken Without AI, Highlighting Cheating Concerns</a></h3>
+  <p class="story-summary">An economics professor at Brown University observed a drastic drop in exam grades, from a 96% average with AI use to 48% without, suggesting widespread AI-assisted cheating among students.</p>
+  <div class="story-meta"><span>The Decoder</span><span class="dot">·</span><a href="https://the-decoder.com/grades-dropped-from-96-to-48-percent-when-a-brown-professor-made-students-take-the-exam-without-ai/" target="_blank" rel="noopener noreferrer">the-decoder.com ↗</a></div>
+</li><li class="story">
+  <h3 class="story-headline"><a href="story/2026-07-13-local-communities-begin-fighting-against-the-environmental-a-3343e3.html">Local Communities Begin Fighting Against the Environmental and Social Impact of New AI Data Centers</a></h3>
+  <p class="story-summary">Communities are increasingly organizing to oppose the construction of new AI data centers, citing concerns about their significant energy consumption, water usage, and local environmental impact.</p>
+  <div class="story-meta"><span>The Verge AI</span><span class="dot">·</span><a href="https://www.theverge.com/column/963346/ai-data-centers-fight" target="_blank" rel="noopener noreferrer">theverge.com ↗</a></div>
+</li></ol>
+</section>
+  </div>
+</main>
+<footer class="footer">
+  <div class="container">
+    <p>Arunkumar Panchanana &middot; AI tools &middot; Automation &middot; IT Leadership</p>
+    <p>Email: <a href="mailto:arunkumar.panchanana@gmail.com">arunkumar.panchanana@gmail.com</a></p>
+    
+    <div class="footer-meta">Updated <time datetime="2026-07-13T02:04:55Z">2026-07-13T02:04:55Z</time></div>
+  </div>
+</footer>
+</body>
+</html>
