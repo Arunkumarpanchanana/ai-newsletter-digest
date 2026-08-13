@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>August 13, 2026 · AI News of the Day</title>
+<style>
+  :root {
+    --bg: #0B1F3A; --surface: #111827; --surface-2: #0F1F36;
+    --border: #1F2937; --border-strong: #2A3548;
+    --text: #E5E7EB; --text-2: #CBD5E1; --muted: #9CA3AF; --muted-2: #6B7280;
+    --white: #FFFFFF; --accent: #2563EB; --accent-hover: #3B82F6; --green: #10B981;
+    --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Arial, sans-serif;
+    --mono: ui-monospace, SFMono-Regular, "JetBrains Mono", Menlo, Consolas, monospace;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; font-family: var(--font); background: var(--bg); color: var(--text);
+    line-height: 1.6; -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--accent); }
+  a:hover { color: var(--accent-hover); }
+  .container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
+  .site-header { border-bottom: 1px solid var(--border); padding: 15px 0; background: var(--bg); }
+  .nav-wrap { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+  .logo { font-size: 1.1rem; font-weight: 700; color: var(--white); text-decoration: none; letter-spacing: 0.3px; }
+  .logo:hover { color: var(--accent-hover); }
+  .nav a { margin-left: 15px; text-decoration: none; color: var(--muted); font-size: 0.95rem; }
+  .nav a.active, .nav a:hover { color: var(--accent); }
+  .nav a:first-child { margin-left: 0; }
+  .tool-bar { border-bottom: 1px solid var(--border); padding: 12px 0; background: var(--surface-2); }
+  .tool-bar-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; font-size: 0.85rem; }
+  .tool-name { color: var(--text-2); font-weight: 600; letter-spacing: 0.02em; }
+  .tool-bar a { color: var(--muted); text-decoration: none; }
+  .tool-bar a:hover { color: var(--accent); }
+  main { padding: 56px 0 80px; }
+  .page-header { margin-bottom: 40px; }
+  .page-header h1 { margin: 8px 0 12px; font-size: 32px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.2; color: var(--white); }
+  .page-header p { color: var(--text-2); font-size: 16px; margin: 0; max-width: 600px; }
+  .section-eyebrow { font-size: 12px; font-weight: 600; color: var(--accent); letter-spacing: 0.08em; text-transform: uppercase; }
+  .category-nav { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 32px; padding-bottom: 16px; border-bottom: 1px solid var(--border); }
+  .category-nav a { display: inline-flex; align-items: center; gap: 8px; padding: 7px 14px; background: var(--surface); border: 1px solid var(--border); border-radius: 999px; text-decoration: none; color: var(--text-2); font-size: 13px; font-weight: 500; transition: all 0.15s; }
+  .category-nav a:hover { border-color: var(--accent); color: var(--accent); background: rgba(37, 99, 235, 0.08); }
+  .category-nav .cat-count { font-size: 11px; font-weight: 600; background: var(--bg); color: var(--muted); padding: 1px 7px; border-radius: 999px; font-variant-numeric: tabular-nums; }
+  .category-section { margin: 48px 0 0; scroll-margin-top: 24px; }
+  .category-section:first-of-type { margin-top: 24px; }
+  .category-heading { font-size: 20px; font-weight: 700; letter-spacing: -0.015em; margin: 0 0 16px; padding-bottom: 10px; border-bottom: 1px solid var(--border); color: var(--white); }
+  .stories { list-style: none; padding: 0; margin: 0; counter-reset: story; }
+  .story { counter-increment: story; padding: 24px 0; border-bottom: 1px solid var(--border); position: relative; padding-left: 44px; }
+  .story:last-child { border-bottom: 0; }
+  .story::before { content: counter(story); position: absolute; left: 0; top: 26px; font-size: 12px; font-weight: 600; color: var(--muted); width: 24px; height: 24px; border: 1px solid var(--border); border-radius: 50%; display: grid; place-items: center; background: var(--surface); font-variant-numeric: tabular-nums; }
+  .story-headline { font-size: 18px; font-weight: 600; line-height: 1.35; letter-spacing: -0.01em; margin: 0 0 8px; }
+  .story-headline a { color: var(--white); text-decoration: none; transition: color 0.15s; }
+  .story-headline a:hover { color: var(--accent-hover); }
+  .story-summary { margin: 0 0 10px; color: var(--text-2); font-size: 15px; }
+  .story-meta { display: flex; gap: 8px; font-size: 13px; color: var(--muted); align-items: center; }
+  .story-meta a { color: var(--muted); text-decoration: none; }
+  .story-meta a:hover { color: var(--accent); }
+  .story-meta .dot { color: var(--muted-2); }
+  .story-detail h1 { font-size: 32px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.2; margin: 12px 0 24px; color: var(--white); }
+  .story-summary-large { font-size: 18px; color: var(--text-2); line-height: 1.6; margin: 0 0 32px; }
+  .why-section { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 20px 24px; margin: 32px 0; }
+  .why-section h2, .why-section h3 { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); margin: 0 0 8px; }
+  .why-section p { margin: 0; color: var(--text); font-size: 15px; }
+  .read-original { margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--border); }
+  .read-original a { color: var(--accent); text-decoration: none; font-weight: 500; display: inline-block; padding: 10px 16px; background: var(--surface); border: 1px solid var(--border); border-radius: 6px; transition: all 0.15s; }
+  .read-original a:hover { background: var(--accent); color: var(--white); border-color: var(--accent); }
+  .prompt-title { font-size: 26px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.25; margin: 8px 0 6px; color: var(--white); }
+  .prompt-subtitle { color: var(--text-2); font-size: 15px; margin: 0 0 24px; }
+  .prompt-block { border: 1px solid var(--border); border-radius: 10px; overflow: hidden; background: var(--surface); margin: 24px 0; }
+  .prompt-block-header { display: flex; align-items: center; justify-content: space-between; padding: 12px 18px; background: var(--surface-2); border-bottom: 1px solid var(--border); }
+  .prompt-label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); }
+  .copy-btn { background: var(--accent); color: var(--white); border: none; border-radius: 6px; padding: 7px 16px; font: 500 12px var(--font); cursor: pointer; transition: background 0.15s, transform 0.05s; }
+  .copy-btn:hover { background: var(--accent-hover); }
+  .copy-btn:active { transform: scale(0.97); }
+  .copy-btn.copied { background: var(--green); }
+  .prompt-text { margin: 0; padding: 22px 22px 24px; font-family: var(--mono); font-size: 13.5px; line-height: 1.7; color: var(--text); white-space: pre-wrap; word-wrap: break-word; background: transparent; }
+  .example-section { margin: 24px 0; padding: 14px 20px; border-left: 3px solid var(--accent); background: var(--surface); border-radius: 0 8px 8px 0; }
+  .example-section h3 { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); margin: 0 0 6px; }
+  .example-section p { margin: 0; color: var(--text-2); font-size: 14px; font-style: italic; }
+  .prompt-list { list-style: none; padding: 0; margin: 0; }
+  .prompt-list li { padding: 0; border-bottom: 1px solid var(--border); }
+  .prompt-list li:last-child { border-bottom: 0; }
+  .prompt-list a { display: flex; align-items: center; gap: 16px; padding: 14px 16px; text-decoration: none; color: var(--text-2); transition: all 0.12s; border-radius: 6px; }
+  .prompt-list a:hover { background: rgba(37,99,235,0.06); color: var(--white); }
+  .prompt-date { font-size: 12px; color: var(--muted-2); white-space: nowrap; font-variant-numeric: tabular-nums; min-width: 85px; }
+  .prompt-title { font-size: 15px; font-weight: 500; }
+  .prompt-list a:hover .prompt-title { color: var(--accent-hover); }
+  @media (max-width: 600px) {
+    .prompt-list a { flex-direction: column; align-items: flex-start; gap: 4px; padding: 12px 8px; }
+  }
+  .archive-section { margin-top: 64px; padding-top: 32px; border-top: 1px solid var(--border); }
+  .archive-section h2 { font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin: 0 0 16px; }
+  .archive-list { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 8px; }
+  .archive-list li { padding: 4px 0; }
+  .archive-list a { color: var(--text-2); text-decoration: none; font-size: 14px; }
+  .archive-list a:hover { color: var(--accent); }
+  .empty { color: var(--muted); font-style: italic; }
+  .footer { text-align: center; padding: 24px 20px; margin-top: 40px; border-top: 1px solid var(--border); color: var(--muted); font-size: 13px; }
+  .footer p { margin: 4px 0; }
+  .footer a { color: var(--text-2); text-decoration: none; }
+  .footer a:hover { color: var(--accent); }
+  .footer .footer-meta { margin-top: 8px; font-size: 11px; color: var(--muted-2); font-variant-numeric: tabular-nums; }
+  @media (max-width: 600px) {
+    .nav a { margin-left: 12px; font-size: 0.9rem; }
+    .page-header h1, .story-detail h1 { font-size: 26px; }
+    main { padding: 36px 0 60px; }
+  }
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="container nav-wrap">
+    <a href="https://arunkumarpanchanana.github.io/" class="logo">Arunkumar Panchanana</a>
+    <nav class="nav">
+      <a href="https://arunkumarpanchanana.github.io/">Home</a>
+      <a href="https://arunkumarpanchanana.github.io/about.html">About</a>
+      <a href="https://arunkumarpanchanana.github.io/tools.html" class="active">Tools</a>
+    </nav>
+  </div>
+</header>
+<div class="tool-bar">
+  <div class="container tool-bar-inner">
+    <span class="tool-name">AI News of the Day</span>
+    <span><a href="../index.html">← Back to today</a></span>
+  </div>
+</div>
+<main>
+  <div class="container">
+    
+<header class="page-header">
+  <div class="section-eyebrow">August 13, 2026</div>
+  <h1>AI News of the Day</h1>
+</header>
+<nav class="category-nav"><a href="#cat-models">Models &amp; Research <span class="cat-count">2</span></a><a href="#cat-industry">Industry &amp; Business <span class="cat-count">3</span></a><a href="#cat-tools">Tools &amp; Code <span class="cat-count">3</span></a><a href="#cat-policy">Policy &amp; Safety <span class="cat-count">3</span></a></nav>
+<section class="category-section" id="cat-models">
+  <h2 class="category-heading">Models &amp; Research</h2>
+  <ol class="stories"><li class="story">
+  <h3 class="story-headline"><a href="story/2026-08-13-deepmind-introduces-sl2t-model-for-real-time-sign-language-t-1357a9.html">DeepMind Introduces SL2T Model for Real-Time Sign Language-to-Text Translation</a></h3>
+  <p class="story-summary">DeepMind has launched its sign-language-to-text (SL2T) model, designed to power new accessibility features for Deaf and hard-of-hearing users.</p>
+  <div class="story-meta"><span>DeepMind</span><span class="dot">·</span><a href="https://deepmind.google/blog/putting-sign-language-ai-into-users-hands/" target="_blank" rel="noopener noreferrer">deepmind.google ↗</a></div>
+</li><li class="story">
+  <h3 class="story-headline"><a href="story/2026-08-13-spacexais-grok-46-matches-openais-best-model-and-offers-lowe-ea93c6.html">SpaceXAI&#39;s Grok 4.6 Matches OpenAI&#39;s Best Model and Offers Lower Pricing</a></h3>
+  <p class="story-summary">xAI&#39;s Grok 4.6 achieved a competitive score on the Artificial Analysis Intelligence Index, tying OpenAI&#39;s GPT-5.6 Sol while offering significantly lower pricing for agentic tasks.</p>
+  <div class="story-meta"><span>The Decoder</span><span class="dot">·</span><a href="https://the-decoder.com/spacexais-grok-4-6-matches-openais-best-model-and-undercuts-it-on-price/" target="_blank" rel="noopener noreferrer">the-decoder.com ↗</a></div>
+</li></ol>
+</section><section class="category-section" id="cat-industry">
+  <h2 class="category-heading">Industry &amp; Business</h2>
+  <ol class="stories"><li class="story">
+  <h3 class="story-headline"><a href="story/2026-08-13-ai-coding-startup-cognition-reportedly-seeks-40b-valuation-a-478abd.html">AI Coding Startup Cognition Reportedly Seeks $40B Valuation After Rapid Growth</a></h3>
+  <p class="story-summary">AI coding startup Cognition is reportedly in talks to raise new funding at a staggering $40 billion valuation, just months after a $1 billion round at $26 billion.</p>
+  <div class="story-meta"><span>TechCrunch AI</span><span class="dot">·</span><a href="https://techcrunch.com/2026/08/12/ai-coding-startup-cognition-reportedly-already-in-talks-to-raise-at-40b-valuation/" target="_blank" rel="noopener noreferrer">techcrunch.com ↗</a></div>
+</li><li class="story">
+  <h3 class="story-headline"><a href="story/2026-08-13-openai-facilitates-7-billion-stock-buyback-for-employees-at--1446df.html">OpenAI Facilitates $7 Billion Stock Buyback for Employees at $852 Billion Valuation</a></h3>
+  <p class="story-summary">OpenAI completed a $7 billion stock buyback, allowing current and former employees to sell shares based on the company&#39;s $852 billion valuation.</p>
+  <div class="story-meta"><span>The Decoder</span><span class="dot">·</span><a href="https://the-decoder.com/openai-lets-employees-cash-out-another-7-billion-in-stock/" target="_blank" rel="noopener noreferrer">the-decoder.com ↗</a></div>
+</li><li class="story">
+  <h3 class="story-headline"><a href="story/2026-08-13-novo-nordisk-partners-with-aws-to-integrate-agentic-ai-into--5d1261.html">Novo Nordisk Partners with AWS to Integrate Agentic AI into Drug Discovery</a></h3>
+  <p class="story-summary">Novo Nordisk is expanding its use of AWS AI tools, including agentic AI, across its drug discovery processes for target identification and therapy design.</p>
+  <div class="story-meta"><span>AI News</span><span class="dot">·</span><a href="https://www.artificialintelligence-news.com/news/novo-nordisk-ai-drug-discovery-aws/" target="_blank" rel="noopener noreferrer">artificialintelligence-news.com ↗</a></div>
+</li></ol>
+</section><section class="category-section" id="cat-tools">
+  <h2 class="category-heading">Tools &amp; Code</h2>
+  <ol class="stories"><li class="story">
+  <h3 class="story-headline"><a href="story/2026-08-13-openai-launches-chatgpt-desktop-application-for-linux-operat-749a3c.html">OpenAI Launches ChatGPT Desktop Application for Linux Operating System</a></h3>
+  <p class="story-summary">OpenAI has released a dedicated desktop application for ChatGPT, making its popular AI chatbot natively available on Linux.</p>
+  <div class="story-meta"><span>The Decoder</span><span class="dot">·</span><a href="https://the-decoder.com/openai-launches-chatgpt-desktop-app-for-linux/" target="_blank" rel="noopener noreferrer">the-decoder.com ↗</a></div>
+</li><li class="story">
+  <h3 class="story-headline"><a href="story/2026-08-13-spacexai-introduces-grok-bot-as-an-ai-teammate-for-workplace-9c20a9.html">SpaceXAI Introduces Grok Bot as an AI &#39;Teammate&#39; for Workplace Automation</a></h3>
+  <p class="story-summary">SpaceXAI has launched Grok Bot, an AI agent service designed to act as an independent &#39;AI teammate&#39; capable of performing multi-step workplace tasks by interacting with various applications.</p>
+  <div class="story-meta"><span>The Verge AI</span><span class="dot">·</span><a href="https://www.theverge.com/ai-artificial-intelligence/978666/spacexai-grok-bot-ai-agent-beta-launch/" target="_blank" rel="noopener noreferrer">theverge.com ↗</a></div>
+</li><li class="story">
+  <h3 class="story-headline"><a href="story/2026-08-13-google-unveils-pixel-11-watch-5-and-new-gemini-ai-features-a-da40c5.html">Google Unveils Pixel 11, Watch 5, and New Gemini AI Features at Made by Google Event</a></h3>
+  <p class="story-summary">Google announced its new Pixel 11 lineup, Pixel Watch 5, a Pixel Tag, and extensive Gemini AI integrations across its hardware ecosystem at the Made by Google 2026 event.</p>
+  <div class="story-meta"><span>TechCrunch AI</span><span class="dot">·</span><a href="https://techcrunch.com/2026/08/12/google-unveils-pixel-11-lineup-new-airtag-rival-and-gemini-features-at-made-by-google-2026/" target="_blank" rel="noopener noreferrer">techcrunch.com ↗</a></div>
+</li></ol>
+</section><section class="category-section" id="cat-policy">
+  <h2 class="category-heading">Policy &amp; Safety</h2>
+  <ol class="stories"><li class="story">
+  <h3 class="story-headline"><a href="story/2026-08-13-terabytes-of-credentials-leaked-in-massive-supply-chain-atta-50a8f7.html">Terabytes of Credentials Leaked in Massive Supply-Chain Attack on AI Package</a></h3>
+  <p class="story-summary">A massive supply-chain attack resulted in the leakage of terabytes of credentials, exfiltrated from 2,500 users of a compromised AI package.</p>
+  <div class="story-meta"><span>Ars Technica AI</span><span class="dot">·</span><a href="https://arstechnica.com/security/2026/08/terabytes-of-credentials-leaked-in-massive-supply-chain-attack/" target="_blank" rel="noopener noreferrer">arstechnica.com ↗</a></div>
+</li><li class="story">
+  <h3 class="story-headline"><a href="story/2026-08-13-researchers-can-reverse-engineer-llm-prompts-from-output-tex-1c2239.html">Researchers Can Reverse-Engineer LLM Prompts from Output Text with High Accuracy</a></h3>
+  <p class="story-summary">Researchers have developed an inverse language model capable of reconstructing original LLM prompts from output text with near-perfect accuracy, posing a security risk for proprietary system prompts.</p>
+  <div class="story-meta"><span>The Decoder</span><span class="dot">·</span><a href="https://the-decoder.com/researchers-can-now-reverse-engineer-llm-prompts-from-output-text-with-near-perfect-accuracy/" target="_blank" rel="noopener noreferrer">the-decoder.com ↗</a></div>
+</li><li class="story">
+  <h3 class="story-headline"><a href="story/2026-08-13-booksellers-suspect-ai-firms-are-buying-and-destroying-rare--8fbaff.html">Booksellers Suspect AI Firms Are Buying and Destroying Rare Books for Training Data</a></h3>
+  <p class="story-summary">Booksellers are reporting suspicious bulk purchases of rare books by AI firms, raising concerns that these valuable cultural artifacts are being acquired and destroyed solely for AI training data.</p>
+  <div class="story-meta"><span>Ars Technica AI</span><span class="dot">·</span><a href="https://arstechnica.com/tech-policy/2026/08/heres-a-balm-if-the-idea-of-destroying-books-to-train-ai-breaks-your-heart/" target="_blank" rel="noopener noreferrer">arstechnica.com ↗</a></div>
+</li></ol>
+</section>
+  </div>
+</main>
+<footer class="footer">
+  <div class="container">
+    <p>Arunkumar Panchanana &middot; AI tools &middot; Automation &middot; IT Leadership</p>
+    <p>Email: <a href="mailto:arunkumar.panchanana@gmail.com">arunkumar.panchanana@gmail.com</a></p>
+    
+    <div class="footer-meta">Updated <time datetime="2026-08-13T02:04:53Z">2026-08-13T02:04:53Z</time></div>
+  </div>
+</footer>
+</body>
+</html>
