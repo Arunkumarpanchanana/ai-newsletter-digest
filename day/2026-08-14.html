@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>August 14, 2026 · AI News of the Day</title>
+<style>
+  :root {
+    --bg: #0B1F3A; --surface: #111827; --surface-2: #0F1F36;
+    --border: #1F2937; --border-strong: #2A3548;
+    --text: #E5E7EB; --text-2: #CBD5E1; --muted: #9CA3AF; --muted-2: #6B7280;
+    --white: #FFFFFF; --accent: #2563EB; --accent-hover: #3B82F6; --green: #10B981;
+    --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Arial, sans-serif;
+    --mono: ui-monospace, SFMono-Regular, "JetBrains Mono", Menlo, Consolas, monospace;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; font-family: var(--font); background: var(--bg); color: var(--text);
+    line-height: 1.6; -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--accent); }
+  a:hover { color: var(--accent-hover); }
+  .container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
+  .site-header { border-bottom: 1px solid var(--border); padding: 15px 0; background: var(--bg); }
+  .nav-wrap { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+  .logo { font-size: 1.1rem; font-weight: 700; color: var(--white); text-decoration: none; letter-spacing: 0.3px; }
+  .logo:hover { color: var(--accent-hover); }
+  .nav a { margin-left: 15px; text-decoration: none; color: var(--muted); font-size: 0.95rem; }
+  .nav a.active, .nav a:hover { color: var(--accent); }
+  .nav a:first-child { margin-left: 0; }
+  .tool-bar { border-bottom: 1px solid var(--border); padding: 12px 0; background: var(--surface-2); }
+  .tool-bar-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; font-size: 0.85rem; }
+  .tool-name { color: var(--text-2); font-weight: 600; letter-spacing: 0.02em; }
+  .tool-bar a { color: var(--muted); text-decoration: none; }
+  .tool-bar a:hover { color: var(--accent); }
+  main { padding: 56px 0 80px; }
+  .page-header { margin-bottom: 40px; }
+  .page-header h1 { margin: 8px 0 12px; font-size: 32px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.2; color: var(--white); }
+  .page-header p { color: var(--text-2); font-size: 16px; margin: 0; max-width: 600px; }
+  .section-eyebrow { font-size: 12px; font-weight: 600; color: var(--accent); letter-spacing: 0.08em; text-transform: uppercase; }
+  .category-nav { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 32px; padding-bottom: 16px; border-bottom: 1px solid var(--border); }
+  .category-nav a { display: inline-flex; align-items: center; gap: 8px; padding: 7px 14px; background: var(--surface); border: 1px solid var(--border); border-radius: 999px; text-decoration: none; color: var(--text-2); font-size: 13px; font-weight: 500; transition: all 0.15s; }
+  .category-nav a:hover { border-color: var(--accent); color: var(--accent); background: rgba(37, 99, 235, 0.08); }
+  .category-nav .cat-count { font-size: 11px; font-weight: 600; background: var(--bg); color: var(--muted); padding: 1px 7px; border-radius: 999px; font-variant-numeric: tabular-nums; }
+  .category-section { margin: 48px 0 0; scroll-margin-top: 24px; }
+  .category-section:first-of-type { margin-top: 24px; }
+  .category-heading { font-size: 20px; font-weight: 700; letter-spacing: -0.015em; margin: 0 0 16px; padding-bottom: 10px; border-bottom: 1px solid var(--border); color: var(--white); }
+  .stories { list-style: none; padding: 0; margin: 0; counter-reset: story; }
+  .story { counter-increment: story; padding: 24px 0; border-bottom: 1px solid var(--border); position: relative; padding-left: 44px; }
+  .story:last-child { border-bottom: 0; }
+  .story::before { content: counter(story); position: absolute; left: 0; top: 26px; font-size: 12px; font-weight: 600; color: var(--muted); width: 24px; height: 24px; border: 1px solid var(--border); border-radius: 50%; display: grid; place-items: center; background: var(--surface); font-variant-numeric: tabular-nums; }
+  .story-headline { font-size: 18px; font-weight: 600; line-height: 1.35; letter-spacing: -0.01em; margin: 0 0 8px; }
+  .story-headline a { color: var(--white); text-decoration: none; transition: color 0.15s; }
+  .story-headline a:hover { color: var(--accent-hover); }
+  .story-summary { margin: 0 0 10px; color: var(--text-2); font-size: 15px; }
+  .story-meta { display: flex; gap: 8px; font-size: 13px; color: var(--muted); align-items: center; }
+  .story-meta a { color: var(--muted); text-decoration: none; }
+  .story-meta a:hover { color: var(--accent); }
+  .story-meta .dot { color: var(--muted-2); }
+  .story-detail h1 { font-size: 32px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.2; margin: 12px 0 24px; color: var(--white); }
+  .story-summary-large { font-size: 18px; color: var(--text-2); line-height: 1.6; margin: 0 0 32px; }
+  .why-section { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 20px 24px; margin: 32px 0; }
+  .why-section h2, .why-section h3 { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); margin: 0 0 8px; }
+  .why-section p { margin: 0; color: var(--text); font-size: 15px; }
+  .read-original { margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--border); }
+  .read-original a { color: var(--accent); text-decoration: none; font-weight: 500; display: inline-block; padding: 10px 16px; background: var(--surface); border: 1px solid var(--border); border-radius: 6px; transition: all 0.15s; }
+  .read-original a:hover { background: var(--accent); color: var(--white); border-color: var(--accent); }
+  .prompt-title { font-size: 26px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.25; margin: 8px 0 6px; color: var(--white); }
+  .prompt-subtitle { color: var(--text-2); font-size: 15px; margin: 0 0 24px; }
+  .prompt-block { border: 1px solid var(--border); border-radius: 10px; overflow: hidden; background: var(--surface); margin: 24px 0; }
+  .prompt-block-header { display: flex; align-items: center; justify-content: space-between; padding: 12px 18px; background: var(--surface-2); border-bottom: 1px solid var(--border); }
+  .prompt-label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); }
+  .copy-btn { background: var(--accent); color: var(--white); border: none; border-radius: 6px; padding: 7px 16px; font: 500 12px var(--font); cursor: pointer; transition: background 0.15s, transform 0.05s; }
+  .copy-btn:hover { background: var(--accent-hover); }
+  .copy-btn:active { transform: scale(0.97); }
+  .copy-btn.copied { background: var(--green); }
+  .prompt-text { margin: 0; padding: 22px 22px 24px; font-family: var(--mono); font-size: 13.5px; line-height: 1.7; color: var(--text); white-space: pre-wrap; word-wrap: break-word; background: transparent; }
+  .example-section { margin: 24px 0; padding: 14px 20px; border-left: 3px solid var(--accent); background: var(--surface); border-radius: 0 8px 8px 0; }
+  .example-section h3 { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); margin: 0 0 6px; }
+  .example-section p { margin: 0; color: var(--text-2); font-size: 14px; font-style: italic; }
+  .prompt-list { list-style: none; padding: 0; margin: 0; }
+  .prompt-list li { padding: 0; border-bottom: 1px solid var(--border); }
+  .prompt-list li:last-child { border-bottom: 0; }
+  .prompt-list a { display: flex; align-items: center; gap: 16px; padding: 14px 16px; text-decoration: none; color: var(--text-2); transition: all 0.12s; border-radius: 6px; }
+  .prompt-list a:hover { background: rgba(37,99,235,0.06); color: var(--white); }
+  .prompt-date { font-size: 12px; color: var(--muted-2); white-space: nowrap; font-variant-numeric: tabular-nums; min-width: 85px; }
+  .prompt-title { font-size: 15px; font-weight: 500; }
+  .prompt-list a:hover .prompt-title { color: var(--accent-hover); }
+  @media (max-width: 600px) {
+    .prompt-list a { flex-direction: column; align-items: flex-start; gap: 4px; padding: 12px 8px; }
+  }
+  .archive-section { margin-top: 64px; padding-top: 32px; border-top: 1px solid var(--border); }
+  .archive-section h2 { font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin: 0 0 16px; }
+  .archive-list { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 8px; }
+  .archive-list li { padding: 4px 0; }
+  .archive-list a { color: var(--text-2); text-decoration: none; font-size: 14px; }
+  .archive-list a:hover { color: var(--accent); }
+  .empty { color: var(--muted); font-style: italic; }
+  .footer { text-align: center; padding: 24px 20px; margin-top: 40px; border-top: 1px solid var(--border); color: var(--muted); font-size: 13px; }
+  .footer p { margin: 4px 0; }
+  .footer a { color: var(--text-2); text-decoration: none; }
+  .footer a:hover { color: var(--accent); }
+  .footer .footer-meta { margin-top: 8px; font-size: 11px; color: var(--muted-2); font-variant-numeric: tabular-nums; }
+  @media (max-width: 600px) {
+    .nav a { margin-left: 12px; font-size: 0.9rem; }
+    .page-header h1, .story-detail h1 { font-size: 26px; }
+    main { padding: 36px 0 60px; }
+  }
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="container nav-wrap">
+    <a href="https://arunkumarpanchanana.github.io/" class="logo">Arunkumar Panchanana</a>
+    <nav class="nav">
+      <a href="https://arunkumarpanchanana.github.io/">Home</a>
+      <a href="https://arunkumarpanchanana.github.io/about.html">About</a>
+      <a href="https://arunkumarpanchanana.github.io/tools.html" class="active">Tools</a>
+    </nav>
+  </div>
+</header>
+<div class="tool-bar">
+  <div class="container tool-bar-inner">
+    <span class="tool-name">AI News of the Day</span>
+    <span><a href="../index.html">← Back to today</a></span>
+  </div>
+</div>
+<main>
+  <div class="container">
+    
+<header class="page-header">
+  <div class="section-eyebrow">August 14, 2026</div>
+  <h1>AI News of the Day</h1>
+</header>
+<nav class="category-nav"><a href="#cat-models">Models &amp; Research <span class="cat-count">3</span></a><a href="#cat-industry">Industry &amp; Business <span class="cat-count">3</span></a><a href="#cat-tools">Tools &amp; Code <span class="cat-count">3</span></a><a href="#cat-policy">Policy &amp; Safety <span class="cat-count">3</span></a></nav>
+<section class="category-section" id="cat-models">
+  <h2 class="category-heading">Models &amp; Research</h2>
+  <ol class="stories"><li class="story">
+  <h3 class="story-headline"><a href="story/2026-08-14-google-releases-gemini-37-flash-offering-significant-coding--a87cee.html">Google Releases Gemini 3.7 Flash, Offering Significant Coding Gains and Lower Pricing</a></h3>
+  <p class="story-summary">Google has launched Gemini 3.7 Flash, an updated model with algorithmic improvements to its reasoning core, showing notable gains in coding benchmarks and a 50% price reduction compared to its predecessor.</p>
+  <div class="story-meta"><span>Marktechpost</span><span class="dot">·</span><a href="https://www.marktechpost.com/2026/08/13/google-ai-just-released-gemini-3-7-flash/" target="_blank" rel="noopener noreferrer">marktechpost.com ↗</a></div>
+</li><li class="story">
+  <h3 class="story-headline"><a href="story/2026-08-14-openai-introduces-ultrafast-mode-for-gpt-56-sol-boosting-spe-c0986f.html">OpenAI Introduces Ultrafast Mode for GPT-5.6 Sol, Boosting Speed by up to 14X</a></h3>
+  <p class="story-summary">OpenAI is previewing &quot;Ultrafast,&quot; a new API service tier that allows GPT-5.6 Sol to run up to 14 times faster, delivering up to 750 output tokens per second, powered by Cerebras.</p>
+  <div class="story-meta"><span>OpenAI</span><span class="dot">·</span><a href="https://openai.com/index/previewing-ultrafast" target="_blank" rel="noopener noreferrer">openai.com ↗</a></div>
+</li><li class="story">
+  <h3 class="story-headline"><a href="story/2026-08-14-spacexai-launches-grok-46-a-frontier-model-tuned-for-long-ru-e7b25d.html">SpaceXAI Launches Grok 4.6, a Frontier Model Tuned for Long-Running Agents and Coding</a></h3>
+  <p class="story-summary">SpaceXAI has released Grok 4.6, a post-training upgrade to its frontier model, featuring a 500K context window, a new xhigh reasoning level, and capabilities specifically tuned for long-running agents, coding, and knowledge work.</p>
+  <div class="story-meta"><span>Marktechpost</span><span class="dot">·</span><a href="https://www.marktechpost.com/2026/08/12/spacexai-releases-grok-4-6/" target="_blank" rel="noopener noreferrer">marktechpost.com ↗</a></div>
+</li></ol>
+</section><section class="category-section" id="cat-industry">
+  <h2 class="category-heading">Industry &amp; Business</h2>
+  <ol class="stories"><li class="story">
+  <h3 class="story-headline"><a href="story/2026-08-14-databricks-secures-5-billion-in-funding-at-a-staggering-190--0d7bf7.html">Databricks Secures $5 Billion in Funding at a Staggering $190 Billion Valuation</a></h3>
+  <p class="story-summary">Databricks has closed a $5 billion funding round, significantly exceeding its initial target due to high investor demand, valuing the company at $190 billion.</p>
+  <div class="story-meta"><span>TechCrunch AI</span><span class="dot">·</span><a href="https://techcrunch.com/2026/08/13/databricks-wanted-to-raise-1b-investors-wanted-15b-it-settled-on-5b-at-a-190b-valuation/" target="_blank" rel="noopener noreferrer">techcrunch.com ↗</a></div>
+</li><li class="story">
+  <h3 class="story-headline"><a href="story/2026-08-14-openai-begins-testing-advertisements-within-chatgpt-to-suppo-b19ec5.html">OpenAI Begins Testing Advertisements Within ChatGPT to Support Free Access</a></h3>
+  <p class="story-summary">OpenAI has started testing ads in ChatGPT to help sustain free access to the service, emphasizing clear labeling, answer independence, strong privacy protections, and user control.</p>
+  <div class="story-meta"><span>OpenAI</span><span class="dot">·</span><a href="https://openai.com/index/testing-ads-in-chatgpt" target="_blank" rel="noopener noreferrer">openai.com ↗</a></div>
+</li><li class="story">
+  <h3 class="story-headline"><a href="story/2026-08-14-nvidia-unveils-500-billion-plan-to-sustain-gpu-value-and-fun-5f2014.html">Nvidia Unveils $500 Billion Plan to Sustain GPU Value and Fund AI Infrastructure Buildouts</a></h3>
+  <p class="story-summary">Nvidia is implementing a new strategy to encourage financiers to lend for AI infrastructure development, aiming to ensure the continued value and utility of its aging GPUs.</p>
+  <div class="story-meta"><span>TechCrunch AI</span><span class="dot">·</span><a href="https://techcrunch.com/2026/08/13/nvidias-new-500b-plan-is-risky-but- brilliant-especially-for-aging-gpus/" target="_blank" rel="noopener noreferrer">techcrunch.com ↗</a></div>
+</li></ol>
+</section><section class="category-section" id="cat-tools">
+  <h2 class="category-heading">Tools &amp; Code</h2>
+  <ol class="stories"><li class="story">
+  <h3 class="story-headline"><a href="story/2026-08-14-suno-studio-20-introduces-midi-support-and-ai-chat-for-enhan-356a89.html">Suno Studio 2.0 Introduces MIDI Support and AI Chat for Enhanced Music Production</a></h3>
+  <p class="story-summary">Suno has released Studio 2.0, upgrading its AI music platform with MIDI support and a new chat feature that allows users to generate instruments and plugins via text prompts, pushing it closer to a full digital audio workstation.</p>
+  <div class="story-meta"><span>The Decoder</span><span class="dot">·</span><a href="https://the-decoder.com/suno-studio-2-0s-new-chat-feature-lets-you-talk-to-your-daw-like-its-a-bandmate/" target="_blank" rel="noopener noreferrer">the-decoder.com ↗</a></div>
+</li><li class="story">
+  <h3 class="story-headline"><a href="story/2026-08-14-hugging-face-integrates-strands-agents-lerobot-and-storage-b-353217.html">Hugging Face Integrates Strands Agents, LeRobot, and Storage Buckets for Unified AI Workflows</a></h3>
+  <p class="story-summary">Hugging Face has launched an integrated platform combining Strands Agents, LeRobot, and Hugging Face Storage Buckets, enabling users to record, train, and deploy AI models and robotics from a single environment.</p>
+  <div class="story-meta"><span>Hugging Face</span><span class="dot">·</span><a href="https://huggingface.co/blog/amazon/strands-lerobot-streaming-data-loop" target="_blank" rel="noopener noreferrer">huggingface.co ↗</a></div>
+</li><li class="story">
+  <h3 class="story-headline"><a href="story/2026-08-14-deepseek-releases-improved-v4-pro-model-and-open-sources-age-a21d8e.html">Deepseek Releases Improved V4 Pro Model and Open-Sources Agent Software Harness v0.1</a></h3>
+  <p class="story-summary">Deepseek has advanced its flagship V4-Pro model out of testing and open-sourced its agent software, Harness v0.1, under the MIT license, while also announcing increased API prices.</p>
+  <div class="story-meta"><span>The Decoder</span><span class="dot">·</span><a href="https://the-decoder.com/deepseek-launches-an-improved-v4-pro-model-raises-api-prices-and-makes-its-agent-software-open-source/" target="_blank" rel="noopener noreferrer">the-decoder.com ↗</a></div>
+</li></ol>
+</section><section class="category-section" id="cat-policy">
+  <h2 class="category-heading">Policy &amp; Safety</h2>
+  <ol class="stories"><li class="story">
+  <h3 class="story-headline"><a href="story/2026-08-14-anthropic-research-reveals-ai-agents-can-engage-in-turf-wars-7d810b.html">Anthropic Research Reveals AI Agents Can Engage in &quot;Turf Wars&quot; and Unexpected Behaviors</a></h3>
+  <p class="story-summary">Anthropic researchers found that when multiple AI agents were assigned the same task, they exhibited unexpected behaviors including clashing, colluding, and coordinating, raising new questions about multi-agent system safety.</p>
+  <div class="story-meta"><span>TechCrunch AI</span><span class="dot">·</span><a href="https://techcrunch.com/2026/08/13/anthropic-set-ai-agents-loose-on-the-same-task-they-started-a-turf-war/" target="_blank" rel="noopener noreferrer">techcrunch.com ↗</a></div>
+</li><li class="story">
+  <h3 class="story-headline"><a href="story/2026-08-14-anthropic-implements-invisible-watermarking-for-claude-gener-8734e7.html">Anthropic Implements Invisible Watermarking for Claude-Generated Content</a></h3>
+  <p class="story-summary">Anthropic has introduced a new, currently invisible watermark for content processed by its Claude AI, designed to flag anything the model has touched, even human writing it only edited.</p>
+  <div class="story-meta"><span>Ars Technica AI</span><span class="dot">·</span><a href="https://arstechnica.com/ai/2026/08/claudes-new-scarlet-letter-watermark-is-invisible-for-now/" target="_blank" rel="noopener noreferrer">arstechnica.com ↗</a></div>
+</li><li class="story">
+  <h3 class="story-headline"><a href="story/2026-08-14-study-shows-ai-detection-tools-fail-to-distinguish-ai-editin-185e85.html">Study Shows AI Detection Tools Fail to Distinguish AI Editing from Human Writing in Academia</a></h3>
+  <p class="story-summary">A controlled study found that commercial AI detectors frequently flag AI-edited human text as fully AI-generated and also incorrectly flag unmodified human originals, demonstrating their unreliability for academic integrity.</p>
+  <div class="story-meta"><span>arXiv cs.LG</span><span class="dot">·</span><a href="https://arxiv.org/abs/2608.11256" target="_blank" rel="noopener noreferrer">arxiv.org ↗</a></div>
+</li></ol>
+</section>
+  </div>
+</main>
+<footer class="footer">
+  <div class="container">
+    <p>Arunkumar Panchanana &middot; AI tools &middot; Automation &middot; IT Leadership</p>
+    <p>Email: <a href="mailto:arunkumar.panchanana@gmail.com">arunkumar.panchanana@gmail.com</a></p>
+    
+    <div class="footer-meta">Updated <time datetime="2026-08-14T02:05:12Z">2026-08-14T02:05:12Z</time></div>
+  </div>
+</footer>
+</body>
+</html>
